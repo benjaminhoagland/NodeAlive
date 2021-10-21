@@ -26,7 +26,7 @@ public class Data
         Log.Write("Initializing database...");
         if(File.Exists(Filesystem.fullName))
         {
-            Log.Write("Database " + Filesystem.filename + " found at " + Filesystem.directoryPath);
+            Log.Write("Database found at " + Filesystem.fullName);
             Log.Write("Continuing...");
 
             // FLAG:TODO test connection
@@ -36,8 +36,8 @@ public class Data
         }
 		else
 		{
-            Log.WriteError("Database " + Filesystem.filename + " not found at " + Filesystem.directoryPath);
-            Log.Write("Exiting Application...");
+            Log.WriteError("Database not found at " + Filesystem.fullName);
+            Log.WriteError("Exiting Application...");
             Application.Quit();
             
 		}

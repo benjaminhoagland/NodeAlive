@@ -21,14 +21,14 @@ public static class Log
 
         public static void Write(string message)
         {
-            NAEventLog.WriteEntry(message, System.Diagnostics.EventLogEntryType.Information);
+            NAEventLog.WriteEntry("NodeAlive.exe" + System.Environment.NewLine + message, System.Diagnostics.EventLogEntryType.Information);
         }
         public static void WriteWarning(string message)
         {
-            NAEventLog.WriteEntry(message, System.Diagnostics.EventLogEntryType.Warning);
+            NAEventLog.WriteEntry("NodeAlive.exe" + System.Environment.NewLine + message, System.Diagnostics.EventLogEntryType.Warning);
         }
         public static void WriteError(string message)
         {
-            NAEventLog.WriteEntry(message, System.Diagnostics.EventLogEntryType.Error);
+            NAEventLog.WriteEntry("NodeAlive.exe" + System.Environment.NewLine + message, System.Diagnostics.EventLogEntryType.Error);
         }
     }
