@@ -37,20 +37,9 @@ public class Data
 		else
 		{
             Log.WriteError("Database " + Filesystem.filename + " not found at " + Filesystem.directoryPath);
-            Log.Write("Creating file...");
-            try
-            {
-                string connectionString = "Data Source=" + Filesystem.fullName + ";Version=3;New=True;Compress=True;";
-                SqliteConnection connection = new SqliteConnection(connectionString);
-                SqliteConnection.CreateFile(Filesystem.fullName);
-                connection.Close();
-                Log.Write("Database " + Filesystem.filename + " created successfully at " + Filesystem.directoryPath);
-                    
-            }
-            catch
-            {
-                Log.WriteError("Database creation failure."); 
-            }
+            Log.Write("Exiting Application...");
+            Application.Quit();
+            
 		}
 
     }
