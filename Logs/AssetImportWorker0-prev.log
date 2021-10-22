@@ -15,11 +15,11 @@ C:/NodeAlive
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-57571
+59069
 Successfully changed project path to: C:/NodeAlive
 C:/NodeAlive
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 89.41 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 104.57 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.20f1 (41c4e627c95f)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.20f1/Editor/Data/Resources/UnitySubsystems
@@ -35,37 +35,37 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.20f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.20f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.20f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56148
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56624
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.20f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.020303 seconds.
+Registered in 0.007198 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 68.78 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 87.83 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  3.987 seconds
+- Completed reload, in  3.279 seconds
 Domain Reload Profiling:
-	ReloadAssembly (3988ms)
-		BeginReloadAssembly (179ms)
+	ReloadAssembly (3279ms)
+		BeginReloadAssembly (200ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (2ms)
-		EndReloadAssembly (1121ms)
-			LoadAssemblies (171ms)
+		EndReloadAssembly (1076ms)
+			LoadAssemblies (190ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (396ms)
+			SetupTypeCache (390ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (100ms)
-			SetupLoadedEditorAssemblies (408ms)
+			RebuildScriptCaches (82ms)
+			SetupLoadedEditorAssemblies (423ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (13ms)
+				InitializePlatformSupportModulesInManaged (11ms)
 				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (69ms)
-				BeforeProcessingInitializeOnLoad (44ms)
-				ProcessInitializeOnLoadAttributes (213ms)
+				RefreshPlugins (88ms)
+				BeforeProcessingInitializeOnLoad (53ms)
+				ProcessInitializeOnLoadAttributes (202ms)
 				ProcessInitializeOnLoadMethodAttributes (68ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (1ms)
@@ -73,226 +73,51 @@ Domain Reload Profiling:
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.016584 seconds.
+Registered in 0.038129 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.65 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.30 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in 19.114 seconds
+- Completed reload, in  2.923 seconds
 Domain Reload Profiling:
-	ReloadAssembly (19117ms)
-		BeginReloadAssembly (5715ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (15ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (404ms)
-		EndReloadAssembly (9642ms)
-			LoadAssemblies (6539ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (3705ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (234ms)
-			SetupLoadedEditorAssemblies (2419ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (28ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (460ms)
-				ProcessInitializeOnLoadAttributes (1879ms)
-				ProcessInitializeOnLoadMethodAttributes (13ms)
-				AfterProcessingInitializeOnLoad (33ms)
-				EditorAssembliesLoaded (3ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (56ms)
-Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.35 seconds
-Refreshing native plugins compatible for Editor in 0.70 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1404 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 65.1 MB.
-System memory in use after: 65.1 MB.
-
-Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 1837.
-Total: 6.930979 ms (FindLiveObjects: 0.366178 ms CreateObjectMapping: 0.134933 ms MarkObjects: 6.277823 ms  DeleteObjects: 0.137378 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  path: Assets/Scripts/Data.cs
-  artifactKey: Guid(0ca6892e98a88c145b7b99f4564b4c7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Data.cs using Guid(0ca6892e98a88c145b7b99f4564b4c7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ddfb37a7aaf40d88123bfc5a13e522a') in 0.071783 seconds 
-  Import took 0.077887 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.015544 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.54 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.420 seconds
-Domain Reload Profiling:
-	ReloadAssembly (2421ms)
-		BeginReloadAssembly (266ms)
+	ReloadAssembly (2925ms)
+		BeginReloadAssembly (385ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (12ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (61ms)
-		EndReloadAssembly (1994ms)
-			LoadAssemblies (214ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (2353ms)
+			LoadAssemblies (253ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (785ms)
+			SetupTypeCache (769ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (91ms)
-			SetupLoadedEditorAssemblies (704ms)
+			RebuildScriptCaches (131ms)
+			SetupLoadedEditorAssemblies (906ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (18ms)
+				InitializePlatformSupportModulesInManaged (21ms)
 				SetLoadedEditorAssemblies (1ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (176ms)
-				ProcessInitializeOnLoadAttributes (478ms)
-				ProcessInitializeOnLoadMethodAttributes (9ms)
+				BeforeProcessingInitializeOnLoad (227ms)
+				ProcessInitializeOnLoadAttributes (623ms)
+				ProcessInitializeOnLoadMethodAttributes (11ms)
 				AfterProcessingInitializeOnLoad (21ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (17ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.61 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1398 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 64.9 MB.
-System memory in use after: 65.0 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1839.
-Total: 5.035067 ms (FindLiveObjects: 0.519689 ms CreateObjectMapping: 0.118311 ms MarkObjects: 4.356489 ms  DeleteObjects: 0.034711 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.022045 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.78 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.903 seconds
-Domain Reload Profiling:
-	ReloadAssembly (4904ms)
-		BeginReloadAssembly (413ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (17ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (140ms)
-		EndReloadAssembly (4134ms)
-			LoadAssemblies (356ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (1197ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (122ms)
-			SetupLoadedEditorAssemblies (1994ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (15ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (290ms)
-				ProcessInitializeOnLoadAttributes (1477ms)
-				ProcessInitializeOnLoadMethodAttributes (15ms)
-				AfterProcessingInitializeOnLoad (193ms)
-				EditorAssembliesLoaded (2ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (35ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.64 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1398 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 64.9 MB.
-System memory in use after: 65.0 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1841.
-Total: 8.993112 ms (FindLiveObjects: 0.464445 ms CreateObjectMapping: 0.114889 ms MarkObjects: 8.369290 ms  DeleteObjects: 0.037644 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.027198 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.52 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  3.087 seconds
-Domain Reload Profiling:
-	ReloadAssembly (3089ms)
-		BeginReloadAssembly (261ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (23ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (78ms)
-		EndReloadAssembly (2643ms)
-			LoadAssemblies (244ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (886ms)
-			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (172ms)
-			SetupLoadedEditorAssemblies (970ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (13ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (202ms)
-				ProcessInitializeOnLoadAttributes (719ms)
-				ProcessInitializeOnLoadMethodAttributes (9ms)
-				AfterProcessingInitializeOnLoad (24ms)
 				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (18ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.14 ms, found 3 plugins.
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.15 seconds
+Refreshing native plugins compatible for Editor in 1.43 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1398 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 64.9 MB.
-System memory in use after: 65.0 MB.
+Unloading 1910 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 81.9 MB.
+System memory in use after: 82.0 MB.
 
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1843.
-Total: 5.547912 ms (FindLiveObjects: 0.329022 ms CreateObjectMapping: 0.163289 ms MarkObjects: 5.019423 ms  DeleteObjects: 0.029333 ms)
+Unloading 58 unused Assets to reduce memory usage. Loaded Objects now: 2307.
+Total: 5.566001 ms (FindLiveObjects: 0.370089 ms CreateObjectMapping: 0.127111 ms MarkObjects: 4.897201 ms  DeleteObjects: 0.165733 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -306,425 +131,312 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 147.184251 seconds.
-  path: Assets/Scripts/Data.cs
-  artifactKey: Guid(0ca6892e98a88c145b7b99f4564b4c7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Data.cs using Guid(0ca6892e98a88c145b7b99f4564b4c7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23b313dba3ada3109de8e9af665736f0') in 0.032151 seconds 
-  Import took 0.036507 seconds .
+  path: Assets/Scenes/Splash.unity
+  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Splash.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '475f6ab625eca8a4d89754c0a0959263') in 0.032905 seconds 
+  Import took 0.038742 seconds .
 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.036075 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.80 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.706 seconds
-Domain Reload Profiling:
-	ReloadAssembly (2707ms)
-		BeginReloadAssembly (271ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (12ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (66ms)
-		EndReloadAssembly (2276ms)
-			LoadAssemblies (248ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (655ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (113ms)
-			SetupLoadedEditorAssemblies (862ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (17ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (209ms)
-				ProcessInitializeOnLoadAttributes (578ms)
-				ProcessInitializeOnLoadMethodAttributes (10ms)
-				AfterProcessingInitializeOnLoad (45ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (28ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.63 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1398 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 64.9 MB.
-System memory in use after: 65.1 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1845.
-Total: 5.542534 ms (FindLiveObjects: 0.332933 ms CreateObjectMapping: 0.104622 ms MarkObjects: 5.062934 ms  DeleteObjects: 0.034222 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 5.755912 seconds.
-  path: Assets/Scripts/Data.cs
-  artifactKey: Guid(0ca6892e98a88c145b7b99f4564b4c7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Data.cs using Guid(0ca6892e98a88c145b7b99f4564b4c7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6f7ed18f8b9054ba6c3dda85a59f021') in 0.016619 seconds 
-  Import took 0.021392 seconds .
+  Time since last request: 393.441972 seconds.
+  path: Assets/Mapbox/Examples/6_ZoomableMap/Screenshots/ZoomableMap.png
+  artifactKey: Guid(f1321adbaa6e24299bb58ab33ad3adf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Examples/6_ZoomableMap/Screenshots/ZoomableMap.png using Guid(f1321adbaa6e24299bb58ab33ad3adf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a9d2347a244dcf76f5a6751a5ed152e') in 0.259604 seconds 
+  Import took 0.265552 seconds .
 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.021981 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.53 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.676 seconds
-Domain Reload Profiling:
-	ReloadAssembly (2677ms)
-		BeginReloadAssembly (302ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (15ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (83ms)
-		EndReloadAssembly (2189ms)
-			LoadAssemblies (231ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (786ms)
-			ReleaseScriptCaches (4ms)
-			RebuildScriptCaches (150ms)
-			SetupLoadedEditorAssemblies (783ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (13ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (201ms)
-				ProcessInitializeOnLoadAttributes (536ms)
-				ProcessInitializeOnLoadMethodAttributes (9ms)
-				AfterProcessingInitializeOnLoad (21ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (16ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.62 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1398 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 65.0 MB.
-System memory in use after: 65.1 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1847.
-Total: 5.685290 ms (FindLiveObjects: 0.284044 ms CreateObjectMapping: 0.097778 ms MarkObjects: 5.256534 ms  DeleteObjects: 0.040578 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 23.194594 seconds.
-  path: Assets/Scripts/Data.cs
-  artifactKey: Guid(0ca6892e98a88c145b7b99f4564b4c7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Data.cs using Guid(0ca6892e98a88c145b7b99f4564b4c7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7534e63552867029a34edf83207a3259') in 0.025470 seconds 
-  Import took 0.030817 seconds .
+  Time since last request: 0.000271 seconds.
+  path: Assets/Mapbox/Examples/Resources/maki/zoo-15.png
+  artifactKey: Guid(8e1b3d7011cd4ff4bb10438e495d6073) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Examples/Resources/maki/zoo-15.png using Guid(8e1b3d7011cd4ff4bb10438e495d6073) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f7e031de7654e67b0a2cdd71aab58b1') in 0.033593 seconds 
+  Import took 0.041895 seconds .
 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.029983 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.53 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.685 seconds
-Domain Reload Profiling:
-	ReloadAssembly (2686ms)
-		BeginReloadAssembly (287ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (12ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (68ms)
-		EndReloadAssembly (2152ms)
-			LoadAssemblies (278ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (839ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (99ms)
-			SetupLoadedEditorAssemblies (723ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (13ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (189ms)
-				ProcessInitializeOnLoadAttributes (488ms)
-				ProcessInitializeOnLoadMethodAttributes (10ms)
-				AfterProcessingInitializeOnLoad (21ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (16ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.64 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1398 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 65.0 MB.
-System memory in use after: 65.1 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1849.
-Total: 5.764490 ms (FindLiveObjects: 0.355422 ms CreateObjectMapping: 0.132489 ms MarkObjects: 5.240401 ms  DeleteObjects: 0.029333 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 17.422438 seconds.
-  path: Assets/Scripts/Data.cs
-  artifactKey: Guid(0ca6892e98a88c145b7b99f4564b4c7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Data.cs using Guid(0ca6892e98a88c145b7b99f4564b4c7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '585322bb798d64de797406229ac83b21') in 0.016184 seconds 
-  Import took 0.022685 seconds .
+  Time since last request: 0.000331 seconds.
+  path: Assets/Mapbox/Examples/Resources/maki/wheelchair-15.png
+  artifactKey: Guid(c2cc9bfd9d26ce146bed5db4dc5bfff2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Examples/Resources/maki/wheelchair-15.png using Guid(c2cc9bfd9d26ce146bed5db4dc5bfff2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b235fed2985c09b48ae12e3904daa74b') in 0.028881 seconds 
+  Import took 0.034598 seconds .
 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.018361 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.89 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  4.293 seconds
-Domain Reload Profiling:
-	ReloadAssembly (4294ms)
-		BeginReloadAssembly (371ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (13ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (133ms)
-		EndReloadAssembly (3655ms)
-			LoadAssemblies (275ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (1358ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (107ms)
-			SetupLoadedEditorAssemblies (1201ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (34ms)
-				SetLoadedEditorAssemblies (2ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (301ms)
-				ProcessInitializeOnLoadAttributes (709ms)
-				ProcessInitializeOnLoadMethodAttributes (95ms)
-				AfterProcessingInitializeOnLoad (56ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (35ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 2.13 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1398 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 65.0 MB.
-System memory in use after: 65.1 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1851.
-Total: 7.440401 ms (FindLiveObjects: 0.322178 ms CreateObjectMapping: 0.115378 ms MarkObjects: 6.966179 ms  DeleteObjects: 0.030311 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 13.262313 seconds.
-  path: Assets/Scripts/Data.cs
-  artifactKey: Guid(0ca6892e98a88c145b7b99f4564b4c7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/Data.cs using Guid(0ca6892e98a88c145b7b99f4564b4c7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '385dfb0c6ff0a04ce0f2c166ab7cb695') in 0.018629 seconds 
-  Import took 0.022622 seconds .
+  Time since last request: 0.000429 seconds.
+  path: Assets/Mapbox/Examples/Resources/maki/water-15.png
+  artifactKey: Guid(adc98df7d2e216c4294db26b0fe7ca87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Examples/Resources/maki/water-15.png using Guid(adc98df7d2e216c4294db26b0fe7ca87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8fcac015ba1b0364aca9d4e079f59442') in 0.043057 seconds 
+  Import took 0.048525 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000324 seconds.
+  path: Assets/Mapbox/Resources/Mapbox/PrefabScreens/WorldScaleAR.gif
+  artifactKey: Guid(544693615a8f3459c94a0a5a8930a702) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Resources/Mapbox/PrefabScreens/WorldScaleAR.gif using Guid(544693615a8f3459c94a0a5a8930a702) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2177d2ae230ee2eddb9f94fc646cf4da') in 0.048719 seconds 
+  Import took 0.054167 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000383 seconds.
+  path: Assets/Mapbox/Examples/Resources/maki/waste-basket-15.png
+  artifactKey: Guid(d6e1dd6c5dbc43d43adbe36b7c00b38a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Examples/Resources/maki/waste-basket-15.png using Guid(d6e1dd6c5dbc43d43adbe36b7c00b38a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a4015c4c11f892c294716ae5c651ce5') in 0.028623 seconds 
+  Import took 0.033486 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001224 seconds.
+  path: Assets/Mapbox/Examples/Resources/maki/wetland-15.png
+  artifactKey: Guid(be0ba1cde49b24648ba3ec24fae5059b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Examples/Resources/maki/wetland-15.png using Guid(be0ba1cde49b24648ba3ec24fae5059b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2c50dd04963378272fc45b31106278f') in 0.029248 seconds 
+  Import took 0.035136 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.104550 seconds.
+  path: Assets/Mapbox/Examples/8_VoxelMap/Screenshots/VoxelMap.png
+  artifactKey: Guid(805ed9e7e2bcd4071bd22b135125a912) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Examples/8_VoxelMap/Screenshots/VoxelMap.png using Guid(805ed9e7e2bcd4071bd22b135125a912) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f62de1888a72bda2d30f79002a875021') in 0.032009 seconds 
+  Import took 0.037762 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000316 seconds.
+  path: Assets/Mapbox/Examples/Resources/maki/warehouse-15.png
+  artifactKey: Guid(3d9903eae716f93498931cff4806f1e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Examples/Resources/maki/warehouse-15.png using Guid(3d9903eae716f93498931cff4806f1e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26b429759afe6c09a74235d418b5aeb8') in 0.038378 seconds 
+  Import took 0.043892 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.089224 seconds.
+  path: Assets/Mapbox/Examples/Resources/maki/triangle-15.png
+  artifactKey: Guid(f54f3a126717f974284272da3d701b5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Examples/Resources/maki/triangle-15.png using Guid(f54f3a126717f974284272da3d701b5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '399b1e87f923f02f1b92d90416f78226') in 0.032466 seconds 
+  Import took 0.039472 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000317 seconds.
+  path: Assets/Mapbox/Examples/Resources/maki/veterinary-15.png
+  artifactKey: Guid(a8bea32fe84c3c94eb3de19a3a15057a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Examples/Resources/maki/veterinary-15.png using Guid(a8bea32fe84c3c94eb3de19a3a15057a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33e74ee164345d3ca7f3ccd77b5b1705') in 0.032663 seconds 
+  Import took 0.038445 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000326 seconds.
+  path: Assets/Mapbox/Examples/Resources/maki/volcano-15.png
+  artifactKey: Guid(adf4b35731ef85a4fb5abdf6eaca3de4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Examples/Resources/maki/volcano-15.png using Guid(adf4b35731ef85a4fb5abdf6eaca3de4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38ebf32ac40a2737625b565c00a37fea') in 0.031897 seconds 
+  Import took 0.037298 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000339 seconds.
+  path: Assets/Mapbox/Examples/Resources/maki/triangle-stroked-15.png
+  artifactKey: Guid(46b1eee3e283d73438cf428363f6d37b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Examples/Resources/maki/triangle-stroked-15.png using Guid(46b1eee3e283d73438cf428363f6d37b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5413d7aa19af5dc604d39b4707691458') in 0.041030 seconds 
+  Import took 0.048657 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.147759 seconds.
+  path: Assets/Mapbox/Examples/Resources/maki/town-hall-15.png
+  artifactKey: Guid(9102b449df46d244c852c3c6e92f99dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Examples/Resources/maki/town-hall-15.png using Guid(9102b449df46d244c852c3c6e92f99dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57a97d05799269b262dc2156b7ca1372') in 0.030161 seconds 
+  Import took 0.036649 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000440 seconds.
+  path: Assets/Mapbox/Examples/Resources/maki/theatre-15.png
+  artifactKey: Guid(fdcf1646c2636004ca82e6046ed05398) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Examples/Resources/maki/theatre-15.png using Guid(fdcf1646c2636004ca82e6046ed05398) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c086965ac2fb20955035896f1ca5174') in 0.046834 seconds 
+  Import took 0.052816 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000302 seconds.
+  path: Assets/Mapbox/Examples/Resources/maki/toilet-15.png
+  artifactKey: Guid(baa3d11b19b652f40b873bea866fca56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Examples/Resources/maki/toilet-15.png using Guid(baa3d11b19b652f40b873bea866fca56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c128a14d8122a2abdcabc01ece27229') in 0.035282 seconds 
+  Import took 0.041248 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000275 seconds.
+  path: Assets/Mapbox/Examples/Resources/maki/telephone-15.png
+  artifactKey: Guid(ac8cf0225fee67d4f86b968f8ed64468) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Examples/Resources/maki/telephone-15.png using Guid(ac8cf0225fee67d4f86b968f8ed64468) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e8885edae25d3a244cadcd143a7fe25') in 0.045267 seconds 
+  Import took 0.050394 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000349 seconds.
+  path: Assets/Mapbox/Examples/Resources/maki/tennis-15.png
+  artifactKey: Guid(8d18b54c5e9a44f46a18d7585f895a87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Examples/Resources/maki/tennis-15.png using Guid(8d18b54c5e9a44f46a18d7585f895a87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3689e6a4c98e5095d30ed4924ecb6656') in 0.045003 seconds 
+  Import took 0.050116 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000275 seconds.
+  path: Assets/Mapbox/Examples/Resources/maki/teahouse-15.png
+  artifactKey: Guid(2ef69bc38ea8a064385fc07ab2ed79dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Examples/Resources/maki/teahouse-15.png using Guid(2ef69bc38ea8a064385fc07ab2ed79dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b28180942f903cd2421befc64c3cddb') in 0.033903 seconds 
+  Import took 0.041567 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000360 seconds.
+  path: Assets/Mapbox/Resources/Mapbox/PrefabScreens/TabletopAR.gif
+  artifactKey: Guid(e96036a81f146439cb33587e192539c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Resources/Mapbox/PrefabScreens/TabletopAR.gif using Guid(e96036a81f146439cb33587e192539c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bb4e036270873014964baea2d28023d') in 0.035248 seconds 
+  Import took 0.041508 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000329 seconds.
+  path: Assets/Mapbox/Examples/1_DataExplorer/Screenshots/TrafficAndDirections.png
+  artifactKey: Guid(9f8dc63149c4c452fb12fa47be6bb6c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Examples/1_DataExplorer/Screenshots/TrafficAndDirections.png using Guid(9f8dc63149c4c452fb12fa47be6bb6c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '132f608fb09ab1fb8ccc894f281a4728') in 0.036881 seconds 
+  Import took 0.041839 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.084853 seconds.
+  path: Assets/Mapbox/Examples/Resources/maki/star-stroked-15.png
+  artifactKey: Guid(8c1b77a0885e16741b9ca566cca795c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Examples/Resources/maki/star-stroked-15.png using Guid(8c1b77a0885e16741b9ca566cca795c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61a462ffb40c0374577342ba6e1928d3') in 0.032766 seconds 
+  Import took 0.038716 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000337 seconds.
+  path: Assets/Mapbox/Examples/Resources/maki/suitcase-15.png
+  artifactKey: Guid(c071dad9d3050a54e80551cddd9b7021) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Examples/Resources/maki/suitcase-15.png using Guid(c071dad9d3050a54e80551cddd9b7021) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54e910d4b0921f233b123920fe3262ba') in 0.042587 seconds 
+  Import took 0.049654 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000349 seconds.
+  path: Assets/Mapbox/Examples/Resources/maki/star-15.png
+  artifactKey: Guid(4412d2f8f47b513428b2823fa66d55e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Examples/Resources/maki/star-15.png using Guid(4412d2f8f47b513428b2823fa66d55e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8f6a2a3fe17691485507c5647bbf8b8') in 0.045451 seconds 
+  Import took 0.050447 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002558 seconds.
+  path: Assets/Mapbox/Examples/Resources/maki/sushi-15.png
+  artifactKey: Guid(27a366aade3a7904f86b4538ba21bdd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Examples/Resources/maki/sushi-15.png using Guid(27a366aade3a7904f86b4538ba21bdd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f5540088a59b6330bf1000279e1defe') in 0.040151 seconds 
+  Import took 0.048731 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000490 seconds.
+  path: Assets/Mapbox/Examples/Resources/maki/stadium-15.png
+  artifactKey: Guid(5cd344da491f1044ba6206898a1e79f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Examples/Resources/maki/stadium-15.png using Guid(5cd344da491f1044ba6206898a1e79f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fc2cafce3ee6a3e0c433bfbd9260ce8') in 0.039650 seconds 
+  Import took 0.051082 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000493 seconds.
+  path: Assets/Mapbox/Examples/Resources/maki/swimming-15.png
+  artifactKey: Guid(efae5cfb6e53ae8409aecbf7eef40ac1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Examples/Resources/maki/swimming-15.png using Guid(efae5cfb6e53ae8409aecbf7eef40ac1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4727b8f65739e117c11e21accef2ac61') in 0.034403 seconds 
+  Import took 0.041796 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.372398 seconds.
+  path: Assets/Mapbox/Examples/Resources/maki/embassy-15.png
+  artifactKey: Guid(5836ba1dfecd1c94c9c38deb12e9860a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Examples/Resources/maki/embassy-15.png using Guid(5836ba1dfecd1c94c9c38deb12e9860a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd991330ef8ccd6cde7bdf3af1d7b0a5b') in 0.030750 seconds 
+  Import took 0.036307 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000294 seconds.
+  path: Assets/Mapbox/Resources/Mapbox/PrefabScreens/Location-basedGame.gif
+  artifactKey: Guid(b9da555a2df00402d86244517dae835a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Resources/Mapbox/PrefabScreens/Location-basedGame.gif using Guid(b9da555a2df00402d86244517dae835a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f79fc980e10300fd0567aaa821fe747') in 0.036498 seconds 
+  Import took 0.041365 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 113.046022 seconds.
+  path: Assets/Mapbox/Fonts/OpenSans-Bold.ttf
+  artifactKey: Guid(7dfc2e1472ac84e1bb749a8a9f934483) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Fonts/OpenSans-Bold.ttf using Guid(7dfc2e1472ac84e1bb749a8a9f934483) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5cd038cc9189d15b0b62dbb76fc3101') in 0.138712 seconds 
+  Import took 0.145511 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000304 seconds.
+  path: Assets/Mapbox/Fonts/OpenSans-Semibold.ttf
+  artifactKey: Guid(218956a5c2a6e42d6a60afccf80b002b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Fonts/OpenSans-Semibold.ttf using Guid(218956a5c2a6e42d6a60afccf80b002b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '503db848cecc1d782e59c0fb0eb01a53') in 0.033637 seconds 
+  Import took 0.039965 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000334 seconds.
+  path: Assets/Mapbox/Fonts/OpenSans-Regular.ttf
+  artifactKey: Guid(bd1ea67ca2b5742d1a24fcbdc17c55e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mapbox/Fonts/OpenSans-Regular.ttf using Guid(bd1ea67ca2b5742d1a24fcbdc17c55e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2425a71c8d1f0f53f950fdd8c0a6b30') in 0.031531 seconds 
+  Import took 0.037224 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.017556 seconds.
+Registered in 0.042369 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.67 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.85 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.547 seconds
+- Completed reload, in  9.609 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2548ms)
-		BeginReloadAssembly (330ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (13ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (107ms)
-		EndReloadAssembly (2045ms)
-			LoadAssemblies (241ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (771ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (94ms)
-			SetupLoadedEditorAssemblies (733ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (18ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (211ms)
-				ProcessInitializeOnLoadAttributes (471ms)
-				ProcessInitializeOnLoadMethodAttributes (9ms)
-				AfterProcessingInitializeOnLoad (21ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (16ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.60 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1398 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 65.0 MB.
-System memory in use after: 65.1 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1853.
-Total: 6.644001 ms (FindLiveObjects: 0.311422 ms CreateObjectMapping: 0.105600 ms MarkObjects: 6.188356 ms  DeleteObjects: 0.031778 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.020495 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.63 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  3.862 seconds
-Domain Reload Profiling:
-	ReloadAssembly (3863ms)
-		BeginReloadAssembly (810ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (15ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (436ms)
-		EndReloadAssembly (2727ms)
-			LoadAssemblies (379ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (1079ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (120ms)
-			SetupLoadedEditorAssemblies (975ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (18ms)
-				SetLoadedEditorAssemblies (2ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (224ms)
-				ProcessInitializeOnLoadAttributes (674ms)
-				ProcessInitializeOnLoadMethodAttributes (19ms)
-				AfterProcessingInitializeOnLoad (37ms)
-				EditorAssembliesLoaded (1ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (21ms)
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.32 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1398 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 65.0 MB.
-System memory in use after: 65.1 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1855.
-Total: 6.183956 ms (FindLiveObjects: 0.427778 ms CreateObjectMapping: 0.108044 ms MarkObjects: 5.608534 ms  DeleteObjects: 0.032756 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.035356 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.56 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  3.608 seconds
-Domain Reload Profiling:
-	ReloadAssembly (3609ms)
-		BeginReloadAssembly (317ms)
+	ReloadAssembly (9610ms)
+		BeginReloadAssembly (453ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (20ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (87ms)
-		EndReloadAssembly (3079ms)
-			LoadAssemblies (240ms)
+			CreateAndSetChildDomain (123ms)
+		EndReloadAssembly (8814ms)
+			LoadAssemblies (968ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (1652ms)
+			SetupTypeCache (2026ms)
 			ReleaseScriptCaches (2ms)
-			RebuildScriptCaches (125ms)
-			SetupLoadedEditorAssemblies (851ms)
+			RebuildScriptCaches (2085ms)
+			SetupLoadedEditorAssemblies (1937ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (13ms)
+				InitializePlatformSupportModulesInManaged (31ms)
 				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (215ms)
-				ProcessInitializeOnLoadAttributes (511ms)
-				ProcessInitializeOnLoadMethodAttributes (16ms)
-				AfterProcessingInitializeOnLoad (93ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (514ms)
+				ProcessInitializeOnLoadAttributes (1339ms)
+				ProcessInitializeOnLoadMethodAttributes (20ms)
+				AfterProcessingInitializeOnLoad (29ms)
 				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (25ms)
+			AwakeInstancesAfterBackupRestoration (20ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.61 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.94 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1398 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 65.0 MB.
-System memory in use after: 65.1 MB.
+Unloading 1899 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.9 MB.
+System memory in use after: 85.0 MB.
 
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1857.
-Total: 6.590712 ms (FindLiveObjects: 0.328533 ms CreateObjectMapping: 0.644845 ms MarkObjects: 5.573334 ms  DeleteObjects: 0.036667 ms)
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 2362.
+Total: 6.852756 ms (FindLiveObjects: 0.959689 ms CreateObjectMapping: 0.170622 ms MarkObjects: 5.590934 ms  DeleteObjects: 0.066978 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -737,50 +449,810 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
+Received Import Request.
+  Time since last request: 373.612988 seconds.
+  path: Assets/Fonts/Roboto/Roboto-Medium.ttf
+  artifactKey: Guid(a52a646ddbeb4be42a9debdea3a27159) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Roboto/Roboto-Medium.ttf using Guid(a52a646ddbeb4be42a9debdea3a27159) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0af12f6d368622d89d910f05131f26b0') in 0.397415 seconds 
+  Import took 0.412386 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001458 seconds.
+  path: Assets/Fonts/Roboto/Roboto-Thin.ttf
+  artifactKey: Guid(9c52cda0587ae2e448036435dcf92812) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Roboto/Roboto-Thin.ttf using Guid(9c52cda0587ae2e448036435dcf92812) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10fe48556212e72f0e91b70ed4940e78') in 0.044568 seconds 
+  Import took 0.052572 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000338 seconds.
+  path: Assets/Fonts/Roboto/Roboto-ThinItalic.ttf
+  artifactKey: Guid(ba9a1fcfcde4cde4e8d33dbe92703cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Roboto/Roboto-ThinItalic.ttf using Guid(ba9a1fcfcde4cde4e8d33dbe92703cdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa0eda4e4268521e4023e2a74cf458fd') in 0.031528 seconds 
+  Import took 0.036774 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000308 seconds.
+  path: Assets/Fonts/Roboto/Roboto-MediumItalic.ttf
+  artifactKey: Guid(d7e388aa38ae84b489d141567093a6ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Roboto/Roboto-MediumItalic.ttf using Guid(d7e388aa38ae84b489d141567093a6ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d52dd148623acf9302426dd30babfd2') in 0.072802 seconds 
+  Import took 0.083079 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000445 seconds.
+  path: Assets/Fonts/Roboto/Roboto-Regular.ttf
+  artifactKey: Guid(84985e09967716349b7e1a1abd2901e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Roboto/Roboto-Regular.ttf using Guid(84985e09967716349b7e1a1abd2901e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7dda0dbec1e939b30042357b50d535e9') in 0.037595 seconds 
+  Import took 0.045092 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.951174 seconds.
+  path: Assets/Fonts/Roboto/Roboto-Light.ttf
+  artifactKey: Guid(6f628d44262901c4ca98b4f52bdc98be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Roboto/Roboto-Light.ttf using Guid(6f628d44262901c4ca98b4f52bdc98be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a17d648e9a5b34961735e3c72431ef7f') in 0.043532 seconds 
+  Import took 0.050343 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000352 seconds.
+  path: Assets/Fonts/Roboto/Roboto-LightItalic.ttf
+  artifactKey: Guid(5ec5daba0e6d13940aba2486456501cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Roboto/Roboto-LightItalic.ttf using Guid(5ec5daba0e6d13940aba2486456501cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2396bd0b1e7ed61bc0e254ec00ba28d') in 0.036313 seconds 
+  Import took 0.043302 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.053325 seconds.
+  path: Assets/Fonts/Poppins/Poppins-Black.ttf
+  artifactKey: Guid(793327eba9033824fb67854ca2b6bce4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Poppins/Poppins-Black.ttf using Guid(793327eba9033824fb67854ca2b6bce4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '168613a0d7b4fba96ee8cab5d330a526') in 0.037603 seconds 
+  Import took 0.045204 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000338 seconds.
+  path: Assets/Fonts/Poppins/Poppins-BoldItalic.ttf
+  artifactKey: Guid(b16f9ce182a58d24a97348b89ba51e6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Poppins/Poppins-BoldItalic.ttf using Guid(b16f9ce182a58d24a97348b89ba51e6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90ff4afa761272722500c534ddafe11d') in 0.066839 seconds 
+  Import took 0.074130 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000365 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_SemiExpanded/Inconsolata_SemiExpanded-ExtraLight.ttf
+  artifactKey: Guid(a648dce5af44d774ebac06a559807188) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_SemiExpanded/Inconsolata_SemiExpanded-ExtraLight.ttf using Guid(a648dce5af44d774ebac06a559807188) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9847e4daa6affe87f7af4be09de2b69b') in 0.038000 seconds 
+  Import took 0.045316 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000731 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_SemiExpanded/Inconsolata_SemiExpanded-Light.ttf
+  artifactKey: Guid(58abd3dbe841cd44a91530d9681f5a5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_SemiExpanded/Inconsolata_SemiExpanded-Light.ttf using Guid(58abd3dbe841cd44a91530d9681f5a5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77eb61ff9258f3c0c389c616b13a118e') in 0.037584 seconds 
+  Import took 0.044996 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000357 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_UltraCondensed/Inconsolata_UltraCondensed-ExtraBold.ttf
+  artifactKey: Guid(f4212cab4589abd4ab9c4f844ff76b55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_UltraCondensed/Inconsolata_UltraCondensed-ExtraBold.ttf using Guid(f4212cab4589abd4ab9c4f844ff76b55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '683feeaeb721b4e0fae121088468b387') in 0.036613 seconds 
+  Import took 0.042449 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000350 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_ExtraExpanded/Inconsolata_ExtraExpanded-SemiBold.ttf
+  artifactKey: Guid(025696199acaeb44dbad1b68718318c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_ExtraExpanded/Inconsolata_ExtraExpanded-SemiBold.ttf using Guid(025696199acaeb44dbad1b68718318c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74c858303d7f9b8d342457f7afd9494e') in 0.037068 seconds 
+  Import took 0.041989 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000428 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_Expanded/Inconsolata_Expanded-ExtraLight.ttf
+  artifactKey: Guid(853d8148636dc1149a9cf4fbef19ba33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_Expanded/Inconsolata_Expanded-ExtraLight.ttf using Guid(853d8148636dc1149a9cf4fbef19ba33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '428ff69535343b95ab81aeabdc6e94d4') in 0.039780 seconds 
+  Import took 0.045166 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000277 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_SemiExpanded/Inconsolata_SemiExpanded-SemiBold.ttf
+  artifactKey: Guid(e31e2f1413847b1468543a2ec6169ad9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_SemiExpanded/Inconsolata_SemiExpanded-SemiBold.ttf using Guid(e31e2f1413847b1468543a2ec6169ad9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83b94e2850aa27667c029702a62acb68') in 0.032168 seconds 
+  Import took 0.037774 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000335 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_Expanded/Inconsolata_Expanded-Bold.ttf
+  artifactKey: Guid(3007b6999cba51d4c892e7e4897cacd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_Expanded/Inconsolata_Expanded-Bold.ttf using Guid(3007b6999cba51d4c892e7e4897cacd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00ba27533fa4ca8fcbd0eeb5537cc282') in 0.031041 seconds 
+  Import took 0.036187 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000314 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_ExtraExpanded/Inconsolata_ExtraExpanded-Medium.ttf
+  artifactKey: Guid(e9a0b52bd14db6f4d8fd91cbfb84ff09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_ExtraExpanded/Inconsolata_ExtraExpanded-Medium.ttf using Guid(e9a0b52bd14db6f4d8fd91cbfb84ff09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eefd9b6ed225d049c39bc925b3d09000') in 0.030108 seconds 
+  Import took 0.035404 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000259 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_Condensed/Inconsolata_Condensed-SemiBold.ttf
+  artifactKey: Guid(18e9eb6db392cd94288fd43394b8ac7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_Condensed/Inconsolata_Condensed-SemiBold.ttf using Guid(18e9eb6db392cd94288fd43394b8ac7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea3f3b43a70252a70f716262b56fbae2') in 0.038788 seconds 
+  Import took 0.045307 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000309 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_SemiExpanded/Inconsolata_SemiExpanded-ExtraBold.ttf
+  artifactKey: Guid(655100b9dcd00254da9463eb24324106) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_SemiExpanded/Inconsolata_SemiExpanded-ExtraBold.ttf using Guid(655100b9dcd00254da9463eb24324106) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '424a504ce0c2407f690148bde6f95bad') in 0.032320 seconds 
+  Import took 0.038052 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000381 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_Expanded/Inconsolata_Expanded-ExtraBold.ttf
+  artifactKey: Guid(7f31fae45c303c14a81a01fe2aa5aec3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_Expanded/Inconsolata_Expanded-ExtraBold.ttf using Guid(7f31fae45c303c14a81a01fe2aa5aec3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79554afd3bbbd12c78a96d97ae6be08f') in 0.038998 seconds 
+  Import took 0.044991 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000293 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_Condensed/Inconsolata_Condensed-Medium.ttf
+  artifactKey: Guid(9ca16aebc45b2874eb0bd390758cacc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_Condensed/Inconsolata_Condensed-Medium.ttf using Guid(9ca16aebc45b2874eb0bd390758cacc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b90056a1dc406a37c92a201c22fbd39d') in 0.047956 seconds 
+  Import took 0.053693 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000303 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_Condensed/Inconsolata_Condensed-Black.ttf
+  artifactKey: Guid(dc7da3f0bb783ed4da112fb4e871cb7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_Condensed/Inconsolata_Condensed-Black.ttf using Guid(dc7da3f0bb783ed4da112fb4e871cb7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b715253314cf0cb3ad5e2a17717fda1') in 0.030202 seconds 
+  Import took 0.035176 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000336 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata/Inconsolata-ExtraLight.ttf
+  artifactKey: Guid(9892ecd62e31f674e9a108fe688cd8a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata/Inconsolata-ExtraLight.ttf using Guid(9892ecd62e31f674e9a108fe688cd8a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6393974e7c10e323671fe7a673ac317') in 0.034459 seconds 
+  Import took 0.040618 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000340 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata/Inconsolata-Light.ttf
+  artifactKey: Guid(5e61ee7652dc0774fa96257db79128db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata/Inconsolata-Light.ttf using Guid(5e61ee7652dc0774fa96257db79128db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d36475da4a35ae7421d5164eb8110ba') in 0.033971 seconds 
+  Import took 0.039728 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000307 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_Condensed/Inconsolata_Condensed-Light.ttf
+  artifactKey: Guid(1459e988d119c3e4c9e806325ec0d7b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_Condensed/Inconsolata_Condensed-Light.ttf using Guid(1459e988d119c3e4c9e806325ec0d7b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30953daae3ff649bbec7976d0a0f1a14') in 0.033777 seconds 
+  Import took 0.039924 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000314 seconds.
+  path: Assets/Fonts/Poppins/Poppins-ExtraBoldItalic.ttf
+  artifactKey: Guid(9049731619d485643a48fe144b6940fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Poppins/Poppins-ExtraBoldItalic.ttf using Guid(9049731619d485643a48fe144b6940fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e958f658472be5f9ca49fb958e783901') in 0.035218 seconds 
+  Import took 0.040747 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000270 seconds.
+  path: Assets/Fonts/Inconsolata/Inconsolata-VariableFont_wdth,wght.ttf
+  artifactKey: Guid(0c977305835bd6f418128fcf3ea21088) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/Inconsolata-VariableFont_wdth,wght.ttf using Guid(0c977305835bd6f418128fcf3ea21088) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a23648b2f5cabe5987ffb106c394356') in 0.048688 seconds 
+  Import took 0.053947 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000382 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_SemiCondensed/Inconsolata_SemiCondensed-Bold.ttf
+  artifactKey: Guid(6c09108c3d46069438a54d2b9d8eb3e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_SemiCondensed/Inconsolata_SemiCondensed-Bold.ttf using Guid(6c09108c3d46069438a54d2b9d8eb3e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f4532df777444b16e5cbe8bf020cd7b') in 0.037368 seconds 
+  Import took 0.043390 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000417 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_SemiExpanded/Inconsolata_SemiExpanded-Medium.ttf
+  artifactKey: Guid(70f5f27e23d54a347a9c7cb1dbae36de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_SemiExpanded/Inconsolata_SemiExpanded-Medium.ttf using Guid(70f5f27e23d54a347a9c7cb1dbae36de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '619458050ad5b70586d71e3c5b545ad5') in 0.037204 seconds 
+  Import took 0.043312 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000335 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata/Inconsolata-Regular.ttf
+  artifactKey: Guid(c794ac896a3c2cb469c6939b302f56b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata/Inconsolata-Regular.ttf using Guid(c794ac896a3c2cb469c6939b302f56b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29b954686347e5c69034d503767e89d9') in 0.032277 seconds 
+  Import took 0.037670 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000318 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_Condensed/Inconsolata_Condensed-Regular.ttf
+  artifactKey: Guid(a0967dd0aa9751c4280b585efaeb681a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_Condensed/Inconsolata_Condensed-Regular.ttf using Guid(a0967dd0aa9751c4280b585efaeb681a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f58dfd6237b8748968bb59485421358f') in 0.029814 seconds 
+  Import took 0.035365 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000308 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_UltraCondensed/Inconsolata_UltraCondensed-Black.ttf
+  artifactKey: Guid(f535aba14a609f8489c33f731e809162) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_UltraCondensed/Inconsolata_UltraCondensed-Black.ttf using Guid(f535aba14a609f8489c33f731e809162) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e8f1d1b85b16e4f78bd213c76131896') in 0.031801 seconds 
+  Import took 0.037964 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000310 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_Expanded/Inconsolata_Expanded-SemiBold.ttf
+  artifactKey: Guid(68abb213050fba54087c8745ea1a40b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_Expanded/Inconsolata_Expanded-SemiBold.ttf using Guid(68abb213050fba54087c8745ea1a40b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5755d2d2fc0a7ea69b3574e4db6cda77') in 0.032719 seconds 
+  Import took 0.038200 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000321 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_UltraCondensed/Inconsolata_UltraCondensed-Bold.ttf
+  artifactKey: Guid(8ddf122575ba12b4995fd57fd5f0cf82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_UltraCondensed/Inconsolata_UltraCondensed-Bold.ttf using Guid(8ddf122575ba12b4995fd57fd5f0cf82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5315930c127fefb6f7388fd64c9ce2f4') in 0.038215 seconds 
+  Import took 0.043726 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_SemiCondensed/Inconsolata_SemiCondensed-ExtraLight.ttf
+  artifactKey: Guid(1f1279765fa9ad94793d2e769f0f24b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_SemiCondensed/Inconsolata_SemiCondensed-ExtraLight.ttf using Guid(1f1279765fa9ad94793d2e769f0f24b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10c3be7dff21d3a2e8da6437acb46fbc') in 0.034209 seconds 
+  Import took 0.041449 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000308 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_Condensed/Inconsolata_Condensed-ExtraBold.ttf
+  artifactKey: Guid(67f69d8103306654eb7d686e0fad967a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_Condensed/Inconsolata_Condensed-ExtraBold.ttf using Guid(67f69d8103306654eb7d686e0fad967a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a42399cb6e9d92755799e6592fb993d') in 0.034676 seconds 
+  Import took 0.039894 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000307 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata/Inconsolata-SemiBold.ttf
+  artifactKey: Guid(1586407a6366b6a40bb02f1413b7d0a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata/Inconsolata-SemiBold.ttf using Guid(1586407a6366b6a40bb02f1413b7d0a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a54d74f8422345bb050de378f46e2f6') in 0.045793 seconds 
+  Import took 0.052261 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000282 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata/Inconsolata-ExtraBold.ttf
+  artifactKey: Guid(5a1a3ad1de95ce24798cefce7ae0d2e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata/Inconsolata-ExtraBold.ttf using Guid(5a1a3ad1de95ce24798cefce7ae0d2e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '496e8f85c94bd3047d43f164c200abe0') in 0.046255 seconds 
+  Import took 0.052535 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000426 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_ExtraExpanded/Inconsolata_ExtraExpanded-Regular.ttf
+  artifactKey: Guid(167b3c21da05cd54f832514a7d819ef8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_ExtraExpanded/Inconsolata_ExtraExpanded-Regular.ttf using Guid(167b3c21da05cd54f832514a7d819ef8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef71b2357f0a61a8da6ead85e178d600') in 0.033242 seconds 
+  Import took 0.039781 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000303 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_SemiCondensed/Inconsolata_SemiCondensed-ExtraBold.ttf
+  artifactKey: Guid(00b5b114bebbb3c4dac61d1f077377e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_SemiCondensed/Inconsolata_SemiCondensed-ExtraBold.ttf using Guid(00b5b114bebbb3c4dac61d1f077377e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53e0e843600aa055a182f26d5ca1e158') in 0.032841 seconds 
+  Import took 0.038270 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000277 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_ExtraCondensed/Inconsolata_ExtraCondensed-ExtraBold.ttf
+  artifactKey: Guid(b57c77630d7962f438fb1ac067ec4b39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_ExtraCondensed/Inconsolata_ExtraCondensed-ExtraBold.ttf using Guid(b57c77630d7962f438fb1ac067ec4b39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '381a4905db895267beb94f17138b1f7c') in 0.032856 seconds 
+  Import took 0.040771 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000379 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata/Inconsolata-Bold.ttf
+  artifactKey: Guid(47387ccc285aca84f9e2f40ab732f1c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata/Inconsolata-Bold.ttf using Guid(47387ccc285aca84f9e2f40ab732f1c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09e8690e04317fbb99cc104dca12b74c') in 0.029394 seconds 
+  Import took 0.034817 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000313 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_ExtraCondensed/Inconsolata_ExtraCondensed-Black.ttf
+  artifactKey: Guid(876df558dde404244ae1c92793e9effd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_ExtraCondensed/Inconsolata_ExtraCondensed-Black.ttf using Guid(876df558dde404244ae1c92793e9effd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '430f16cee8a5e543d0a65f1cacdc9687') in 0.037515 seconds 
+  Import took 0.043126 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000361 seconds.
+  path: Assets/Fonts/Poppins/Poppins-Bold.ttf
+  artifactKey: Guid(5a13d56fd5a300a409d78159d709be81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Poppins/Poppins-Bold.ttf using Guid(5a13d56fd5a300a409d78159d709be81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f4d2b0d34ab2d8e8b2fb133b52bf1b5') in 0.031167 seconds 
+  Import took 0.037126 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000376 seconds.
+  path: Assets/Fonts/Poppins/Poppins-ExtraBold.ttf
+  artifactKey: Guid(caf39fe724d97124bbc3fb82318a61ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Poppins/Poppins-ExtraBold.ttf using Guid(caf39fe724d97124bbc3fb82318a61ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6020b797578d41db0ffd589af522e0db') in 0.031555 seconds 
+  Import took 0.037384 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000299 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_Expanded/Inconsolata_Expanded-Regular.ttf
+  artifactKey: Guid(263836046ece0b54a9ba55bfec29833c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_Expanded/Inconsolata_Expanded-Regular.ttf using Guid(263836046ece0b54a9ba55bfec29833c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f67c5d5a61bda7476c383b21779a7687') in 0.032528 seconds 
+  Import took 0.037769 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000309 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata/Inconsolata-Medium.ttf
+  artifactKey: Guid(9f858673682971547bb5fa171071f0b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata/Inconsolata-Medium.ttf using Guid(9f858673682971547bb5fa171071f0b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f252e943fdea8391c3607e20b29621f8') in 0.032435 seconds 
+  Import took 0.037705 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000311 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_SemiCondensed/Inconsolata_SemiCondensed-Light.ttf
+  artifactKey: Guid(27927cef306ce524daf7fa099a135b7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_SemiCondensed/Inconsolata_SemiCondensed-Light.ttf using Guid(27927cef306ce524daf7fa099a135b7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba13cc2cfab8afb980326d400d903287') in 0.034245 seconds 
+  Import took 0.039969 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_Expanded/Inconsolata_Expanded-Light.ttf
+  artifactKey: Guid(9ba8a358fc1685d46996ce3ed9c1ed8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_Expanded/Inconsolata_Expanded-Light.ttf using Guid(9ba8a358fc1685d46996ce3ed9c1ed8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '259ad3c63e75a5e24041ddfacee69321') in 0.037109 seconds 
+  Import took 0.043030 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000322 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_ExtraCondensed/Inconsolata_ExtraCondensed-Bold.ttf
+  artifactKey: Guid(2a24395febd72d14b936aa4855ec452e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_ExtraCondensed/Inconsolata_ExtraCondensed-Bold.ttf using Guid(2a24395febd72d14b936aa4855ec452e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd532a10065ed3d0027f91364933fd227') in 0.037510 seconds 
+  Import took 0.043108 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000388 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_Condensed/Inconsolata_Condensed-ExtraLight.ttf
+  artifactKey: Guid(aeeedb5e3f3bb5c409357ee02956be81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_Condensed/Inconsolata_Condensed-ExtraLight.ttf using Guid(aeeedb5e3f3bb5c409357ee02956be81) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59ea8683c4c0aabe283525fbd39bbd10') in 0.040493 seconds 
+  Import took 0.045560 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000274 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_Expanded/Inconsolata_Expanded-Black.ttf
+  artifactKey: Guid(e48b86818d6009b48ae2ea9e8c8471a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_Expanded/Inconsolata_Expanded-Black.ttf using Guid(e48b86818d6009b48ae2ea9e8c8471a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3e275b8b376465bb8fad25c4efaba23') in 0.033678 seconds 
+  Import took 0.039087 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000357 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_SemiExpanded/Inconsolata_SemiExpanded-Regular.ttf
+  artifactKey: Guid(d9a088391bff33147bf9c9d7b0225ffe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_SemiExpanded/Inconsolata_SemiExpanded-Regular.ttf using Guid(d9a088391bff33147bf9c9d7b0225ffe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1791c3d66db514a510dd52abc16ac06c') in 0.030013 seconds 
+  Import took 0.035356 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000303 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_ExtraExpanded/Inconsolata_ExtraExpanded-Light.ttf
+  artifactKey: Guid(69d34885963488a4cbc02ab4cb458e9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_ExtraExpanded/Inconsolata_ExtraExpanded-Light.ttf using Guid(69d34885963488a4cbc02ab4cb458e9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3dee9b5079e9d1c68831be1759a2f9f1') in 0.034336 seconds 
+  Import took 0.041067 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000336 seconds.
+  path: Assets/Fonts/Poppins/Poppins-BlackItalic.ttf
+  artifactKey: Guid(3d936643ffd10bf449f08fc9fd0f42b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Poppins/Poppins-BlackItalic.ttf using Guid(3d936643ffd10bf449f08fc9fd0f42b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5917e2ebbdb73b1637ef071bde30891a') in 0.036294 seconds 
+  Import took 0.041621 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000377 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_SemiCondensed/Inconsolata_SemiCondensed-Black.ttf
+  artifactKey: Guid(26840700b64823a4d9e1a255e1fa01fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_SemiCondensed/Inconsolata_SemiCondensed-Black.ttf using Guid(26840700b64823a4d9e1a255e1fa01fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4746f7244a9b9f99b754f03187eeee78') in 0.031306 seconds 
+  Import took 0.036856 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000326 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_Condensed/Inconsolata_Condensed-Bold.ttf
+  artifactKey: Guid(b7e1d1e7fe40cd9488fa25f6a986745a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_Condensed/Inconsolata_Condensed-Bold.ttf using Guid(b7e1d1e7fe40cd9488fa25f6a986745a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1136f2a4b41c883931cb8df65bd752d8') in 0.030586 seconds 
+  Import took 0.035911 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000279 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata/Inconsolata-Black.ttf
+  artifactKey: Guid(2fa5785492f3d724bbac04d18d4e21e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata/Inconsolata-Black.ttf using Guid(2fa5785492f3d724bbac04d18d4e21e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5da9cba2cb70800e03f13223d0fec1b6') in 0.032161 seconds 
+  Import took 0.036947 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001647 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_Expanded/Inconsolata_Expanded-Medium.ttf
+  artifactKey: Guid(6c56cb179cd496b4085990990ee0bc32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_Expanded/Inconsolata_Expanded-Medium.ttf using Guid(6c56cb179cd496b4085990990ee0bc32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6620111a1d0d4d1967c9c8e73945924') in 0.033109 seconds 
+  Import took 0.038991 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.536577 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_ExtraCondensed/Inconsolata_ExtraCondensed-ExtraLight.ttf
+  artifactKey: Guid(18d2628129dd2794dbb14b79d052b8d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_ExtraCondensed/Inconsolata_ExtraCondensed-ExtraLight.ttf using Guid(18d2628129dd2794dbb14b79d052b8d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c0d3c2b8c90e6d5d230df17f961d356') in 0.033956 seconds 
+  Import took 0.040622 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000364 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_ExtraCondensed/Inconsolata_ExtraCondensed-Light.ttf
+  artifactKey: Guid(75038934ce0f7a341a1e6129d02236c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_ExtraCondensed/Inconsolata_ExtraCondensed-Light.ttf using Guid(75038934ce0f7a341a1e6129d02236c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '920121e2c2c13ddf3b333ad6d154bfe9') in 0.031600 seconds 
+  Import took 0.038704 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.302793 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_ExtraCondensed/Inconsolata_ExtraCondensed-Medium.ttf
+  artifactKey: Guid(3a04688c367b3664382bd3c7e8583bff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_ExtraCondensed/Inconsolata_ExtraCondensed-Medium.ttf using Guid(3a04688c367b3664382bd3c7e8583bff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '044541b5efd84b4a5747dce2d2bd0f0f') in 0.032076 seconds 
+  Import took 0.037933 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000316 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_ExtraCondensed/Inconsolata_ExtraCondensed-Regular.ttf
+  artifactKey: Guid(4568fd5d12c75844e8409360a33f6763) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_ExtraCondensed/Inconsolata_ExtraCondensed-Regular.ttf using Guid(4568fd5d12c75844e8409360a33f6763) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '877646c25aa1f98ab79a2265a955bc7b') in 0.029290 seconds 
+  Import took 0.036450 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000296 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_ExtraExpanded/Inconsolata_ExtraExpanded-Bold.ttf
+  artifactKey: Guid(8cf43d939b574fc4db4d3eceea9b60c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_ExtraExpanded/Inconsolata_ExtraExpanded-Bold.ttf using Guid(8cf43d939b574fc4db4d3eceea9b60c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '115b36a64ccf0bc9478ea914d51a236a') in 0.033023 seconds 
+  Import took 0.038796 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000289 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_ExtraExpanded/Inconsolata_ExtraExpanded-Black.ttf
+  artifactKey: Guid(de3342a52e47f3044baed19b91830376) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_ExtraExpanded/Inconsolata_ExtraExpanded-Black.ttf using Guid(de3342a52e47f3044baed19b91830376) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '845a966868c65eec2eb70250d3e32844') in 0.037070 seconds 
+  Import took 0.043411 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000532 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_ExtraExpanded/Inconsolata_ExtraExpanded-ExtraBold.ttf
+  artifactKey: Guid(a8d517b99c75cee4f8c0960280f650d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_ExtraExpanded/Inconsolata_ExtraExpanded-ExtraBold.ttf using Guid(a8d517b99c75cee4f8c0960280f650d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38d174b7b78557d17a06110da6b0871c') in 0.041098 seconds 
+  Import took 0.047056 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000381 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_ExtraCondensed/Inconsolata_ExtraCondensed-SemiBold.ttf
+  artifactKey: Guid(da2ead9242be23e488055dee2ab80347) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_ExtraCondensed/Inconsolata_ExtraCondensed-SemiBold.ttf using Guid(da2ead9242be23e488055dee2ab80347) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e486dbe4654c2b9d01fa289350aadce8') in 0.037035 seconds 
+  Import took 0.042481 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000337 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_ExtraExpanded/Inconsolata_ExtraExpanded-ExtraLight.ttf
+  artifactKey: Guid(bfd69f14531e6944b927ea2ce254e689) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_ExtraExpanded/Inconsolata_ExtraExpanded-ExtraLight.ttf using Guid(bfd69f14531e6944b927ea2ce254e689) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dbd326809753ca2adb64ac7307388d7b') in 0.030161 seconds 
+  Import took 0.035369 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.499483 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_SemiCondensed/Inconsolata_SemiCondensed-Medium.ttf
+  artifactKey: Guid(c93e2a03e429faf4484e56e88c947803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_SemiCondensed/Inconsolata_SemiCondensed-Medium.ttf using Guid(c93e2a03e429faf4484e56e88c947803) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88be9fb2ee089df4ec545c49ba27bed2') in 0.036004 seconds 
+  Import took 0.041514 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000377 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_SemiCondensed/Inconsolata_SemiCondensed-SemiBold.ttf
+  artifactKey: Guid(397067ea7d5d5dc47b67d4a5cf1b7064) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_SemiCondensed/Inconsolata_SemiCondensed-SemiBold.ttf using Guid(397067ea7d5d5dc47b67d4a5cf1b7064) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0064cd1d1e62f54bee00b49bc6cdd87') in 0.030645 seconds 
+  Import took 0.035990 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000321 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_SemiCondensed/Inconsolata_SemiCondensed-Regular.ttf
+  artifactKey: Guid(b54a5a63d4b93d74d8bc793c349c9dfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_SemiCondensed/Inconsolata_SemiCondensed-Regular.ttf using Guid(b54a5a63d4b93d74d8bc793c349c9dfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdf2e8dcbd16f7cb8912e1168c4c0754') in 0.036058 seconds 
+  Import took 0.042190 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000104 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_SemiExpanded/Inconsolata_SemiExpanded-Black.ttf
+  artifactKey: Guid(1a5b8a2d874baf149b6dc73ca35e82f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_SemiExpanded/Inconsolata_SemiExpanded-Black.ttf using Guid(1a5b8a2d874baf149b6dc73ca35e82f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83aaff55f5748e7e23681b5c4e96e7e6') in 0.046698 seconds 
+  Import took 0.053053 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000331 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_SemiExpanded/Inconsolata_SemiExpanded-Bold.ttf
+  artifactKey: Guid(ade5b904d1d0f1f429d27115f53cceb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_SemiExpanded/Inconsolata_SemiExpanded-Bold.ttf using Guid(ade5b904d1d0f1f429d27115f53cceb6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '572024c17b0c2757a69b9998a37d2821') in 0.040161 seconds 
+  Import took 0.046469 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.275268 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_UltraCondensed/Inconsolata_UltraCondensed-ExtraLight.ttf
+  artifactKey: Guid(dd85b421669e7094dac25028514f285c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_UltraCondensed/Inconsolata_UltraCondensed-ExtraLight.ttf using Guid(dd85b421669e7094dac25028514f285c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34f22b1c590dddec3209c2a9228e5a15') in 0.028272 seconds 
+  Import took 0.033698 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_UltraCondensed/Inconsolata_UltraCondensed-Light.ttf
+  artifactKey: Guid(b914d98c07ef13c42aa7cb65861e87fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_UltraCondensed/Inconsolata_UltraCondensed-Light.ttf using Guid(b914d98c07ef13c42aa7cb65861e87fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '715cb919c07a6d0bc829883f3852b6e3') in 0.035741 seconds 
+  Import took 0.041274 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000447 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_UltraCondensed/Inconsolata_UltraCondensed-Medium.ttf
+  artifactKey: Guid(984c9a456881f0c43b3a39cf9aa24fe6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_UltraCondensed/Inconsolata_UltraCondensed-Medium.ttf using Guid(984c9a456881f0c43b3a39cf9aa24fe6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8681215d096e20d3f2c27dee216939d1') in 0.034956 seconds 
+  Import took 0.040668 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000304 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_UltraCondensed/Inconsolata_UltraCondensed-Regular.ttf
+  artifactKey: Guid(4d93477faa366ef48a4558b25f782986) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_UltraCondensed/Inconsolata_UltraCondensed-Regular.ttf using Guid(4d93477faa366ef48a4558b25f782986) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3f10dffe1a7c1ebe554edd526a39cdd') in 0.032408 seconds 
+  Import took 0.038252 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.096201 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_UltraCondensed/Inconsolata_UltraCondensed-SemiBold.ttf
+  artifactKey: Guid(245ad199da25a8e4490789f646428f97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_UltraCondensed/Inconsolata_UltraCondensed-SemiBold.ttf using Guid(245ad199da25a8e4490789f646428f97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c79c893e90324ec41a1a830cf08a5f7c') in 0.041992 seconds 
+  Import took 0.048071 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000295 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_UltraExpanded/Inconsolata_UltraExpanded-Black.ttf
+  artifactKey: Guid(970cd5362396b494abbd6c856f6a9dbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_UltraExpanded/Inconsolata_UltraExpanded-Black.ttf using Guid(970cd5362396b494abbd6c856f6a9dbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '690f7c99b4fac0e32d753b62ce6c6e2d') in 0.033086 seconds 
+  Import took 0.039011 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.125844 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_UltraExpanded/Inconsolata_UltraExpanded-Bold.ttf
+  artifactKey: Guid(43d670798d3249c4f875595ac9cbb00a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_UltraExpanded/Inconsolata_UltraExpanded-Bold.ttf using Guid(43d670798d3249c4f875595ac9cbb00a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef632eca5b3530d5a8a38dc5d73320e7') in 0.034349 seconds 
+  Import took 0.040444 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000337 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_UltraExpanded/Inconsolata_UltraExpanded-Light.ttf
+  artifactKey: Guid(dc219ded321c64144b2e79d9a3b3f067) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_UltraExpanded/Inconsolata_UltraExpanded-Light.ttf using Guid(dc219ded321c64144b2e79d9a3b3f067) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e37c44f4d1450be3fa1092b33ceb54f0') in 0.030200 seconds 
+  Import took 0.036154 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000483 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_UltraExpanded/Inconsolata_UltraExpanded-Regular.ttf
+  artifactKey: Guid(227ea6eddde842141808876ecaaa638f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_UltraExpanded/Inconsolata_UltraExpanded-Regular.ttf using Guid(227ea6eddde842141808876ecaaa638f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '199e1c0635b0ae31a1b16313ee0bd2bd') in 0.035972 seconds 
+  Import took 0.042172 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000306 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_UltraExpanded/Inconsolata_UltraExpanded-Medium.ttf
+  artifactKey: Guid(5723d2fabbe340646aea4d40d93e72b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_UltraExpanded/Inconsolata_UltraExpanded-Medium.ttf using Guid(5723d2fabbe340646aea4d40d93e72b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df08c05cd0a8a2ba7825925844346bc5') in 0.030971 seconds 
+  Import took 0.038396 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000354 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_UltraExpanded/Inconsolata_UltraExpanded-ExtraBold.ttf
+  artifactKey: Guid(7b7ce817a3c86304fafcd0192425c285) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_UltraExpanded/Inconsolata_UltraExpanded-ExtraBold.ttf using Guid(7b7ce817a3c86304fafcd0192425c285) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '581303d64d3703dd0cb09a263a33e81f') in 0.042543 seconds 
+  Import took 0.049143 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000357 seconds.
+  path: Assets/Fonts/Inconsolata/static/Inconsolata_UltraExpanded/Inconsolata_UltraExpanded-ExtraLight.ttf
+  artifactKey: Guid(bbd191d6a3bc8ce43be79ad03da1c8b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Inconsolata/static/Inconsolata_UltraExpanded/Inconsolata_UltraExpanded-ExtraLight.ttf using Guid(bbd191d6a3bc8ce43be79ad03da1c8b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79714ca6d547b3feff663d9bff31d0b1') in 0.033428 seconds 
+  Import took 0.038869 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.248095 seconds.
+  path: Assets/Fonts/Lato/Lato-Black.ttf
+  artifactKey: Guid(585b58f5c4cb62d47bb9285e5f18e32e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Lato/Lato-Black.ttf using Guid(585b58f5c4cb62d47bb9285e5f18e32e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d1c3dc36f886937cdd0bcf2ef321d2b') in 0.044868 seconds 
+  Import took 0.055343 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000298 seconds.
+  path: Assets/Fonts/Lato/Lato-BlackItalic.ttf
+  artifactKey: Guid(2c47251bb61e4194d9da69f461d9bef7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Lato/Lato-BlackItalic.ttf using Guid(2c47251bb61e4194d9da69f461d9bef7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '115e0c64170ea81748906a972081dd35') in 0.035537 seconds 
+  Import took 0.041156 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000330 seconds.
+  path: Assets/Fonts/Lato/Lato-Light.ttf
+  artifactKey: Guid(aa10751eaa8f91b4e8d35756e0822ae2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Lato/Lato-Light.ttf using Guid(aa10751eaa8f91b4e8d35756e0822ae2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '811895588cb00442430aa32dd0e637f8') in 0.030693 seconds 
+  Import took 0.036511 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000310 seconds.
+  path: Assets/Fonts/Lato/Lato-Bold.ttf
+  artifactKey: Guid(93690c6614a946f4cae4aca42ecc55ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Lato/Lato-Bold.ttf using Guid(93690c6614a946f4cae4aca42ecc55ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8e35b12bfca33d49cef50aae1f268d0') in 0.032990 seconds 
+  Import took 0.038412 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/Fonts/Lato/Lato-Italic.ttf
+  artifactKey: Guid(869571b877d796d40a3b20583d787a1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Lato/Lato-Italic.ttf using Guid(869571b877d796d40a3b20583d787a1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bdb8358fe23d85611e60d98cf2636496') in 0.047197 seconds 
+  Import took 0.053767 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000129 seconds.
+  path: Assets/Fonts/Lato/Lato-Thin.ttf
+  artifactKey: Guid(a4432a13f2acb2941b372b7cdff1459b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Lato/Lato-Thin.ttf using Guid(a4432a13f2acb2941b372b7cdff1459b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7aaa049f412ebca01e4475e36f402a55') in 0.035064 seconds 
+  Import took 0.039849 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000273 seconds.
+  path: Assets/Fonts/Lato/Lato-LightItalic.ttf
+  artifactKey: Guid(d4dd9fe772762de45968295232aff2d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Lato/Lato-LightItalic.ttf using Guid(d4dd9fe772762de45968295232aff2d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70810e9845b51d8832a28004d8fce995') in 0.041307 seconds 
+  Import took 0.047630 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000899 seconds.
+  path: Assets/Fonts/Lato/Lato-ThinItalic.ttf
+  artifactKey: Guid(dd62afdf9d12fcd46a44954025fcfcfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Lato/Lato-ThinItalic.ttf using Guid(dd62afdf9d12fcd46a44954025fcfcfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb6aa0226c8811265bb90619de76bdaf') in 0.029835 seconds 
+  Import took 0.034654 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000278 seconds.
+  path: Assets/Fonts/Lato/Lato-BoldItalic.ttf
+  artifactKey: Guid(dde04cbc8e3759d4280c602bcb0f7c90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Lato/Lato-BoldItalic.ttf using Guid(dde04cbc8e3759d4280c602bcb0f7c90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '015463b0c892b82402b54440b36bf983') in 0.033718 seconds 
+  Import took 0.038779 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000312 seconds.
+  path: Assets/Fonts/Lato/Lato-Regular.ttf
+  artifactKey: Guid(2f9fde29e49bc7e4296b20fac21df54c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fonts/Lato/Lato-Regular.ttf using Guid(2f9fde29e49bc7e4296b20fac21df54c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0587f2cf942c691f45d326f0e57fb09b') in 0.034182 seconds 
+  Import took 0.039952 seconds .
+
+========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.020584 seconds.
+Registered in 0.045555 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.60 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.31 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.860 seconds
+- Completed reload, in  2.884 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2861ms)
-		BeginReloadAssembly (363ms)
+	ReloadAssembly (2885ms)
+		BeginReloadAssembly (332ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (14ms)
+			DisableScriptedObjects (11ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (87ms)
-		EndReloadAssembly (2269ms)
+			CreateAndSetChildDomain (73ms)
+		EndReloadAssembly (2310ms)
 			LoadAssemblies (306ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (706ms)
+			SetupTypeCache (767ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (113ms)
-			SetupLoadedEditorAssemblies (799ms)
+			RebuildScriptCaches (94ms)
+			SetupLoadedEditorAssemblies (828ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (20ms)
-				SetLoadedEditorAssemblies (1ms)
+				InitializePlatformSupportModulesInManaged (15ms)
+				SetLoadedEditorAssemblies (2ms)
 				RefreshPlugins (1ms)
-				BeforeProcessingInitializeOnLoad (200ms)
-				ProcessInitializeOnLoadAttributes (544ms)
+				BeforeProcessingInitializeOnLoad (219ms)
+				ProcessInitializeOnLoadAttributes (559ms)
 				ProcessInitializeOnLoadMethodAttributes (10ms)
-				AfterProcessingInitializeOnLoad (22ms)
+				AfterProcessingInitializeOnLoad (21ms)
 				EditorAssembliesLoaded (1ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (17ms)
+			AwakeInstancesAfterBackupRestoration (18ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.62 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 7.77 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1398 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 65.0 MB.
-System memory in use after: 65.1 MB.
+Unloading 1899 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 85.1 MB.
+System memory in use after: 85.2 MB.
 
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1859.
-Total: 6.214267 ms (FindLiveObjects: 0.414089 ms CreateObjectMapping: 0.101200 ms MarkObjects: 5.654001 ms  DeleteObjects: 0.034222 ms)
+Unloading 53 unused Assets to reduce memory usage. Loaded Objects now: 2366.
+Total: 6.077867 ms (FindLiveObjects: 0.427289 ms CreateObjectMapping: 0.134444 ms MarkObjects: 5.447201 ms  DeleteObjects: 0.061600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
