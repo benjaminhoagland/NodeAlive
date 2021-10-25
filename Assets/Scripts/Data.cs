@@ -6,7 +6,7 @@ using System.Data;
 using System.IO;
 public class Data
 {
-   public static class Filesystem
+   public static class File
     {
         // public static string filePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
         public static string filePath = @"C:\NodeAlive\NASVC\NASVC\bin\Debug\";
@@ -24,11 +24,11 @@ public class Data
     public static void Initialize() 
     {
         Log.Write("Initializing database...");
-        if(File.Exists(Filesystem.fullName))
+        if(System.IO.File.Exists(File.fullName))
         {
-            Log.Write("Database found at " + Filesystem.fullName);
-            Log.Write("Continuing...");
-
+			Log.Write("Database found at " + File.fullName);
+            // Log.Write("Continuing...");
+            
             // FLAG:TODO test connection
             // FLAG:TODO write log and exit app on connection failure
             // FLAG:TODO check data initialization
@@ -36,16 +36,58 @@ public class Data
         }
 		else
 		{
-            Log.WriteError("Database not found at " + Filesystem.fullName);
-            Log.WriteError("Exiting Application...");
-            Application.Quit();
+			Log.WriteError("Database not found at " + File.fullName);
+			Log.WriteError("Exiting Application...");
+			Instance.InitializationFailure = true;
+			Application.Quit();
+
             
 		}
 
     }
     public static string GetDBName()
     {
-        return "The database name is " + Filesystem.fullName;
+        return "The database name is " + File.fullName;
     }
+    public static List<string> SelectWhatFromWhere (string what, string from, string where = null)
+	{
+        string query = null;
+        List<string> results = new List<string>();
+
+        if(what == null)
+		{
+            query = 
+                "SELECT " + what +
+                "FROM " + from + ";";
+		}
+        else
+		{
+            query = 
+                "SELECT " + what +
+                "FROM " + from +
+                "WHERE " + where + ";";
+		}
+        try
+		{
+            string connectionString = "URI=file:" + File.fullName;
+            IDbConnection connection = new SqliteConnection(connectionString);
+            IDbCommand command;
+            IDataReader reader;
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = query;
+            reader = command.ExecuteReader();
+            while(reader.Read())
+			{
+                results.Add(reader[0].ToString());
+			}
+
+		}
+        catch
+		{
+            Log.WriteError("Database connection failure at Data.SelectWhatFromWhere()");
+		}
+        return results;
+	}
 
 }
