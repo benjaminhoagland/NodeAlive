@@ -21,6 +21,22 @@ public class Data
             }
         }
     }
+    public static void Clear()
+	{
+        // clear data
+        Debug.Log("clear db");
+	}
+    public static void Populate()
+	{
+        // populate data
+        Debug.Log("populate db");
+	}
+    public static void Reset()
+	{
+        Clear();
+        Populate();
+        Debug.Log("reset db");
+	}
     public static void Initialize() 
     {
         Log.Write("Initializing database...");
@@ -44,10 +60,6 @@ public class Data
             
 		}
 
-    }
-    public static string GetDBName()
-    {
-        return "The database name is " + File.fullName;
     }
     public static List<string> SelectWhatFromWhere (string what, string from, string where = null)
 	{
