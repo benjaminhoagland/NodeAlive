@@ -67,10 +67,10 @@ public class Menu_ForwardGeocodeResponse : MonoBehaviour
 		{
 			var center = res.Features[0].Center;
 			_coordinate = res.Features[0].Center;
+			latitude.text = res.Features[0].Center.x.ToString();
+			longitude.text = res.Features[0].Center.y.ToString();
 		}
 		Response = res;
 		OnGeocoderResponse(res);
-		latitude.text = res.Features[0].Center.x.ToString();
-		longitude.text = res.Features[0].Center.y.ToString();
 	}
 }

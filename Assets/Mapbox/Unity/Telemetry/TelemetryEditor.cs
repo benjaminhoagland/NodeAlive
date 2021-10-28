@@ -85,7 +85,9 @@ namespace Mapbox.Unity.Telemetry
 
 			while (!postRequest.isDone) { yield return null; }
 
+#pragma warning disable CS0618 // Type or member is obsolete
 			if (!postRequest.isNetworkError)
+#pragma warning restore CS0618 // Type or member is obsolete
 			{
 #else
 				var headers = new Dictionary<string, string>();

@@ -257,7 +257,9 @@ namespace Mapbox.Platform
 
 			// additional string.empty check for apiResponse.error:
 			// on UWP isNetworkError is sometimes set to true despite all being well
+#pragma warning disable CS0618 // Type or member is obsolete
 			if (apiResponse.isNetworkError && !string.IsNullOrEmpty(apiResponse.error))
+#pragma warning restore CS0618 // Type or member is obsolete
 			{
 				response.AddException(new Exception(apiResponse.error));
 			}
