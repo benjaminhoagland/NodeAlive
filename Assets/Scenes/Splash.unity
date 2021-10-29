@@ -544,8 +544,8 @@ RectTransform:
   m_Father: {fileID: 1538296682}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.54545456, y: 0}
-  m_AnchorMax: {x: 0.54545456, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10.5, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1056,7 +1056,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &287083513
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2096,7 +2096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &578686434
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3464,7 +3464,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.54545456, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3830,6 +3830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   latitude: {fileID: 1608108840}
   longitude: {fileID: 616877340}
+  mapName: {fileID: 1979445896}
 --- !u!1 &864672912
 GameObject:
   m_ObjectHideFlags: 0
@@ -4755,7 +4756,7 @@ MonoBehaviour:
   _options:
     locationOptions:
       latitudeLongitude: 40.7128, -74.0060
-      zoom: 14
+      zoom: 12
     extentOptions:
       extentType: 0
       defaultExtents:
@@ -8942,7 +8943,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1329964993
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11251,7 +11252,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 14
+  m_text: 12
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 15d5617a9a62f624ea51575bf5e4ce29, type: 2}
   m_sharedMaterial: {fileID: -132055114155508071, guid: 15d5617a9a62f624ea51575bf5e4ce29, type: 2}

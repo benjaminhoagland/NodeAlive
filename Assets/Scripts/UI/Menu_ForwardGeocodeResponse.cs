@@ -17,7 +17,7 @@ public class Menu_ForwardGeocodeResponse : MonoBehaviour
 
 	[SerializeField] TMP_InputField latitude;
 	[SerializeField] TMP_InputField longitude;
-
+	[SerializeField] TMP_InputField mapName;
 	Vector2d _coordinate;
 	public Vector2d Coordinate
 	{
@@ -54,6 +54,7 @@ public class Menu_ForwardGeocodeResponse : MonoBehaviour
 			_resource.Query = searchString;
 			MapboxAccess.Instance.Geocoder.Geocode(_resource, HandleGeocoderResponse);
 		}
+		if(mapName.text.Length == 0) mapName.text = "Map of " + _TMP_inputField.text;
 	}
 
 	void HandleGeocoderResponse(ForwardGeocodeResponse res)
@@ -69,6 +70,7 @@ public class Menu_ForwardGeocodeResponse : MonoBehaviour
 			_coordinate = res.Features[0].Center;
 			latitude.text = res.Features[0].Center.x.ToString();
 			longitude.text = res.Features[0].Center.y.ToString();
+			
 		}
 		Response = res;
 		OnGeocoderResponse(res);

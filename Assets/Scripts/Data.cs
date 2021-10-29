@@ -4,9 +4,61 @@ using UnityEngine;
 using Mono.Data.Sqlite;
 using System.Data;
 using System.IO;
+using System.Reflection;
+using System.Linq;
 public class Data
 {
-   public static class File
+    public class Table
+	{
+        public string Name { get; set; }
+        public List<Attribute> Attributes { get; set; }
+        public class Attribute
+		{
+            public string Name { get; set; }
+            public string Type { get; set; }
+            public Attribute(string name, string type)
+			{
+                Name = name;
+                Type = type;
+			}
+
+		}
+        public Table(string name, List<Attribute> attributes)
+		{
+            Name = name;
+            Attributes = attributes;
+		}
+	}
+
+    public class Schema
+    {
+        public static List<Table> tables = new List<Table>()
+        {
+            new Table("map", new List<Table.Attribute>()
+			{
+                new Table.Attribute("ID", "INTEGER PRIMARY KEY"),
+                new Table.Attribute("name", "TEXT"),
+                new Table.Attribute("location", "TEXT"),
+                new Table.Attribute("latitude", "REAL"),
+                new Table.Attribute("longitude", "REAL"),
+                new Table.Attribute("zoom", "INTEGER")
+			})
+        };
+	}
+    public class Record
+	{
+        public class ColumnValuePair
+		{
+            public string Column { get; set; }
+            public string Value { get; set; }
+            public ColumnValuePair(string column, string value)
+			{
+                Column = column;
+                Value = value;
+			}
+		}
+	}
+    public static class File
     {
         // public static string filePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
         public static string filePath = @"C:\NodeAlive\NASVC\NASVC\bin\Debug\";
@@ -24,18 +76,123 @@ public class Data
     public static void Clear()
 	{
         // clear data
-        Debug.Log("clear db");
-	}
+        foreach(var table in Schema.tables)
+		{
+            DropTable(table.Name);
+		}
+    }
     public static void Populate()
 	{
-        // populate data
-        Debug.Log("populate db");
-	}
+        foreach(var table in Schema.tables)
+		{
+            CreateTable(table);
+		}
+        Insert("map", new List<Record.ColumnValuePair>()
+        {
+            new Record.ColumnValuePair("name", "Map of Buffalo, New York"),
+            new Record.ColumnValuePair("location", "Buffalo, New York"),
+            new Record.ColumnValuePair("latitude", "42.8865"),
+            new Record.ColumnValuePair("longitude", "-78.8784"),
+            new Record.ColumnValuePair("zoom", "12")
+        });
+    }
     public static void Reset()
 	{
         Clear();
         Populate();
-        Debug.Log("reset db");
+	}
+    public static void Insert(string tableName, List<Record.ColumnValuePair> columnValuePairs)
+	{
+        // SQLite syntax:
+        // INSERT INTO table (column1,column2 ,..)
+        // VALUES( value1,	value2 ,...);
+        var pairs = from p in columnValuePairs select p;
+        string query = 
+            "INSERT INTO " + tableName;
+        query += "(" + System.Environment.NewLine;
+        var last = pairs.Last<Record.ColumnValuePair>();
+        foreach(var p in pairs)
+		{
+            query += p.Column;
+            if(!p.Equals(last)) { query += ","; }
+            query += System.Environment.NewLine;
+		}
+        query += ")" + System.Environment.NewLine;
+        query += "VALUES (" + System.Environment.NewLine;
+        foreach(var p in pairs)
+		{
+            query += @"'" + p.Value + @"'";
+            if(!p.Equals(last)) { query += ","; }
+            query += System.Environment.NewLine;
+		}
+        query += ");";
+        
+        // Debug.Log(query);
+        // return;
+        string connectionString = "URI=file:" + File.fullName;
+        IDbConnection connection = new SqliteConnection(connectionString);
+        IDbCommand command;
+        try
+		{
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = query;
+            command.ExecuteNonQuery();
+		}
+        catch
+		{
+            Log.WriteError("Database connection failure at " + MethodBase.GetCurrentMethod().Name);
+		    Log.WriteWarning("Used query: " + System.Environment.NewLine + query);
+        }
+	}
+    public static void CreateTable(Table table)
+	{
+        string query = 
+            "CREATE TABLE IF NOT EXISTS " + table.Name;
+        query += "(" + System.Environment.NewLine;
+        var attributes = from a in table.Attributes select a;
+        var last = attributes.Last<Table.Attribute>();
+        foreach(var a in attributes)
+		{
+            query += a.Name + " " + a.Type; 
+            if(!a.Equals(last)) { query += ","; }
+            query += System.Environment.NewLine;
+		}
+        query += ");";
+        string connectionString = "URI=file:" + File.fullName;
+        IDbConnection connection = new SqliteConnection(connectionString);
+        IDbCommand command;
+        try
+		{
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = query;
+            command.ExecuteNonQuery();
+		}
+        catch
+		{
+            Log.WriteError("Database connection failure at " + MethodBase.GetCurrentMethod().Name);
+		    Log.WriteWarning("Used query: " + System.Environment.NewLine + query);
+        }
+	}
+    public static void DropTable(string tableName)
+	{
+        string query = "DROP TABLE IF EXISTS " + tableName;
+        string connectionString = "URI=file:" + File.fullName;
+        IDbConnection connection = new SqliteConnection(connectionString);
+        IDbCommand command;
+        try
+		{
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = query;
+            command.ExecuteNonQuery();
+		}
+        catch
+		{
+            Log.WriteError("Database connection failure at " + MethodBase.GetCurrentMethod().Name);
+		    Log.WriteWarning("Used query: " + System.Environment.NewLine + query);
+        }
 	}
     public static void Initialize() 
     {
@@ -97,7 +254,8 @@ public class Data
 		}
         catch
 		{
-            Log.WriteError("Database connection failure at Data.SelectWhatFromWhere()");
+            Log.WriteError("Database connection failure at " + MethodBase.GetCurrentMethod().Name);
+            Log.WriteWarning("Used query: " + System.Environment.NewLine + query);
 		}
         return results;
 	}
