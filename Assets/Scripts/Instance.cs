@@ -28,6 +28,7 @@ public static class Instance
         "Exiting",
     };
     public static bool InitializationFailure = false;
+    public static List<string> MessageQueue = new List<string>() { "Instance initialized." };
     static class ActiveMap
 	{
         public static string ID { get; set; }
@@ -36,10 +37,11 @@ public static class Instance
         public static string Latitude { get; set; }
         public static string Longitude { get; set; }
         public static string Zoom { get; set; }
-
+        public static string GUID { get; set; }
 	}
-    public static void SetActiveMap(string id)
+    public static void SetActiveMap(string guid)
 	{
+        var id = Data.SelectWhatFromWhere("id", "map", "guid = " + guid)[0];
         ActiveMap.ID = id;
         ActiveMap.Name = Data.SelectWhatFromWhere("name", "map", "id = " + id)[0];
         ActiveMap.Location = Data.SelectWhatFromWhere("location", "map", "id = " + id)[0];
@@ -53,6 +55,11 @@ public static class Instance
             ActiveMap.Location + System.Environment.NewLine +
             ActiveMap.Latitude + System.Environment.NewLine +
             ActiveMap.Longitude + System.Environment.NewLine +
-            ActiveMap.Zoom);
+            ActiveMap.Zoom + System.Environment.NewLine +
+            ActiveMap.GUID);
+	}
+    public static void Message(string status)
+	{
+        MessageQueue.Add(status);
 	}
 }

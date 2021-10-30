@@ -41,7 +41,8 @@ public class Data
                 new Table.Attribute("location", "TEXT"),
                 new Table.Attribute("latitude", "REAL"),
                 new Table.Attribute("longitude", "REAL"),
-                new Table.Attribute("zoom", "INTEGER")
+                new Table.Attribute("zoom", "INTEGER"),
+                new Table.Attribute("guid", "text")
 			})
         };
 	}
@@ -93,7 +94,8 @@ public class Data
             new Record.ColumnValuePair("location", "Buffalo, New York"),
             new Record.ColumnValuePair("latitude", "42.8865"),
             new Record.ColumnValuePair("longitude", "-78.8784"),
-            new Record.ColumnValuePair("zoom", "12")
+            new Record.ColumnValuePair("zoom", "12"),
+            new Record.ColumnValuePair("guid", System.Guid.NewGuid().ToString())
         });
     }
     public static void Reset()
@@ -233,8 +235,8 @@ public class Data
 		{
             query = 
                 "SELECT " + what +
-                "FROM " + from +
-                "WHERE " + where + ";";
+                " FROM " + from +
+                " WHERE \"" + where + "\";";
 		}
         try
 		{
@@ -255,7 +257,7 @@ public class Data
         catch
 		{
             Log.WriteError("Database connection failure at " + MethodBase.GetCurrentMethod().Name);
-            Log.WriteWarning("Used query: " + System.Environment.NewLine + query);
+            Log.WriteWarning("Used query: \"" + System.Environment.NewLine + query + "\"");
 		}
         return results;
 	}
