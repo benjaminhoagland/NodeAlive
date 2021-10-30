@@ -103,7 +103,7 @@ public class Data
         Clear();
         Populate();
 	}
-    public static void Insert(string tableName, List<Record.ColumnValuePair> columnValuePairs)
+    public static void Insert(string tableName, List<Record.ColumnValuePair> columnValuePairs, bool log = false)
 	{
         // SQLite syntax:
         // INSERT INTO table (column1,column2 ,..)
@@ -128,7 +128,8 @@ public class Data
             query += System.Environment.NewLine;
 		}
         query += ");";
-        
+
+        if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
         // Debug.Log(query);
         // return;
         string connectionString = "URI=file:" + File.fullName;
@@ -220,7 +221,7 @@ public class Data
 		}
 
     }
-    public static List<string> SelectWhatFromWhere (string what, string from, string where = null)
+    public static List<string> SelectWhatFromWhere (string what, string from, string where = null, bool log = false)
 	{
         string query = null;
         List<string> results = new List<string>();
@@ -236,8 +237,9 @@ public class Data
             query = 
                 "SELECT " + what +
                 " FROM " + from +
-                " WHERE \"" + where + "\";";
+                " WHERE " + where + ";";
 		}
+        if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
         try
 		{
             string connectionString = "URI=file:" + File.fullName;

@@ -13,6 +13,8 @@ public class Menu_ResetDB : MonoBehaviour
     }
     void Clicked()
     {
+        Instance.Message("Resetting data...");
         Data.Reset();
+        Instance.Message("Data reset.");
     }
 }

@@ -21,7 +21,7 @@ public static class Log
 
         public static void Write(string message)
         {
-            UnityEngine.Debug.LogError(message);
+            // UnityEngine.Debug.Log(message);
             NAEventLog.WriteEntry("NodeAlive.exe" + System.Environment.NewLine + message, System.Diagnostics.EventLogEntryType.Information);
         }
         public static void WriteWarning(string message)

@@ -12,7 +12,7 @@ public class Menu_HideMapWhenLoading : MonoBehaviour
 {
 	// Start is called before the first frame update
 	AbstractMap _map;
-	GameObject self;
+	[SerializeField]GameObject target;
 
 	[SerializeField]
 	TMP_Text _text;
@@ -28,7 +28,6 @@ public class Menu_HideMapWhenLoading : MonoBehaviour
 			return;
 		}
 		_map.OnInitialized += _map_OnInitialized;
-		self = this.gameObject;
 
 	}
 	void _map_OnInitialized()
@@ -41,14 +40,14 @@ public class Menu_HideMapWhenLoading : MonoBehaviour
 
 			if (s == ModuleState.Finished)
 			{
-				self.SetActive(false);
+				target.SetActive(false);
 			}
 			else if (s == ModuleState.Working)
 			{
 
 				// Uncommment me if you want the loading screen to show again
 				// when loading new tiles.
-				self.SetActive(true);
+				target.SetActive(true);
 			}
 
 		};

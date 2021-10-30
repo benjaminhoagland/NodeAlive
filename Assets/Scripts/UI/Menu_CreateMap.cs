@@ -3,12 +3,17 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using Sirenix.OdinInspector;
 
 [RequireComponent(typeof(Button))]
-public class Menu_CreateMap : MonoBehaviour
-{
-    [SerializeField]List<(GameObject input, GameObject warning)> inputsToValidate;
 
+public class Menu_CreateMap : SerializedMonoBehaviour
+{
+    [ShowInInspector][SerializeField]
+    List<(GameObject input, GameObject warning)> inputsToValidate;
+
+    [SerializeField]GameObject parent;
+    [SerializeField]GameObject mapLable;
     Button button;
     TMPro.TMP_Text statusText;
     void Awake()
@@ -56,10 +61,12 @@ public class Menu_CreateMap : MonoBehaviour
             new Data.Record.ColumnValuePair("latitude", inputsToValidate[2].input.GetComponent<TMPro.TMP_InputField>().text),
             new Data.Record.ColumnValuePair("longitude", inputsToValidate[3].input.GetComponent<TMPro.TMP_InputField>().text),
             new Data.Record.ColumnValuePair("zoom", inputsToValidate[4].input.GetComponent<TMPro.TMP_InputField>().text),
-            new Data.Record.ColumnValuePair("guid", guid)
-        });
+            new Data.Record.ColumnValuePair("guid", guid),
+        }, true);
+        Instance.Message("Map created.");
         Instance.Message("Setting active map...");
         Instance.SetActiveMap(guid);
-
+        mapLable.GetComponent<TMPro.TMP_Text>().text = inputsToValidate[0].input.GetComponent<TMPro.TMP_InputField>().text;
+        parent.SetActive(false);
     }
 }

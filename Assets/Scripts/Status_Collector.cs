@@ -7,6 +7,7 @@ public class Status_Collector : MonoBehaviour
     TMPro.TMP_Text text;
     [SerializeField] float duration = 1f;
     WaitForSeconds wait;
+    bool pollIsRunning = false;
     bool empty = false;
     void Awake()
     {
@@ -17,11 +18,14 @@ public class Status_Collector : MonoBehaviour
     void Update()
     {
         if(Instance.MessageQueue.Count > 0) text.text = Instance.MessageQueue[0];
-        StartCoroutine("PollStatus");
+        if(!pollIsRunning) StartCoroutine(PollStatus());
+        
     }
-
-    IEnumerator PollStatus()
+		
+	
+	IEnumerator PollStatus()
 	{
+        pollIsRunning = true;
         yield return wait;
         if(empty) gameObject.SetActive(false);
         if(Instance.MessageQueue.Count > 0)
@@ -33,5 +37,6 @@ public class Status_Collector : MonoBehaviour
 		{
             empty = true;
 		}
+        pollIsRunning = false;
 	}
 }
