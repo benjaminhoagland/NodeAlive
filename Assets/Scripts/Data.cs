@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Linq;
 public class Data
 {
+    public static string connectionString = "URI=file:" + File.fullName;
     public class Table
 	{
         public string Name { get; set; }
@@ -52,12 +53,18 @@ public class Data
 		{
             public string Column { get; set; }
             public string Value { get; set; }
+            public ColumnValuePair()
+            { 
+                Column = null;
+                Value = null;
+            }
             public ColumnValuePair(string column, string value)
 			{
                 Column = column;
                 Value = value;
 			}
 		}
+        public List<ColumnValuePair> columnValuePairs;
 	}
     public static class File
     {
@@ -221,12 +228,54 @@ public class Data
 		}
 
     }
+     public static List<Record> SelectStar (string from, bool log = false)
+	{
+        string query = null;
+        List<Record> records = new List<Record>();
+
+        query = 
+            "SELECT * " +
+            "FROM " + from + ";";
+
+
+        if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
+        try
+		{
+            string connectionString = "URI=file:" + File.fullName;
+            IDbConnection connection = new SqliteConnection(connectionString);
+            IDbCommand command;
+            IDataReader reader;
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = query;
+            reader = command.ExecuteReader();
+            while(reader.Read())
+			{
+                Record record = new Record();
+                foreach(int i in Enumerable.Range(1, reader.FieldCount))
+				{
+                    Record.ColumnValuePair columnValuePair = new Record.ColumnValuePair();
+                    columnValuePair.Column = reader.GetName(i);
+                    columnValuePair.Value = reader[i].ToString();
+                    record.columnValuePairs.Add(columnValuePair);
+				}
+                records.Add(record);
+			}
+
+		}
+        catch
+		{
+            Log.WriteError("Database connection failure at " + MethodBase.GetCurrentMethod().Name);
+            Log.WriteWarning("Used query: \"" + System.Environment.NewLine + query + "\"");
+		}
+        return records;
+	}
     public static List<string> SelectWhatFromWhere (string what, string from, string where = null, bool log = false)
 	{
         string query = null;
         List<string> results = new List<string>();
 
-        if(what == null)
+        if(where == null)
 		{
             query = 
                 "SELECT " + what +

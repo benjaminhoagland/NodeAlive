@@ -15,7 +15,6 @@ public class Menu_CreateMap : SerializedMonoBehaviour
     [SerializeField]GameObject parent;
     [SerializeField]GameObject mapLable;
     Button button;
-    TMPro.TMP_Text statusText;
     void Awake()
     {
        button = GetComponent<Button>();
