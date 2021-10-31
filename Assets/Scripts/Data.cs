@@ -1,11 +1,13 @@
+using Mono.Data.Sqlite;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using Mono.Data.Sqlite;
 using System.Data;
+using System.Globalization;
 using System.IO;
-using System.Reflection;
 using System.Linq;
+using System.Reflection;
+using UnityEngine;
 public class Data
 {
     public static string connectionString = "URI=file:" + File.fullName;
@@ -37,34 +39,115 @@ public class Data
         {
             new Table("map", new List<Table.Attribute>()
 			{
-                new Table.Attribute("ID", "INTEGER PRIMARY KEY"),
+                new Table.Attribute("id", "INTEGER PRIMARY KEY"),
                 new Table.Attribute("name", "TEXT"),
                 new Table.Attribute("location", "TEXT"),
                 new Table.Attribute("latitude", "REAL"),
                 new Table.Attribute("longitude", "REAL"),
                 new Table.Attribute("zoom", "INTEGER"),
-                new Table.Attribute("guid", "text")
+                new Table.Attribute("guid", "TEXT"),
+                new Table.Attribute("date_created", "TEXT"),
+                new Table.Attribute("date_activated", "TEXT")
 			})
         };
+        public class Map
+		{
+            public int ID { get;set; }
+            public string Name { get;set; }
+            public string Location { get;set; }
+            public float Latitude { get;set; }
+            public float Longitude { get;set; }
+            public int Zoom { get;set; }
+            public string Guid { get;set; }
+            public DateTime DateCreated { get;set; }
+            public DateTime DateActivated { get;set; }
+            
+            public override string ToString()
+			{
+                var s = "";
+                s += ID.ToString() + System.Environment.NewLine; 
+                s += Name + System.Environment.NewLine; 
+                s += Location + System.Environment.NewLine; 
+                s += Latitude.ToString() + System.Environment.NewLine; 
+                s += Longitude.ToString() + System.Environment.NewLine;
+                s += Zoom.ToString() + System.Environment.NewLine;
+                s += Guid + System.Environment.NewLine;
+                s += DateCreated.ToString(timeformat) + System.Environment.NewLine;
+                s += DateActivated.ToString(timeformat);
+                return s;
+			}
+
+		}
+	}
+    public static List<Schema.Map> SelectMaps()
+	{
+        var maps = new List<Schema.Map>();
+
+        string query = null;
+      
+        query = "SELECT * FROM map;";
+        var log = false;
+        if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
+        string connectionString = "URI=file:" + File.fullName;
+        IDbConnection connection = new SqliteConnection(connectionString);
+        IDbCommand command;
+        IDataReader reader;
+        connection.Open();
+        command = connection.CreateCommand();
+        command.CommandText = query;
+        reader = command.ExecuteReader();
+        while(reader.Read())
+		{
+            Schema.Map map = new Schema.Map();
+            int id;
+            // Debug.Log("fieldcount is" + reader.FieldCount);
+            Int32.TryParse(reader[0].ToString(), out id);
+            map.ID = id;
+            map.Name = reader[1].ToString();
+            map.Location  = reader[2].ToString();
+            float lat;
+            float.TryParse(reader[3].ToString(), out lat);
+            map.Latitude = lat;
+            float lon;
+            float.TryParse(reader[4].ToString(), out lon);
+            map.Longitude = lon;
+            int zoomies;
+            Int32.TryParse(reader[5].ToString(), out zoomies);
+            map.Zoom = zoomies;
+            map.Guid  = reader[6].ToString();
+            map.DateCreated = DateTime.ParseExact(reader[7].ToString(), timeformat, CultureInfo.InvariantCulture);
+            map.DateActivated = DateTime.ParseExact(reader[8].ToString(), timeformat, CultureInfo.InvariantCulture); 
+            maps.Add(map);
+		}
+
+        try
+		{
+		}
+        catch
+		{
+            Log.WriteError("Database connection failure at " + MethodBase.GetCurrentMethod().Name);
+            Log.WriteWarning("Used query: \"" + System.Environment.NewLine + query + "\"");
+		}
+        return maps;
 	}
     public class Record
 	{
-        public class ColumnValuePair
+        public class Attribute
 		{
-            public string Column { get; set; }
+            public string Name { get; set; }
             public string Value { get; set; }
-            public ColumnValuePair()
+            public Attribute()
             { 
-                Column = null;
+                Name = null;
                 Value = null;
             }
-            public ColumnValuePair(string column, string value)
+            public Attribute(string column, string value)
 			{
-                Column = column;
+                Name = column;
                 Value = value;
 			}
 		}
-        public List<ColumnValuePair> columnValuePairs;
+        public List<Attribute> attributes;
 	}
     public static class File
     {
@@ -89,20 +172,23 @@ public class Data
             DropTable(table.Name);
 		}
     }
+    public static string timeformat = "yyyy-MM-dd HH:mm:ss";
     public static void Populate()
 	{
         foreach(var table in Schema.tables)
 		{
             CreateTable(table);
 		}
-        Insert("map", new List<Record.ColumnValuePair>()
+        Insert("map", new List<Record.Attribute>()
         {
-            new Record.ColumnValuePair("name", "Map of Buffalo, New York"),
-            new Record.ColumnValuePair("location", "Buffalo, New York"),
-            new Record.ColumnValuePair("latitude", "42.8865"),
-            new Record.ColumnValuePair("longitude", "-78.8784"),
-            new Record.ColumnValuePair("zoom", "12"),
-            new Record.ColumnValuePair("guid", System.Guid.NewGuid().ToString())
+            new Record.Attribute("name", "Map of Buffalo, New York"),
+            new Record.Attribute("location", "Buffalo, New York"),
+            new Record.Attribute("latitude", "42.8865"),
+            new Record.Attribute("longitude", "-78.8784"),
+            new Record.Attribute("zoom", "12"),
+            new Record.Attribute("guid", System.Guid.NewGuid().ToString()),
+            new Record.Attribute("date_created", DateTime.Now.ToString(timeformat)),
+            new Record.Attribute("date_activated", DateTime.Now.ToString(timeformat))
         });
     }
     public static void Reset()
@@ -110,7 +196,7 @@ public class Data
         Clear();
         Populate();
 	}
-    public static void Insert(string tableName, List<Record.ColumnValuePair> columnValuePairs, bool log = false)
+    public static void Insert(string tableName, List<Record.Attribute> columnValuePairs, bool log = false)
 	{
         // SQLite syntax:
         // INSERT INTO table (column1,column2 ,..)
@@ -119,10 +205,10 @@ public class Data
         string query = 
             "INSERT INTO " + tableName;
         query += "(" + System.Environment.NewLine;
-        var last = pairs.Last<Record.ColumnValuePair>();
+        var last = pairs.Last<Record.Attribute>();
         foreach(var p in pairs)
 		{
-            query += p.Column;
+            query += p.Name;
             if(!p.Equals(last)) { query += ","; }
             query += System.Environment.NewLine;
 		}
@@ -228,7 +314,7 @@ public class Data
 		}
 
     }
-     public static List<Record> SelectStar (string from, bool log = false)
+    public static List<Record> SelectStar (string from, bool log = false)
 	{
         string query = null;
         List<Record> records = new List<Record>();
@@ -237,10 +323,7 @@ public class Data
             "SELECT * " +
             "FROM " + from + ";";
 
-
         if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
-        try
-		{
             string connectionString = "URI=file:" + File.fullName;
             IDbConnection connection = new SqliteConnection(connectionString);
             IDbCommand command;
@@ -254,14 +337,18 @@ public class Data
                 Record record = new Record();
                 foreach(int i in Enumerable.Range(1, reader.FieldCount))
 				{
-                    Record.ColumnValuePair columnValuePair = new Record.ColumnValuePair();
-                    columnValuePair.Column = reader.GetName(i);
-                    columnValuePair.Value = reader[i].ToString();
-                    record.columnValuePairs.Add(columnValuePair);
+                    Record.Attribute attribute = new Record.Attribute();
+                    attribute.Name = reader.GetName(i); 
+                    Debug.Log(reader.GetName(0));
+                    Debug.Log(reader.GetName(i));
+                    attribute.Value = reader[i].ToString();
+                    record.attributes.Add(attribute);
 				}
                 records.Add(record);
 			}
 
+        try
+		{
 		}
         catch
 		{

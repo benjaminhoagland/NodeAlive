@@ -83,6 +83,13 @@ public static class Instance
 		{
             Log.WriteError("Error logging active map.");
 		}
+
+        // flag:workinghere activate mapbox
+	}
+    public static string SelectedMapGUID;
+    public static void SelectGUID(string guid)
+	{
+        SelectedMapGUID = guid;
 	}
     public static void Message(string status)
 	{

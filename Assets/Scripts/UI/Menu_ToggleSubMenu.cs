@@ -26,6 +26,5 @@ public class Menu_ToggleSubMenu : MonoBehaviour
             target.gameObject.SetActive(true);
 		}
         Instance.UIEngaged = true;
-        //flag:workinghere
     }
 }

@@ -15,13 +15,7 @@ public class Menu_SelectMap : MonoBehaviour
     void Clicked()
     {
         // do stuff
-        foreach(var mapRecord in Data.SelectStar("map", true))
-        {
-             foreach(var pair in mapRecord.columnValuePairs)
-			 {
-                Debug.Log(pair.Column + " : " + pair.Value);
-			 }
-        }
+        Instance.SetActiveMap(Instance.SelectedMapGUID);
 
        
     }

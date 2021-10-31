@@ -16,6 +16,5 @@ public class Menu_ExitApplication : MonoBehaviour
     void Clicked()
     {
         Application.Quit();
-        //flag:workinghere
     }
 }
