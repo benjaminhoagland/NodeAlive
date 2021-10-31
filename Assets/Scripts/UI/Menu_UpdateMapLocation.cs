@@ -105,7 +105,9 @@ public class Menu_UpdateMapLocation : MonoBehaviour
 		if (null != response.Features && response.Features.Count > 0)
 		{
 			int zoom = _map.AbsoluteZoom;
-			_map.UpdateMap(response.Features[0].Center, zoom);
+			_map.SetZoom(zoom);
+			_map.SetCenterLatitudeLongitude(response.Features[0].Center);
+			Reload();
 		}
 	}
 

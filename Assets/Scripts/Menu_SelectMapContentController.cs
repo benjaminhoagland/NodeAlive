@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Mapbox.Geocoding;
+using UnityEngine.UI;
+using Mapbox.Unity.Map;
+using System;
+using TMPro;
 
 public class Menu_SelectMapContentController : MonoBehaviour
 {
@@ -13,16 +18,16 @@ public class Menu_SelectMapContentController : MonoBehaviour
 	private void Awake()
 	{
 		rt = Content.GetComponent<RectTransform>();
+		
 	}
-
+	private void OnDisable()
+	{
+		Instance.EnableNodeUI();
+	}
 	private void OnEnable()
 	{
+		Instance.DisableNodeUI();
 		rt.sizeDelta = new Vector2(0, heightIncrement);
-
-
-
-
-
 		var maps = Data.SelectMaps();
 		int counter = 0;
 		foreach(var map in maps)
@@ -43,9 +48,9 @@ public class Menu_SelectMapContentController : MonoBehaviour
 			var pos = mapItem.transform.position;
 			mapItem.transform.position = new Vector3(pos.x, pos.y + -heightIncrement * counter);
 			counter++;
-
 		}
 		rt.sizeDelta = new Vector2(0, heightIncrement * counter);
 	}
+	
 }
 

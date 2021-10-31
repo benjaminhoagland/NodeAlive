@@ -2,7 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-
+using System.Threading;
+using Mapbox.Geocoding;
+using UnityEngine.UI;
+using Mapbox.Unity.Map;
+using System;
+using TMPro;
+using Mapbox;
 
 public static class Instance
 {
@@ -31,6 +37,7 @@ public static class Instance
     };
     public static bool InitializationFailure = false;
     public static List<string> MessageQueue = new List<string>() 
+    
     { 
         "Initalizing", 
         "Initalizing.",
@@ -38,10 +45,10 @@ public static class Instance
         "Initalizing...", 
         "Instance initialized." 
     };
-    static class ActiveMap
+    public static class ActiveMap
 	{
         public static string ID { get; set; }
-        public static string Name { get; set; }
+        public static string Name { get; set; } = "unassigned";
         public static string Location { get; set; }
         public static string Latitude { get; set; }
         public static string Longitude { get; set; }
@@ -50,8 +57,9 @@ public static class Instance
 	}
     public static void SetActiveMap(string guid)
 	{
-        
+        if(guid.Length == 0 || guid == null) Log.WriteError("Failure at SetActiveMap from null input.");
         var id = Data.SelectWhatFromWhere("id", "map", "guid = \'" + guid + "\'").FirstOrDefault();
+        
         var log = false;
         ActiveMap.ID = id;
         if(log) Debug.Log(ActiveMap.ID);
@@ -67,25 +75,8 @@ public static class Instance
         if(log) Debug.Log(ActiveMap.Zoom);
         ActiveMap.GUID = Data.SelectWhatFromWhere("guid", "map", "id = \'" + id + "\'").FirstOrDefault();
         if(log) Debug.Log(ActiveMap.GUID);
-        
-		try
-		{
-        if(log) Debug.Log(
-            ActiveMap.ID.ToString() + System.Environment.NewLine +
-            ActiveMap.Name.ToString() + System.Environment.NewLine + 
-            ActiveMap.Location.ToString() + System.Environment.NewLine +
-            ActiveMap.Latitude.ToString() + System.Environment.NewLine +
-            ActiveMap.Longitude.ToString() + System.Environment.NewLine +
-            ActiveMap.Zoom.ToString() + System.Environment.NewLine +
-            ActiveMap.GUID.ToString());
-		}
-        catch
-		{
-            Log.WriteError("Error logging active map.");
-		}
-
-        // flag:workinghere activate mapbox
 	}
+ 
     public static string SelectedMapGUID;
     public static void SelectGUID(string guid)
 	{
@@ -95,4 +86,13 @@ public static class Instance
 	{
         MessageQueue.Add(status);
 	}
+    public static void DisableNodeUI()
+	{
+
+	}
+    public static void EnableNodeUI()
+	{
+
+	}
+
 }

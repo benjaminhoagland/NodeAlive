@@ -68,7 +68,6 @@ public class Menu_CreateMap : SerializedMonoBehaviour
         Instance.Message("Map created.");
         Instance.Message("Setting active map...");
         Instance.SetActiveMap(guid);
-        mapLable.GetComponent<TMPro.TMP_Text>().text = inputsToValidate[0].input.GetComponent<TMPro.TMP_InputField>().text;
         parent.SetActive(false);
     }
 }
