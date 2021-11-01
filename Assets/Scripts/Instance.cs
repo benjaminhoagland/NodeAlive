@@ -39,10 +39,10 @@ public static class Instance
     public static List<string> MessageQueue = new List<string>() 
     
     { 
-        "Initalizing", 
-        "Initalizing.",
-        "Initalizing..", 
-        "Initalizing...", 
+        // "Initalizing", 
+        // "Initalizing.",
+        // "Initalizing..", 
+        // "Initalizing...", 
         "Instance initialized." 
     };
     public static class ActiveMap

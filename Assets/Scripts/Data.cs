@@ -11,7 +11,23 @@ using UnityEngine;
 public class Data
 {
     public static string connectionString = "URI=file:" + File.fullName;
-    public class Table
+    public static string timeformat = "yyyy-MM-dd HH:mm:ss"; 
+    public static class File
+    {
+        // public static string filePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+        public static string filePath = @"C:\NodeAlive\NASVC\NASVC\bin\Debug\";
+        public static string directoryPath = System.IO.Path.GetDirectoryName(filePath);
+        public const string filename = "NADB.sqlite";
+        public static string fullName
+        {
+            // example: "C:\NodeAlive\NASVC\NASVC\bin\Debug\NADB.sqlite"
+            get
+            {
+                return Path.Combine(directoryPath, filename);
+            }
+        }
+    }
+    public class TableStructure
 	{
         public string Name { get; set; }
         public List<Attribute> Attributes { get; set; }
@@ -26,111 +42,13 @@ public class Data
 			}
 
 		}
-        public Table(string name, List<Attribute> attributes)
+        public TableStructure(string name, List<Attribute> attributes)
 		{
             Name = name;
             Attributes = attributes;
 		}
 	}
-
-    public class Schema
-    {
-        public static List<Table> tables = new List<Table>()
-        {
-            new Table("map", new List<Table.Attribute>()
-			{
-                new Table.Attribute("id", "INTEGER PRIMARY KEY"),
-                new Table.Attribute("name", "TEXT"),
-                new Table.Attribute("location", "TEXT"),
-                new Table.Attribute("latitude", "REAL"),
-                new Table.Attribute("longitude", "REAL"),
-                new Table.Attribute("zoom", "INTEGER"),
-                new Table.Attribute("guid", "TEXT"),
-                new Table.Attribute("date_created", "TEXT"),
-                new Table.Attribute("date_activated", "TEXT")
-			})
-        };
-        public class Map
-		{
-            public int ID { get;set; }
-            public string Name { get;set; }
-            public string Location { get;set; }
-            public float Latitude { get;set; }
-            public float Longitude { get;set; }
-            public int Zoom { get;set; }
-            public string Guid { get;set; }
-            public DateTime DateCreated { get;set; }
-            public DateTime DateActivated { get;set; }
-            
-            public override string ToString()
-			{
-                var s = "";
-                s += ID.ToString() + System.Environment.NewLine; 
-                s += Name + System.Environment.NewLine; 
-                s += Location + System.Environment.NewLine; 
-                s += Latitude.ToString() + System.Environment.NewLine; 
-                s += Longitude.ToString() + System.Environment.NewLine;
-                s += Zoom.ToString() + System.Environment.NewLine;
-                s += Guid + System.Environment.NewLine;
-                s += DateCreated.ToString(timeformat) + System.Environment.NewLine;
-                s += DateActivated.ToString(timeformat);
-                return s;
-			}
-
-		}
-	}
-    public static List<Schema.Map> SelectMaps()
-	{
-        var maps = new List<Schema.Map>();
-
-        string query = null;
-      
-        query = "SELECT * FROM map;";
-        var log = false;
-        if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
-        string connectionString = "URI=file:" + File.fullName;
-        IDbConnection connection = new SqliteConnection(connectionString);
-        IDbCommand command;
-        IDataReader reader;
-        connection.Open();
-        command = connection.CreateCommand();
-        command.CommandText = query;
-        reader = command.ExecuteReader();
-        while(reader.Read())
-		{
-            Schema.Map map = new Schema.Map();
-            int id;
-            // Debug.Log("fieldcount is" + reader.FieldCount);
-            Int32.TryParse(reader[0].ToString(), out id);
-            map.ID = id;
-            map.Name = reader[1].ToString();
-            map.Location  = reader[2].ToString();
-            float lat;
-            float.TryParse(reader[3].ToString(), out lat);
-            map.Latitude = lat;
-            float lon;
-            float.TryParse(reader[4].ToString(), out lon);
-            map.Longitude = lon;
-            int zoomies;
-            Int32.TryParse(reader[5].ToString(), out zoomies);
-            map.Zoom = zoomies;
-            map.Guid  = reader[6].ToString();
-            map.DateCreated = DateTime.ParseExact(reader[7].ToString(), timeformat, CultureInfo.InvariantCulture);
-            map.DateActivated = DateTime.ParseExact(reader[8].ToString(), timeformat, CultureInfo.InvariantCulture); 
-            maps.Add(map);
-		}
-
-        try
-		{
-		}
-        catch
-		{
-            Log.WriteError("Database connection failure at " + MethodBase.GetCurrentMethod().Name);
-            Log.WriteWarning("Used query: \"" + System.Environment.NewLine + query + "\"");
-		}
-        return maps;
-	}
-    public class Record
+    public class RecordStructure
 	{
         public class Attribute
 		{
@@ -149,20 +67,117 @@ public class Data
 		}
         public List<Attribute> attributes;
 	}
-    public static class File
+    public class Schema
     {
-        // public static string filePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
-        public static string filePath = @"C:\NodeAlive\NASVC\NASVC\bin\Debug\";
-        public static string directoryPath = System.IO.Path.GetDirectoryName(filePath);
-        public const string filename = "NADB.sqlite";
-        public static string fullName
+        public static List<Data.TableStructure> tables = new List<TableStructure>()
         {
-            // example: "C:\NodeAlive\NASVC\NASVC\bin\Debug\NADB.sqlite"
-            get
-            {
-                return Path.Combine(directoryPath, filename);
-            }
+            new TableStructure("map", new List<TableStructure.Attribute>()
+			{
+                new TableStructure.Attribute("id", "INTEGER PRIMARY KEY"),
+                new TableStructure.Attribute("name", "TEXT"),
+                new TableStructure.Attribute("location", "TEXT"),
+                new TableStructure.Attribute("latitude", "REAL"),
+                new TableStructure.Attribute("longitude", "REAL"),
+                new TableStructure.Attribute("zoom", "INTEGER"),
+                new TableStructure.Attribute("guid", "TEXT"),
+                new TableStructure.Attribute("date_created", "TEXT"),
+                new TableStructure.Attribute("date_activated", "TEXT")
+			}),
+            new TableStructure("location", new List<TableStructure.Attribute>()
+			{
+                new TableStructure.Attribute("id", "INTEGER PRIMARY KEY"),
+                new TableStructure.Attribute("map_id", "INTEGER"),
+                new TableStructure.Attribute("address", "TEXT"),
+                new TableStructure.Attribute("latitude", "REAL"),
+                new TableStructure.Attribute("longitude", "REAL"),
+                new TableStructure.Attribute("guid", "TEXT"),
+                new TableStructure.Attribute("date_created", "TEXT")
+			})
+        };
+        public class Table
+		{
+            public override string ToString()
+			{
+                var output = "";
+                Type type = this.GetType();
+                PropertyInfo[] properties = type.GetProperties();
+                foreach (PropertyInfo property in properties)
+                {
+                    output += property.Name + ": " + property.GetValue(this, null) + Environment.NewLine;
+                }
+                return output;
+			}
+            public int ID { get;set; }
+            public string GUID { get;set; }
+            public DateTime DateCreated { get;set; }
+            public class Location : Table
+		    {
+                public int MapID { get;set; }
+                public string Address { get;set; }
+                public float Latitude { get;set; }
+                public float Longitude { get;set; }
+                public override string ToString()
+			    {
+                    var output = "";
+                    Type type = this.GetType();
+                    PropertyInfo[] properties = type.GetProperties();
+                    foreach (PropertyInfo property in properties)
+                    {
+                        output += property.Name + ": " + property.GetValue(this, null) + Environment.NewLine;
+                    }
+                    return output;
+			    }
+                
+		    }
+            public class Map : Table
+		    {
+                // public int ID { get;set; }
+                public string Name { get;set; }
+                public string Target { get;set; }
+                public float Latitude { get;set; }
+                public float Longitude { get;set; }
+                public int Zoom { get;set; }
+                // public string Guid { get;set; }
+                // public DateTime DateCreated { get;set; }
+                public DateTime DateActivated { get;set; }
+                public override string ToString()
+			    {
+                    var output = "";
+                    Type type = this.GetType();
+                    PropertyInfo[] properties = type.GetProperties();
+                    foreach (PropertyInfo property in properties)
+                    {
+                        output += property.Name + ": " + property.GetValue(this, null) + Environment.NewLine;
+                    }
+                    return output;
+			    }
+		    }
+		}
+	}
+
+    public static void Initialize() 
+    {
+        Log.Write("Initializing database...");
+        if(System.IO.File.Exists(File.fullName))
+        {
+			Log.Write("Database found at " + File.fullName);
+            // Log.Write("Continuing...");
+            
+            // FLAG:TODO test connection
+            // FLAG:TODO write log and exit app on connection failure
+            // FLAG:TODO check data initialization
+    
         }
+		else
+		{
+			Log.WriteError("Database not found at " + File.fullName);
+			Log.WriteError("Exiting Application...");
+			Instance.InitializationFailure = true;
+			Application.Quit();
+
+            
+		}
+
     }
     public static void Clear()
 	{
@@ -172,31 +187,83 @@ public class Data
             DropTable(table.Name);
 		}
     }
-    public static string timeformat = "yyyy-MM-dd HH:mm:ss";
+    public static void DropTable(string tableName)
+	{
+        string query = "DROP TABLE IF EXISTS " + tableName;
+        string connectionString = "URI=file:" + File.fullName;
+        IDbConnection connection = new SqliteConnection(connectionString);
+        IDbCommand command;
+        try
+		{
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = query;
+            command.ExecuteNonQuery();
+		}
+        catch
+		{
+            Log.WriteError("Database connection failure at " + MethodBase.GetCurrentMethod().Name);
+		    Log.WriteWarning("Used query: " + System.Environment.NewLine + query);
+        }
+	}
     public static void Populate()
 	{
         foreach(var table in Schema.tables)
 		{
             CreateTable(table);
 		}
-        Insert("map", new List<Record.Attribute>()
+        Insert("map", new List<RecordStructure.Attribute>()
         {
-            new Record.Attribute("name", "Map of Buffalo, New York"),
-            new Record.Attribute("location", "Buffalo, New York"),
-            new Record.Attribute("latitude", "42.8865"),
-            new Record.Attribute("longitude", "-78.8784"),
-            new Record.Attribute("zoom", "12"),
-            new Record.Attribute("guid", System.Guid.NewGuid().ToString()),
-            new Record.Attribute("date_created", DateTime.Now.ToString(timeformat)),
-            new Record.Attribute("date_activated", DateTime.Now.ToString(timeformat))
+            new RecordStructure.Attribute("name", "Map of Buffalo, New York"),
+            new RecordStructure.Attribute("location", "Buffalo, New York"),
+            new RecordStructure.Attribute("latitude", "42.8865"),
+            new RecordStructure.Attribute("longitude", "-78.8784"),
+            new RecordStructure.Attribute("zoom", "12"),
+            new RecordStructure.Attribute("guid", System.Guid.NewGuid().ToString()),
+            new RecordStructure.Attribute("date_created", DateTime.Now.ToString(timeformat)),
+            new RecordStructure.Attribute("date_activated", DateTime.Now.ToString(timeformat))
+        });
+        Insert("location", new List<RecordStructure.Attribute>()
+        {
+            new RecordStructure.Attribute("map_id", "1"),
+            new RecordStructure.Attribute("address", "1 Main St, Buffalo, New York 14203"),
+            new RecordStructure.Attribute("latitude", "42.8800"),
+            new RecordStructure.Attribute("longitude", "-78.8764"),
+            new RecordStructure.Attribute("guid", System.Guid.NewGuid().ToString()),
+            new RecordStructure.Attribute("date_created", DateTime.Now.ToString(timeformat))
         });
     }
-    public static void Reset()
+    public static void CreateTable(TableStructure table)
 	{
-        Clear();
-        Populate();
+        string query = 
+            "CREATE TABLE IF NOT EXISTS " + table.Name;
+        query += "(" + System.Environment.NewLine;
+        var attributes = from a in table.Attributes select a;
+        var last = attributes.Last<TableStructure.Attribute>();
+        foreach(var a in attributes)
+		{
+            query += a.Name + " " + a.Type; 
+            if(!a.Equals(last)) { query += ","; }
+            query += System.Environment.NewLine;
+		}
+        query += ");";
+        string connectionString = "URI=file:" + File.fullName;
+        IDbConnection connection = new SqliteConnection(connectionString);
+        IDbCommand command;
+        try
+		{
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = query;
+            command.ExecuteNonQuery();
+		}
+        catch
+		{
+            Log.WriteError("Database connection failure at " + MethodBase.GetCurrentMethod().Name);
+		    Log.WriteWarning("Used query: " + System.Environment.NewLine + query);
+        }
 	}
-    public static void Insert(string tableName, List<Record.Attribute> columnValuePairs, bool log = false)
+    public static void Insert(string tableName, List<RecordStructure.Attribute> columnValuePairs, bool log = false)
 	{
         // SQLite syntax:
         // INSERT INTO table (column1,column2 ,..)
@@ -205,7 +272,7 @@ public class Data
         string query = 
             "INSERT INTO " + tableName;
         query += "(" + System.Environment.NewLine;
-        var last = pairs.Last<Record.Attribute>();
+        var last = pairs.Last<RecordStructure.Attribute>();
         foreach(var p in pairs)
 		{
             query += p.Name;
@@ -241,79 +308,12 @@ public class Data
 		    Log.WriteWarning("Used query: " + System.Environment.NewLine + query);
         }
 	}
-    public static void CreateTable(Table table)
+    public static void Reset()
 	{
-        string query = 
-            "CREATE TABLE IF NOT EXISTS " + table.Name;
-        query += "(" + System.Environment.NewLine;
-        var attributes = from a in table.Attributes select a;
-        var last = attributes.Last<Table.Attribute>();
-        foreach(var a in attributes)
-		{
-            query += a.Name + " " + a.Type; 
-            if(!a.Equals(last)) { query += ","; }
-            query += System.Environment.NewLine;
-		}
-        query += ");";
-        string connectionString = "URI=file:" + File.fullName;
-        IDbConnection connection = new SqliteConnection(connectionString);
-        IDbCommand command;
-        try
-		{
-            connection.Open();
-            command = connection.CreateCommand();
-            command.CommandText = query;
-            command.ExecuteNonQuery();
-		}
-        catch
-		{
-            Log.WriteError("Database connection failure at " + MethodBase.GetCurrentMethod().Name);
-		    Log.WriteWarning("Used query: " + System.Environment.NewLine + query);
-        }
+        Clear();
+        Populate();
 	}
-    public static void DropTable(string tableName)
-	{
-        string query = "DROP TABLE IF EXISTS " + tableName;
-        string connectionString = "URI=file:" + File.fullName;
-        IDbConnection connection = new SqliteConnection(connectionString);
-        IDbCommand command;
-        try
-		{
-            connection.Open();
-            command = connection.CreateCommand();
-            command.CommandText = query;
-            command.ExecuteNonQuery();
-		}
-        catch
-		{
-            Log.WriteError("Database connection failure at " + MethodBase.GetCurrentMethod().Name);
-		    Log.WriteWarning("Used query: " + System.Environment.NewLine + query);
-        }
-	}
-    public static void Initialize() 
-    {
-        Log.Write("Initializing database...");
-        if(System.IO.File.Exists(File.fullName))
-        {
-			Log.Write("Database found at " + File.fullName);
-            // Log.Write("Continuing...");
-            
-            // FLAG:TODO test connection
-            // FLAG:TODO write log and exit app on connection failure
-            // FLAG:TODO check data initialization
-    
-        }
-		else
-		{
-			Log.WriteError("Database not found at " + File.fullName);
-			Log.WriteError("Exiting Application...");
-			Instance.InitializationFailure = true;
-			Application.Quit();
-
-            
-		}
-
-    }
+    /*
     public static List<Record> SelectStar (string from, bool log = false)
 	{
         string query = null;
@@ -357,6 +357,7 @@ public class Data
 		}
         return records;
 	}
+    */
     public static List<string> SelectWhatFromWhere (string what, string from, string where = null, bool log = false)
 	{
         string query = null;
@@ -398,6 +399,105 @@ public class Data
             Log.WriteWarning("Used query: \"" + System.Environment.NewLine + query + "\"");
 		}
         return results;
+	}
+    public static class Select
+	{
+        public static List<Schema.Table.Location> Location()
+	    {
+            var returnList = new List<Schema.Table.Location>();      
+            var query = "SELECT * FROM location;";
+            var log = true;
+			if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
+            string connectionString = "URI=file:" + File.fullName;
+            try
+		    {
+                IDbConnection connection = new SqliteConnection(connectionString);
+                IDbCommand command;
+                IDataReader reader;
+                connection.Open();
+                command = connection.CreateCommand();
+                command.CommandText = query;
+                reader = command.ExecuteReader();
+			    while(reader.Read())
+		        {
+                    Schema.Table.Location location = new Schema.Table.Location();
+                    int index = 0;
+                    int id;
+                    Int32.TryParse(reader[index++].ToString(), out id);
+                    location.ID = id;
+                    int map_id;
+                    Int32.TryParse(reader[index++].ToString(), out map_id);
+                    location.MapID = map_id;
+                    location.Address  = reader[index++].ToString();
+                    float lat;
+                    float.TryParse(reader[index++].ToString(), out lat);
+                    location.Latitude = lat;
+                    float lon;
+                    float.TryParse(reader[index++].ToString(), out lon);
+                    location.Longitude = lon;
+                    location.GUID  = reader[index++].ToString();
+                    location.DateCreated = DateTime.ParseExact(reader[index++].ToString(), timeformat, CultureInfo.InvariantCulture);
+                    returnList.Add(location);
+		        }
+		    }
+            catch
+		    {
+                Log.WriteError("Database connection failure at " + MethodBase.GetCurrentMethod().Name);
+                Log.WriteWarning("Used query: \"" + System.Environment.NewLine + query + "\"");
+		    }
+            return returnList;
+	    }
+        public static List<Schema.Table.Map> Map()
+	    {
+            var maps = new List<Schema.Table.Map>();
+
+            string query = null;
+      
+            query = "SELECT * FROM map;";
+            var log = false;
+            if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
+            string connectionString = "URI=file:" + File.fullName;
+            IDbConnection connection = new SqliteConnection(connectionString);
+            IDbCommand command;
+            IDataReader reader;
+            connection.Open();
+            command = connection.CreateCommand();
+            command.CommandText = query;
+            reader = command.ExecuteReader();
+            while(reader.Read())
+		    {
+                Schema.Table.Map map = new Schema.Table.Map();
+                int id;
+                // Debug.Log("fieldcount is" + reader.FieldCount);
+                Int32.TryParse(reader[0].ToString(), out id);
+                map.ID = id;
+                map.Name = reader[1].ToString();
+                map.Target  = reader[2].ToString();
+                float lat;
+                float.TryParse(reader[3].ToString(), out lat);
+                map.Latitude = lat;
+                float lon;
+                float.TryParse(reader[4].ToString(), out lon);
+                map.Longitude = lon;
+                int zoomies;
+                Int32.TryParse(reader[5].ToString(), out zoomies);
+                map.Zoom = zoomies;
+                map.GUID  = reader[6].ToString();
+                map.DateCreated = DateTime.ParseExact(reader[7].ToString(), timeformat, CultureInfo.InvariantCulture);
+                map.DateActivated = DateTime.ParseExact(reader[8].ToString(), timeformat, CultureInfo.InvariantCulture); 
+                maps.Add(map);
+		    }
+
+            try
+		    {
+		    }
+            catch
+		    {
+                Log.WriteError("Database connection failure at " + MethodBase.GetCurrentMethod().Name);
+                Log.WriteWarning("Used query: \"" + System.Environment.NewLine + query + "\"");
+		    }
+            return maps;
+	    }
 	}
 
 }

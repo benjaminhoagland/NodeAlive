@@ -91,6 +91,7 @@
     <Compile Include="Assets\Mapbox\Unity\Utilities\ObjectPool.cs" />
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Factories\TileProcessFinishedEventArgs.cs" />
     <Compile Include="Assets\Mapbox\Unity\SourceLayers\SubLayerCustomStyleTiled.cs" />
+    <Compile Include="Assets\Scripts\UI\Menu_UpdateMapOnSelection.cs" />
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Components\FeatureBehaviour.cs" />
     <Compile Include="Assets\Mapbox\Unity\Utilities\Singleton.cs" />
     <Compile Include="Assets\Mapbox\Unity\Map\TileProviders\RangeTileProvider.cs" />
@@ -125,6 +126,7 @@
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Factories\TerrainStrategies\ElevationBasedTerrainStrategy.cs" />
     <Compile Include="Assets\Mapbox\Unity\DataContainers\ElevationModificationOptions.cs" />
     <Compile Include="Assets\Mapbox\Examples\Scripts\CameraBillboard.cs" />
+    <Compile Include="Assets\Scripts\UI\Menu_UpdateActiveMapLabel.cs" />
     <Compile Include="Assets\Mapbox\Examples\5_Playground\Scripts\LogLocationProviderData.cs" />
     <Compile Include="Assets\Mapbox\Unity\Map\TileProviders\QuadTreeTileProvider.cs" />
     <Compile Include="Assets\Mapbox\Unity\Location\LocationProviderFactory.cs" />
@@ -154,7 +156,6 @@
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Platform\TileJSON\TileJSONObjectVectorLayer.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Map\ClassicRasterTile.cs" />
     <Compile Include="Assets\Mapbox\Examples\Scripts\LabelTextSetter.cs" />
-    <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Enums\TilePropertyState.cs" />
     <Compile Include="Assets\Mapbox\Unity\Map\Strategies\MapScalingAtWorldScaleStrategy.cs" />
     <Compile Include="Assets\Mapbox\Unity\Map\Interfaces\IMap.cs" />
@@ -172,7 +173,7 @@
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\LayerVisualizers\VectorLayerVisualizer.cs" />
     <Compile Include="Assets\Mapbox\Unity\Location\Location.cs" />
     <Compile Include="Assets\Mapbox\Examples\Scripts\ObjectInspectorModifier.cs" />
-    <Compile Include="Assets\Scripts\StatusHost.cs" />
+    <Compile Include="Assets\Scripts\UI\StatusHost.cs" />
     <Compile Include="Assets\Mapbox\Unity\SourceLayers\ISubLayerCustomStyleAtlasWithColorPallete.cs" />
     <Compile Include="Assets\Mapbox\Unity\DataContainers\ColliderOptions.cs" />
     <Compile Include="Assets\Mapbox\Unity\LayerProperties\LayerProperties.cs" />
@@ -304,6 +305,7 @@
     <Compile Include="Assets\Mapbox\Unity\SourceLayers\ISubLayerCustomStyleOptions.cs" />
     <Compile Include="Assets\Mapbox\Examples\2_AstronautGame\AstronautGame\Astronaut\CharacterMovement.cs" />
     <Compile Include="Assets\Mapbox\Examples\Scripts\HighlightFeature.cs" />
+    <Compile Include="Assets\Scripts\UI\Menu_CancelSelection.cs" />
     <Compile Include="Assets\Mapbox\Unity\Map\AbstractMapVisualizer.cs" />
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Factories\TerrainStrategies\LowPolyTerrainStrategy.cs" />
     <Compile Include="Assets\Mapbox\Examples\Scripts\QuadTreeCameraMovement.cs" />
@@ -364,7 +366,7 @@
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Modifiers\ModifierBase.cs" />
     <Compile Include="Assets\Mapbox\Unity\DataContainers\LineGeometryOptions.cs" />
     <Compile Include="Assets\Mapbox\Examples\8_VoxelMap\Scripts\VoxelFetcher.cs" />
-    <Compile Include="Assets\Scripts\Menu_SelectMap.cs" />
+    <Compile Include="Assets\Scripts\UI\Menu_SelectMap.cs" />
     <Compile Include="Assets\Mapbox\Unity\SourceLayers\ISubLayerBehaviorModifiers.cs" />
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Data\FeatureCollectionBase.cs" />
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Modifiers\GameObjectModifiers\MaterialModifier.cs" />
@@ -419,7 +421,7 @@
     <Compile Include="Assets\Mapbox\Unity\Utilities\GeocodeAttribute.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Platform\Cache\SQLiteCache\SQLiteCache.cs" />
     <Compile Include="Assets\Mapbox\Unity\DataContainers\ImageryRasterOptions.cs" />
-    <Compile Include="Assets\Scripts\Status_Collector.cs" />
+    <Compile Include="Assets\Scripts\UI\Status_Collector.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\MapMatching\MatchObject.cs" />
     <Compile Include="Assets\Mapbox\Unity\Location\AngleSmoothing\AngleSmoothingLowPass.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Platform\SQLite\SQLite.cs" />
@@ -435,15 +437,14 @@
     <Compile Include="Assets\Mapbox\Unity\Location\DeviceLocationProviderAndroidNative.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Platform\IFileSource.cs" />
     <Compile Include="Assets\Mapbox\Unity\Location\Logging\LocationLogAbstractBase.cs" />
-    <Compile Include="Assets\Scripts\Menu_SelectMapContentController.cs" />
+    <Compile Include="Assets\Scripts\UI\Menu_SelectMapContentController.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Geocoding\ReverseGeocodeResource.cs" />
-    <Compile Include="Assets\Scripts\Menu_Selection.cs" />
+    <Compile Include="Assets\Scripts\UI\Menu_Selection.cs" />
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Factories\ImageDataFetcher.cs" />
     <Compile Include="Assets\Mapbox\Unity\Location\LocationSmoothing\KalmanFilter.cs" />
     <Compile Include="Assets\Mapbox\Unity\SourceLayers\ISubLayerCustomStyle.cs" />
-    <Compile Include="Assets\Scripts\Menu_UpdateMapOnSelection.cs" />
-    <Compile Include="Assets\Scripts\Menu_UpdateActiveMapLabel.cs" />
-    <Compile Include="Assets\Scripts\Menu_CancelSelection.cs" />
+    <Compile Include="Assets\Scripts\NewBehaviourScript_test1.cs" />
+    <Compile Include="Assets\Scripts\Map_ClickHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
