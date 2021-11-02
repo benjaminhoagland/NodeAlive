@@ -28,7 +28,7 @@ public class Menu_Selection : MonoBehaviour
          //   .GetChild(0)
         //    .GetChild(0).gameObject.GetComponent<TMPro.TMP_Text>().text);
 		Instance.Message("Updating map...");
-        var map = (from m in Data.Select.Map() 
+        var map = (from m in Data.Data.Select.Map() 
                    where m.GUID == Instance.SelectedMapGUID 
                    select m).ToList().FirstOrDefault();
         var c = new Mapbox.Utils.Vector2d((double) map.Latitude, (double) map.Longitude);

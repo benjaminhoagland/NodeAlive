@@ -14,7 +14,7 @@ public class Menu_ClearDB : MonoBehaviour
     void Clicked()
     {
         Instance.Message("Clearing data...");
-        Data.Clear();
+        Data.Data.Clear();
         Instance.Message("Data cleared.");
     }
 }

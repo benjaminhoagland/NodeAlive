@@ -54,16 +54,16 @@ public class Menu_CreateMap : SerializedMonoBehaviour
         Instance.Message("Populating GUID...");
         var guid = System.Guid.NewGuid().ToString();
         Instance.Message("Creating new map...");
-        Data.Insert("map", new List<Data.RecordStructure.Attribute>()
+        Data.Data.Insert("map", new List<Data.Data.RecordStructure.Attribute>()
         {
-            new Data.RecordStructure.Attribute("name", inputsToValidate[0].input.GetComponent<TMPro.TMP_InputField>().text),
-            new Data.RecordStructure.Attribute("location", inputsToValidate[1].input.GetComponent<TMPro.TMP_InputField>().text),
-            new Data.RecordStructure.Attribute("latitude", inputsToValidate[2].input.GetComponent<TMPro.TMP_InputField>().text),
-            new Data.RecordStructure.Attribute("longitude", inputsToValidate[3].input.GetComponent<TMPro.TMP_InputField>().text),
-            new Data.RecordStructure.Attribute("zoom", inputsToValidate[4].input.GetComponent<TMPro.TMP_InputField>().text),
-            new Data.RecordStructure.Attribute("guid", guid),
-            new Data.RecordStructure.Attribute("date_created", DateTime.Now.ToString(Data.timeformat)),
-            new Data.RecordStructure.Attribute("date_activated", DateTime.Now.ToString(Data.timeformat))
+            new Data.Data.RecordStructure.Attribute("name", inputsToValidate[0].input.GetComponent<TMPro.TMP_InputField>().text),
+            new Data.Data.RecordStructure.Attribute("location", inputsToValidate[1].input.GetComponent<TMPro.TMP_InputField>().text),
+            new Data.Data.RecordStructure.Attribute("latitude", inputsToValidate[2].input.GetComponent<TMPro.TMP_InputField>().text),
+            new Data.Data.RecordStructure.Attribute("longitude", inputsToValidate[3].input.GetComponent<TMPro.TMP_InputField>().text),
+            new Data.Data.RecordStructure.Attribute("zoom", inputsToValidate[4].input.GetComponent<TMPro.TMP_InputField>().text),
+            new Data.Data.RecordStructure.Attribute("guid", guid),
+            new Data.Data.RecordStructure.Attribute("date_created", DateTime.Now.ToString(Data.Data.timeformat)),
+            new Data.Data.RecordStructure.Attribute("date_activated", DateTime.Now.ToString(Data.Data.timeformat))
         }, true);
         Instance.Message("Map created.");
         Instance.Message("Setting active map...");

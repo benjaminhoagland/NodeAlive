@@ -28,7 +28,7 @@ public class Menu_SelectMapContentController : MonoBehaviour
 	{
 		Instance.DisableNodeUI();
 		rt.sizeDelta = new Vector2(0, heightIncrement);
-		var maps = Data.Select.Map();
+		var maps = Data.Data.Select.Map();
 		int counter = 0;
 		foreach(var map in maps)
 		{
@@ -36,7 +36,7 @@ public class Menu_SelectMapContentController : MonoBehaviour
 			var clickableListItem = mapItem.transform.GetChild(0);
 			var itemsToSet = new List<string>()
 			{
-				map.Name, map.Target, map.DateCreated.ToString(Data.timeformat), map.GUID
+				map.Name, map.Target, map.DateCreated.ToString(Data.Data.timeformat), map.GUID
 			};
 			foreach(var item in Enumerable.Range(0,4))
 			{

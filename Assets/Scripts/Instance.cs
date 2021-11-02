@@ -9,6 +9,7 @@ using Mapbox.Unity.Map;
 using System;
 using TMPro;
 using Mapbox;
+using Data;
 
 public static class Instance
 {
@@ -58,22 +59,22 @@ public static class Instance
     public static void SetActiveMap(string guid)
 	{
         if(guid.Length == 0 || guid == null) Log.WriteError("Failure at SetActiveMap from null input.");
-        var id = Data.SelectWhatFromWhere("id", "map", "guid = \'" + guid + "\'").FirstOrDefault();
+        var id = Data.Data.SelectWhatFromWhere("id", "map", "guid = \'" + guid + "\'").FirstOrDefault();
         
         var log = false;
         ActiveMap.ID = id;
         if(log) Debug.Log(ActiveMap.ID);
-        ActiveMap.Name = Data.SelectWhatFromWhere("name", "map", "id = \'" + id + "\'").FirstOrDefault();
+        ActiveMap.Name = Data.Data.SelectWhatFromWhere("name", "map", "id = \'" + id + "\'").FirstOrDefault();
         if(log) Debug.Log(ActiveMap.Name);
-        ActiveMap.Location = Data.SelectWhatFromWhere("location", "map", "id = \'" + id + "\'").FirstOrDefault();
+        ActiveMap.Location = Data.Data.SelectWhatFromWhere("location", "map", "id = \'" + id + "\'").FirstOrDefault();
         if(log) Debug.Log(ActiveMap.Location);
-        ActiveMap.Latitude = Data.SelectWhatFromWhere("latitude", "map", "id = \'" + id + "\'").FirstOrDefault();
+        ActiveMap.Latitude = Data.Data.SelectWhatFromWhere("latitude", "map", "id = \'" + id + "\'").FirstOrDefault();
         if(log) Debug.Log(ActiveMap.Latitude);
-        ActiveMap.Longitude = Data.SelectWhatFromWhere("longitude", "map", "id = \'" + id + "\'").FirstOrDefault();
+        ActiveMap.Longitude = Data.Data.SelectWhatFromWhere("longitude", "map", "id = \'" + id + "\'").FirstOrDefault();
         if(log) Debug.Log(ActiveMap.Longitude);
-        ActiveMap.Zoom = Data.SelectWhatFromWhere("zoom", "map", "id = \'" + id + "\'").FirstOrDefault();
+        ActiveMap.Zoom = Data.Data.SelectWhatFromWhere("zoom", "map", "id = \'" + id + "\'").FirstOrDefault();
         if(log) Debug.Log(ActiveMap.Zoom);
-        ActiveMap.GUID = Data.SelectWhatFromWhere("guid", "map", "id = \'" + id + "\'").FirstOrDefault();
+        ActiveMap.GUID = Data.Data.SelectWhatFromWhere("guid", "map", "id = \'" + id + "\'").FirstOrDefault();
         if(log) Debug.Log(ActiveMap.GUID);
 	}
  

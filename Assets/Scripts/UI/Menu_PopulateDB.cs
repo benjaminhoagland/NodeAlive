@@ -14,7 +14,7 @@ public class Menu_PopulateDB : MonoBehaviour
     void Clicked()
     {
         Instance.Message("Populating data...");
-        Data.Populate();
+        Data.Data.Populate();
         Instance.Message("Data populated.");
     }
 }

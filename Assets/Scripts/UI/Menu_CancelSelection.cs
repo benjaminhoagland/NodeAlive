@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Mapbox.Unity.Map;
 using System.Linq;
+using Data;
 public class Menu_CancelSelection : MonoBehaviour
 {
     Button button;
@@ -19,10 +20,13 @@ public class Menu_CancelSelection : MonoBehaviour
     void Clicked()
     {
         Instance.Message("Updating map...");
-        var map = (from m in Data.Select.Map() 
-                   where m.GUID == Instance.ActiveMap.GUID 
-                   select m).ToList().FirstOrDefault();
-        var c = new Mapbox.Utils.Vector2d((double) map.Latitude, (double) map.Longitude);
-		_map.UpdateMap(c, map.Zoom);
+        if(Instance.ActiveMap.GUID != null)
+		{
+            var map = (from m in Data.Data.Select.Map() 
+                       where m.GUID == Instance.ActiveMap.GUID 
+                       select m).ToList().FirstOrDefault();
+            var c = new Mapbox.Utils.Vector2d((double) map.Latitude, (double) map.Longitude);
+		    _map.UpdateMap(c, map.Zoom);
+		}
     }
 }
