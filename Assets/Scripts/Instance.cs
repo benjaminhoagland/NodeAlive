@@ -95,5 +95,14 @@ public static class Instance
 	{
 
 	}
+    public static string DebugProperties(object obj)
+	{
+        string log = "";
+        foreach(var property in obj.GetType().GetProperties())
+		{ 
+			log += property.Name + " : " + property.GetValue(obj, null) + System.Environment.NewLine;
+		}
+        return log;
+	}
 
 }

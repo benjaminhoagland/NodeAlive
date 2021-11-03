@@ -66,6 +66,8 @@ public class Menu_UpdateMapLocation : MonoBehaviour
 			float.TryParse(zoomFloat.ToString(), out toZoom);
 			_zoomSlider.value = toZoom;
 			_map.SetZoom(toZoom);
+			zoom.text = zoomFloat.ToString();
+			Instance.Message("Updating map...");
 			Reload();
 		}
 	}

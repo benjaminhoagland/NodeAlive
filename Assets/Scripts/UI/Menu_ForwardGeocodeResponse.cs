@@ -7,6 +7,7 @@ using System;
 using Mapbox.Geocoding;
 using Mapbox.Utils;
 using TMPro;
+using Mapbox.Unity.Map;
 
 [RequireComponent(typeof(TMP_InputField))]
 public class Menu_ForwardGeocodeResponse : MonoBehaviour
@@ -17,7 +18,10 @@ public class Menu_ForwardGeocodeResponse : MonoBehaviour
 
 	[SerializeField] TMP_InputField latitude;
 	[SerializeField] TMP_InputField longitude;
+	[SerializeField] TMP_InputField zoom;
 	[SerializeField] TMP_InputField mapName;
+
+	AbstractMap map;
 	Vector2d _coordinate;
 	public Vector2d Coordinate
 	{
@@ -45,6 +49,7 @@ public class Menu_ForwardGeocodeResponse : MonoBehaviour
 		_TMP_inputField = GetComponent<TMPro.TMP_InputField>();
 		_TMP_inputField.onEndEdit.AddListener(HandleUserInput);
 		_resource = new ForwardGeocodeResource("");
+		map = FindObjectOfType<AbstractMap>();
 	}
 	void HandleUserInput(string searchString)
 	{
@@ -70,7 +75,7 @@ public class Menu_ForwardGeocodeResponse : MonoBehaviour
 			_coordinate = res.Features[0].Center;
 			latitude.text = res.Features[0].Center.x.ToString();
 			longitude.text = res.Features[0].Center.y.ToString();
-			
+			zoom.text = map.Zoom.ToString();
 		}
 		Response = res;
 		OnGeocoderResponse(res);
