@@ -46,6 +46,9 @@ public static class Instance
         // "Initalizing...", 
         "Instance initialized." 
     };
+
+    public static List<Data.Data.Schema.Table.Location> UnassignedLocations = new List<Data.Data.Schema.Table.Location>();
+
     public static class ActiveMap
 	{
         public static string ID { get; set; }
