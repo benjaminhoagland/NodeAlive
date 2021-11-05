@@ -57,7 +57,8 @@ public partial class Data
                     new TableStructure.Attribute("name", "TEXT"),
                     new TableStructure.Attribute("guid", "TEXT"),
                     new TableStructure.Attribute("date_created", "TEXT"),
-                    new TableStructure.Attribute("type", "INTEGER")
+                    new TableStructure.Attribute("type", "INTEGER"),
+                    new TableStructure.Attribute("map_guid", "TEXT")
 			    }),
                 new TableStructure("cluster", new List<TableStructure.Attribute>()
 			    {
@@ -66,7 +67,8 @@ public partial class Data
                     new TableStructure.Attribute("name", "TEXT"),
                     new TableStructure.Attribute("guid", "TEXT"),
                     new TableStructure.Attribute("date_created", "TEXT"),
-                    new TableStructure.Attribute("type", "INTEGER")
+                    new TableStructure.Attribute("type", "INTEGER"),
+                    new TableStructure.Attribute("map_guid", "TEXT")
 			    }),
                 new TableStructure("dispatch", new List<TableStructure.Attribute>()
 			    {
@@ -75,7 +77,8 @@ public partial class Data
                     new TableStructure.Attribute("name", "TEXT"),
                     new TableStructure.Attribute("guid", "TEXT"),
                     new TableStructure.Attribute("date_created", "TEXT"),
-                    new TableStructure.Attribute("type", "INTEGER")
+                    new TableStructure.Attribute("type", "INTEGER"),
+                    new TableStructure.Attribute("map_guid", "TEXT")
 			    })
             };
             public class Table
@@ -122,6 +125,7 @@ public partial class Data
                     public string EntityGUID { get;set; }
                     public string Name { get;set; }
                     public new int Type { get;set; } = 0;
+                    public string MapGUID { get;set; }
                     public override string ToString()
 			        {
                         var output = "";
@@ -139,6 +143,7 @@ public partial class Data
                     public string EntityGUID { get;set; }
                     public string Name { get;set; }
                     public new int Type { get;set; } = 1;
+                    public string MapGUID { get;set; }
                     public override string ToString()
 			        {
                         var output = "";
@@ -156,6 +161,7 @@ public partial class Data
                     public string EntityGUID { get;set; }
                     public string Name { get;set; }
                     public new int Type { get;set; } = 2;
+                    public string MapGUID { get;set; }
                     public override string ToString()
 			        {
                         var output = "";

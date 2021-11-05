@@ -31,9 +31,18 @@ public class DataCollector : MonoBehaviour
         ready = false;
         // do sql stuff
         Instance.UnassignedLocations = (from l in Data.Data.Select.Location()
-                                        where l.ChildGUID == "unassigned"
+                                        where l.ChildGUID == "unassigned" && l.MapGUID == Instance.ActiveMap.GUID
                                         select l).ToList();
-        Debug.Log((from u in Instance.UnassignedLocations select u.GUID).ToList().Count);
+        Instance.Nodes = (from n in Data.Data.Select.Node()
+                                        where n.MapGUID == Instance.ActiveMap.GUID
+                                        select n).ToList();
+        Instance.Clusters = (from c in Data.Data.Select.Cluster()
+                                        where c.MapGUID == Instance.ActiveMap.GUID
+                                        select c).ToList();
+        Instance.Dispatches = (from d in Data.Data.Select.Dispatch()
+                                        where d.MapGUID == Instance.ActiveMap.GUID
+                                        select d).ToList();
+        // Debug.Log((from u in Instance.UnassignedLocations select u.GUID).ToList().Count);
         yield return wait;
         ready = true;
 	}

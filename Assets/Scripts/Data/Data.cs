@@ -121,6 +121,7 @@ namespace Data
                         node.GUID  = reader[index++].ToString();
                         node.DateCreated = DateTime.ParseExact(reader[index++].ToString(), timeformat, CultureInfo.InvariantCulture);
                         int t; Int32.TryParse(reader[index++].ToString(), out t); node.Type = t;
+                        node.MapGUID  = reader[index++].ToString();
                         returnList.Add(node);
 		            }
 		        }
@@ -157,6 +158,7 @@ namespace Data
                         cluster.GUID  = reader[index++].ToString();
                         cluster.DateCreated = DateTime.ParseExact(reader[index++].ToString(), timeformat, CultureInfo.InvariantCulture);
                         int t; Int32.TryParse(reader[index++].ToString(), out t); cluster.Type = t;
+                        cluster.MapGUID  = reader[index++].ToString();
                         returnList.Add(cluster);
 		            }
 		        }
@@ -193,6 +195,7 @@ namespace Data
                         dispatch.GUID  = reader[index++].ToString();
                         dispatch.DateCreated = DateTime.ParseExact(reader[index++].ToString(), timeformat, CultureInfo.InvariantCulture);
                         int t; Int32.TryParse(reader[index++].ToString(), out t); dispatch.Type = t;
+                        dispatch.MapGUID  = reader[index++].ToString();
                         returnList.Add(dispatch);
 		            }
 		        }

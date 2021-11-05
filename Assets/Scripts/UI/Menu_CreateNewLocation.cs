@@ -35,8 +35,19 @@ public class Menu_CreateNewLocation : SerializedMonoBehaviour
         if (!validated) return;
         Data.Data.Schema.Table.Location location = new Data.Data.Schema.Table.Location();
         location.Address = InputIndicatorTuple[0].input.text;
-        location.Latitude = float.Parse(InputIndicatorTuple[1].input.text);
-        location.Longitude = float.Parse(InputIndicatorTuple[1].input.text);
+        float lat = 12.3456f;
+        float lon = 12.3456f;
+        try
+		{
+            float.TryParse(InputIndicatorTuple[1].input.text, out lat);
+            float.TryParse(InputIndicatorTuple[2].input.text, out lon);
+		}
+        catch
+		{
+            Log.WriteError("Error parsing float input at Create New Location menu");
+		}
+        location.Latitude = lat;
+        location.Longitude = lon;
 
         Data.Data.Insert("location", new List<Data.Data.RecordStructure.Attribute>()
         {

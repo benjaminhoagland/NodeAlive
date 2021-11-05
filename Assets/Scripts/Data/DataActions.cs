@@ -106,7 +106,8 @@ namespace Data
                 new RecordStructure.Attribute("name", "this is a node"),
                 new RecordStructure.Attribute("guid", "273d8c97-9c61-4452-9b9d-9b03562e0029"),
                 new RecordStructure.Attribute("date_created", DateTime.Now.ToString(timeformat)),
-                new RecordStructure.Attribute("type", 0.ToString())
+                new RecordStructure.Attribute("type", 0.ToString()),
+                new RecordStructure.Attribute("map_guid", "f8dad699-c299-42df-9f51-af7c410be502")
             });
 
             Insert("location", new List<RecordStructure.Attribute>()
@@ -133,7 +134,8 @@ namespace Data
                 new RecordStructure.Attribute("name", "this is a cluster"),
                 new RecordStructure.Attribute("guid", "064b1f51-a3d3-458a-9ac2-fa12c3eacc6a"),
                 new RecordStructure.Attribute("date_created", DateTime.Now.ToString(timeformat)),
-                new RecordStructure.Attribute("type", 1.ToString())
+                new RecordStructure.Attribute("type", 1.ToString()),
+                new RecordStructure.Attribute("map_guid", "f8dad699-c299-42df-9f51-af7c410be502")
             });
 
             Insert("location", new List<RecordStructure.Attribute>()
@@ -160,7 +162,8 @@ namespace Data
                 new RecordStructure.Attribute("name", "this is a dispatch"),
                 new RecordStructure.Attribute("guid", "b742cfcc-6e43-44c6-9697-4af3030f4117"),
                 new RecordStructure.Attribute("date_created", DateTime.Now.ToString(timeformat)),
-                new RecordStructure.Attribute("type", 2.ToString())
+                new RecordStructure.Attribute("type", 2.ToString()),
+                new RecordStructure.Attribute("map_guid", "f8dad699-c299-42df-9f51-af7c410be502")
             });
 
         }
