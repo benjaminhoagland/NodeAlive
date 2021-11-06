@@ -10,7 +10,7 @@ using Mapbox.Utils;
 
 public class Map_LocationHost : MonoBehaviour
 {
-	private class Location
+	public class Location
 	{
         public static List<Location> List = new List<Location>();
         public GameObject gameObject { get; set; }
@@ -53,6 +53,7 @@ public class Map_LocationHost : MonoBehaviour
         foreach(var location in Location.List)
 		{
             var pos = map.GeoToWorldPosition(location.coordinate);
+
 
 
             location.gameObject.transform.position = pos;

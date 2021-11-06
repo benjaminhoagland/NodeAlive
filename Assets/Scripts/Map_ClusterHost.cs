@@ -65,11 +65,10 @@ public class Map_ClusterHost : MonoBehaviour
         ready = false;
         // data to match
         
-        var clusters = (from c in Instance.Clusters 
-                        select c).ToList();
+
         // add stuff
         var guids = (from loc in ClusterLocation.List select loc.guid).ToList();
-        foreach(var cluster in clusters)
+        foreach(var cluster in Instance.Clusters)
         { 
             if (guids.Contains(cluster.GUID))
 			{
@@ -78,16 +77,18 @@ public class Map_ClusterHost : MonoBehaviour
             var l = Instantiate(ClusterEntity);
             l.GetComponent<Identifier>().GUID = cluster.GUID;
 			l.transform.parent = this.transform;
-            var v = (from i in Data.Data.Select.Location()
-                     where i.ChildGUID == cluster.GUID
-                     select new Vector2d(i.Latitude, i.Longitude)).FirstOrDefault();
+            var v = (from location in Data.Data.Select.Location()
+                     where location.ChildGUID == (from entity in Data.Data.Select.Entity()
+                                                  where entity.ChildGUID == cluster.GUID
+                                                  select entity.GUID).FirstOrDefault()
+                     select new Vector2d(location.Latitude, location.Longitude)).FirstOrDefault();
 			ClusterLocation.List.Add(new ClusterLocation(l, cluster.GUID, v));
 		}
 
         // remove stuff
         foreach(var l in ClusterLocation.List)
 		{
-			if((from c in clusters select c.GUID).Contains(l.gameObject.GetComponent<Identifier>().GUID)) 
+			if((from c in Instance.Clusters select c.GUID).Contains(l.gameObject.GetComponent<Identifier>().GUID)) 
                 continue;
             ClusterLocation.Remove(l);
 		}

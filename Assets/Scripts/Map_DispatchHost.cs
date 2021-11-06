@@ -77,9 +77,11 @@ public class Map_DispatchHost : MonoBehaviour
             var l = Instantiate(DispatchEntity);
             l.GetComponent<Identifier>().GUID = disp.GUID;
 			l.transform.parent = this.transform;
-            var v = (from i in Data.Data.Select.Location()
-                     where i.ChildGUID == disp.GUID
-                     select new Vector2d(i.Latitude, i.Longitude)).FirstOrDefault();
+            var v = (from location in Data.Data.Select.Location()
+                     where location.ChildGUID == (from entity in Data.Data.Select.Entity()
+                                                  where entity.ChildGUID == disp.GUID
+                                                  select entity.GUID).FirstOrDefault()
+                     select new Vector2d(location.Latitude, location.Longitude)).FirstOrDefault();
 			DispatchLocation.List.Add(new DispatchLocation(l, disp.GUID, v));
 		}
 

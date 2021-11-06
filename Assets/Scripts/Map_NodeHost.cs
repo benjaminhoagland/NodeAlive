@@ -77,9 +77,11 @@ public class Map_NodeHost : MonoBehaviour
             var l = Instantiate(NodeEntity);
             l.GetComponent<Identifier>().GUID = node.GUID;
 			l.transform.parent = this.transform;
-            var v = (from i in Data.Data.Select.Location()
-                     where i.ChildGUID == node.GUID
-                     select new Vector2d(i.Latitude, i.Longitude)).FirstOrDefault();
+            var v = (from location in Data.Data.Select.Location()
+                     where location.ChildGUID == (from entity in Data.Data.Select.Entity()
+                                                  where entity.ChildGUID == node.GUID
+                                                  select entity.GUID).FirstOrDefault()
+                     select new Vector2d(location.Latitude, location.Longitude)).FirstOrDefault();
 			NodeLocation.List.Add(new NodeLocation(l, node.GUID, v));
 		}
 
