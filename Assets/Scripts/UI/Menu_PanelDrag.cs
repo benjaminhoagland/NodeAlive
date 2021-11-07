@@ -20,7 +20,6 @@ public class Menu_PanelDrag : EventTrigger
         {
             var n = new Vector2(Input.mousePosition.x,Input.mousePosition.y) - mouseOrigin;
             rectTransform.anchoredPosition = origin + n;
-            Debug.Log("dragging");
         }
     }
     public override void OnPointerDown(PointerEventData eventData) 
