@@ -258,6 +258,31 @@ namespace Data
                 return maps;
 	        }
 	    }
+
+        public static class Delete
+		{
+            public static void Location(string guid)
+	        {      
+                var query = "DELETE FROM location WHERE guid == \"" + guid + "\";";
+                var log = true;
+			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
+                string connectionString = "URI=file:" + File.fullName;
+                try
+		        {
+                    IDbConnection connection = new SqliteConnection(connectionString);
+                    IDbCommand command;
+                    connection.Open();
+                    command = connection.CreateCommand();
+                    command.CommandText = query;
+                    command.ExecuteNonQuery();
+		        }
+                catch
+		        {
+                    Log.WriteError("Database connection failure at " + MethodBase.GetCurrentMethod().Name);
+                    Log.WriteWarning("Used query: \"" + System.Environment.NewLine + query + "\"");
+		        }
+	        }
+		}
         public static string connectionString = "URI=file:" + File.fullName;
         public static string timeformat = "yyyy-MM-dd HH:mm:ss"; 
         public static class File

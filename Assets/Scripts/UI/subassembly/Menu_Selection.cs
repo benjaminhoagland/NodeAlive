@@ -19,7 +19,7 @@ public class Menu_Selection : MonoBehaviour
     void Clicked()
     {
         // do stuff
-        Instance.SelectGUID(gameObject.transform
+        Instance.SelectMapGUID(gameObject.transform
             .GetChild(3)
             .GetChild(0)
             .GetChild(0).gameObject.GetComponent<TMPro.TMP_Text>().text);

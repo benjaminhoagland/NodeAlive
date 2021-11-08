@@ -83,11 +83,16 @@ public static class Instance
         ActiveMap.GUID = Data.Data.SelectWhatFromWhere("guid", "map", "id = \'" + id + "\'").FirstOrDefault();
         if(log) Debug.Log(ActiveMap.GUID);
 	}
+    public static string SelectedLocationGUID;
  
     public static string SelectedMapGUID;
-    public static void SelectGUID(string guid)
+    public static void SelectMapGUID(string guid)
 	{
         SelectedMapGUID = guid;
+	}
+    public static void SelectLocationGUID(string guid)
+	{
+        SelectedLocationGUID = guid;
 	}
     public static void Message(string status)
 	{

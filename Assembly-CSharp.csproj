@@ -61,6 +61,7 @@
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Data\KdTree\NearestNeighbour.cs" />
     <Compile Include="Assets\Mapbox\Unity\DataContainers\TerrainColliderOptions.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Platform\Response.cs" />
+    <Compile Include="Assets\Scripts\UI\subassembly\Display_ClustersHost.cs" />
     <Compile Include="Assets\Mapbox\Unity\SourceLayers\SubLayerCustomStyleAtlasWithColorPallete.cs" />
     <Compile Include="Assets\Mapbox\Unity\DataContainers\MapboxDataProperty.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Utils\Vector2d\Vector2d.cs" />
@@ -223,6 +224,7 @@
     <Compile Include="Assets\Mapbox\Unity\LayerProperties\VectorFilterOptions.cs" />
     <Compile Include="Assets\Mapbox\Unity\Location\Logging\LocationLogReader.cs" />
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Modifiers\MeshModifiers\LineMeshModifier.cs" />
+    <Compile Include="Assets\Scripts\UI\subassembly\Display_DispatchesHost.cs" />
     <Compile Include="Assets\Mapbox\Unity\Map\TileProviders\RangeAroundTransformTileProvider.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Map\RawPngRasterTile.cs" />
     <Compile Include="Assets\Mapbox\Unity\SourceLayers\ISubLayerModeling.cs" />
@@ -339,6 +341,7 @@
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Modifiers\GameObjectModifiers\AddToCollectionModifier.cs" />
     <Compile Include="Assets\Mapbox\Unity\SourceLayers\SubLayerColorStyle.cs" />
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Modifiers\MeshModifiers\ChamferHeightModifier.cs" />
+    <Compile Include="Assets\Scripts\UI\subassembly\Display_NodesHost.cs" />
     <Compile Include="Assets\Mapbox\Examples\Scripts\UpdateMapWithLocationProvider.cs" />
     <Compile Include="Assets\Mapbox\Unity\Location\TransformLocationProvider.cs" />
     <Compile Include="Assets\Mapbox\Unity\LayerProperties\PresetSubLayerPropertiesFetcher.cs" />
@@ -364,6 +367,7 @@
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\Response\Route.cs" />
     <Compile Include="Assets\Mapbox\Unity\SourceLayers\SubLayerCustomStyle.cs" />
     <Compile Include="Assets\Mapbox\Unity\Utilities\GameObjectExtensions.cs" />
+    <Compile Include="Assets\Scripts\UI\Menu_OnPointerExitTarget.cs" />
     <Compile Include="Assets\Mapbox\Unity\LayerProperties\CoreVectorLayerProperties.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Utils\Compression.cs" />
     <Compile Include="Assets\Mapbox\Unity\SourceLayers\SubLayerBehaviorModifiers.cs" />
@@ -457,10 +461,11 @@
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Factories\ImageDataFetcher.cs" />
     <Compile Include="Assets\Mapbox\Unity\Location\LocationSmoothing\KalmanFilter.cs" />
     <Compile Include="Assets\Mapbox\Unity\SourceLayers\ISubLayerCustomStyle.cs" />
-    <Compile Include="Assets\Scripts\UI\subassembly\Display_ClustersHost.cs" />
-    <Compile Include="Assets\Scripts\UI\subassembly\Display_NodesHost.cs" />
-    <Compile Include="Assets\Scripts\UI\subassembly\Display_DispatchesHost.cs" />
-    <Compile Include="Assets\Scripts\UI\Menu_OnPointerExitTarget.cs" />
+    <Compile Include="Assets\Scripts\Menu_RemoveLocation.cs" />
+    <Compile Include="Assets\Scripts\Menu_AddNode.cs" />
+    <Compile Include="Assets\Scripts\Menu_CreateNode.cs" />
+    <Compile Include="Assets\Scripts\Menu_SelectLocationGUID.cs" />
+    <Compile Include="Assets\Scripts\Menu_DisplaySelectedLocationGUID.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
