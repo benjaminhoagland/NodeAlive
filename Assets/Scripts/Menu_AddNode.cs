@@ -5,25 +5,25 @@ using UnityEngine.UI;
 
 public class Menu_AddNode : MonoBehaviour
 {
-        Button button;
+    Button button;
     GameObject target;
     void OnEnable()
     {
-       button = GetComponent<Button>();
-       button.onClick.AddListener(() => Clicked());
-        target = GameObject.Find("NewNodePanel");
+        button = GetComponent<Button>();
+        button.onClick.AddListener(() => Clicked());
+        target = GameObject.Find("NewNodePanel Host").transform.GetChild(0).gameObject;
         Debug.Log(target.name);
     }
 
     void Clicked()
     {
-        if(target.gameObject.activeInHierarchy)
+        if(target.activeInHierarchy)
 		{
-            target.gameObject.SetActive(false);
+            target.SetActive(false);
 		}
         else
 		{
-            target.gameObject.SetActive(true);
+            target.SetActive(true);
 		}
     }
 }

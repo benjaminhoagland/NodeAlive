@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class Menu_SelectLocationGUID : MonoBehaviour
 {    
@@ -16,5 +17,6 @@ public class Menu_SelectLocationGUID : MonoBehaviour
     {
         var guid = GetComponent<Identifier>().GUID;
         Instance.SelectLocationGUID(guid);
+        Instance.SetActiveLocation(guid);
     }
 }

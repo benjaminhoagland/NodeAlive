@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
-using System.Linq;
 using System;
+using System.Linq;
 
 public class Menu_CreateNewLocation : SerializedMonoBehaviour
 {

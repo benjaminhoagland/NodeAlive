@@ -122,6 +122,9 @@ namespace Data
                         node.DateCreated = DateTime.ParseExact(reader[index++].ToString(), timeformat, CultureInfo.InvariantCulture);
                         int t; Int32.TryParse(reader[index++].ToString(), out t); node.Type = t;
                         node.MapGUID  = reader[index++].ToString();
+                        node.ClusterGUID  = reader[index++].ToString();
+                        int timeout; Int32.TryParse(reader[index++].ToString(), out timeout); node.Timeout = timeout;
+                        bool alive; bool.TryParse(reader[index++].ToString(), out alive); node.Alive = alive;
                         returnList.Add(node);
 		            }
 		        }
@@ -259,6 +262,36 @@ namespace Data
 	        }
 	    }
 
+        public static class Update
+		{
+            public static void Location(string guid, List<Data.RecordStructure.Attribute> attributes)
+	        {      
+                
+                foreach(var attribute in attributes)
+				{
+
+                    var query = "UPDATE location SET " + attribute.Name + " = \'" + attribute.Value + "\'" +
+                        "WHERE guid == \"" + guid + "\";";
+                    var log = true;
+			        if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
+                    string connectionString = "URI=file:" + File.fullName;
+                    try
+		            {
+                        IDbConnection connection = new SqliteConnection(connectionString);
+                        IDbCommand command;
+                        connection.Open();
+                        command = connection.CreateCommand();
+                        command.CommandText = query;
+                        command.ExecuteNonQuery();
+		            }
+                    catch
+		            {
+                        Log.WriteError("Database connection failure at " + MethodBase.GetCurrentMethod().Name);
+                        Log.WriteWarning("Used query: \"" + System.Environment.NewLine + query + "\"");
+		            }
+				}
+	        }
+		}
         public static class Delete
 		{
             public static void Location(string guid)

@@ -103,8 +103,9 @@
     <Compile Include="Assets\Scripts\UI\subassembly\Menu_ResetNewMapValues.cs" />
     <Compile Include="Assets\Mapbox\Examples\Scripts\ImmediatePositionWithLocationProvider.cs" />
     <Compile Include="Assets\Mapbox\Unity\DataContainers\MapLocationOptions.cs" />
-    <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Modifiers\GameObjectModifiers\LayerModifier.cs" />
+    <Compile Include="Assets\Scripts\Menu_RemoveLocation.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Map\Map.cs" />
+    <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Modifiers\GameObjectModifiers\LayerModifier.cs" />
     <Compile Include="Assets\Mapbox\Unity\DataContainers\GeometryExtrusionOptions.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Utils\JsonConverters\BboxToGeoCoordinateBoundsConverter.cs" />
     <Compile Include="Assets\Mapbox\Unity\Utilities\Console.cs" />
@@ -187,12 +188,14 @@
     <Compile Include="Assets\Mapbox\Unity\LayerProperties\LayerProperties.cs" />
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Modifiers\MeshModifiers\LoftModifier.cs" />
     <Compile Include="Assets\Mapbox\Unity\DataContainers\MapOptions.cs" />
+    <Compile Include="Assets\Scripts\Menu_AddNode.cs" />
     <Compile Include="Assets\Mapbox\Unity\SourceLayers\ILayer.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Utils\UnixTimestampUtils.cs" />
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Modifiers\GameObjectModifiers\ColliderModifier.cs" />
     <Compile Include="Assets\Mapbox\Unity\DataContainers\UnityLayerOptions.cs" />
     <Compile Include="Assets\Mapbox\Unity\Utilities\DebugTools\SceneData.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\Response\DirectionsResponse.cs" />
+    <Compile Include="Assets\Scripts\Menu_DisplaySelectedLocationGUID.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Map\TileErrorEventArgs.cs" />
     <Compile Include="Assets\Mapbox\Examples\Scripts\TrafficUvAnimator.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Platform\TileJSON\TileJSONReponse.cs" />
@@ -262,6 +265,7 @@
     <Compile Include="Assets\Mapbox\Unity\Map\TileProviders\QuadTreeMapVisualizer.cs" />
     <Compile Include="Assets\Mapbox\Unity\SourceLayers\SubLayerModeling.cs" />
     <Compile Include="Assets\Mapbox\Unity\Location\UnityLocationWrappers\MapboxLocationInfoMock.cs" />
+    <Compile Include="Assets\Menu_NewNodePanelHost.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Geocoding\Response\Geometry.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Map\CanonicalTileId.cs" />
     <Compile Include="Assets\Mapbox\Examples\Scripts\RotateWithLocationProvider.cs" />
@@ -320,6 +324,7 @@
     <Compile Include="Assets\Scripts\UI\subassembly\Menu_CancelSelection.cs" />
     <Compile Include="Assets\Mapbox\Unity\Map\AbstractMapVisualizer.cs" />
     <Compile Include="Assets\Scripts\UI\subassembly\Menu_CreateNewLocation.cs" />
+    <Compile Include="Assets\Scripts\Menu_SelectLocationGUID.cs" />
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Factories\TerrainStrategies\LowPolyTerrainStrategy.cs" />
     <Compile Include="Assets\Mapbox\Examples\Scripts\QuadTreeCameraMovement.cs" />
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Data\KdTree\IntervalHeap.cs" />
@@ -377,6 +382,7 @@
     <Compile Include="Assets\Mapbox\Unity\SourceLayers\ISubLayerCoreOptions.cs" />
     <Compile Include="Assets\Mapbox\Examples\6_ZoomableMap\Scripts\SetCameraHeight.cs" />
     <Compile Include="Assets\Mapbox\Unity\DataContainers\TileStats.cs" />
+    <Compile Include="Assets\Scripts\Menu_CreateNode.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Geocoding\Geocoder.cs" />
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Modifiers\ModifierBase.cs" />
     <Compile Include="Assets\Mapbox\Unity\DataContainers\LineGeometryOptions.cs" />
@@ -461,11 +467,6 @@
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Factories\ImageDataFetcher.cs" />
     <Compile Include="Assets\Mapbox\Unity\Location\LocationSmoothing\KalmanFilter.cs" />
     <Compile Include="Assets\Mapbox\Unity\SourceLayers\ISubLayerCustomStyle.cs" />
-    <Compile Include="Assets\Scripts\Menu_RemoveLocation.cs" />
-    <Compile Include="Assets\Scripts\Menu_AddNode.cs" />
-    <Compile Include="Assets\Scripts\Menu_CreateNode.cs" />
-    <Compile Include="Assets\Scripts\Menu_SelectLocationGUID.cs" />
-    <Compile Include="Assets\Scripts\Menu_DisplaySelectedLocationGUID.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

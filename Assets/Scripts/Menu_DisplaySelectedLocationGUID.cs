@@ -6,11 +6,11 @@ using System.Linq;
 
 public class Menu_DisplaySelectedLocationGUID : MonoBehaviour
 {
-    TMPro.TMP_InputField input;
+    TMPro.TMP_Text input;
 
 	private void Awake()
 	{
-		input = GetComponent<TMPro.TMP_InputField>();
+		input = GetComponent<TMPro.TMP_Text>();
 	}
 	private void OnEnable()
 	{

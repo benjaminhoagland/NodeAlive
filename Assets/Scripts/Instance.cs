@@ -62,6 +62,29 @@ public static class Instance
         public static string Zoom { get; set; }
         public static string GUID { get; set; }
 	}
+    public static class ActiveLocation
+    { 
+        public static string MapGUID { get;set; }
+        public static string Address { get;set; }
+        public static float Latitude { get;set; }
+        public static float Longitude { get;set; }
+        public static string ChildGUID { get;set; }
+    }
+    public static void SetActiveLocation(string guid)
+	{
+        var location = (from l in Data.Data.Select.Location()
+                        where l.GUID == guid
+                        select l).FirstOrDefault();
+        if(location == null)
+        {
+            throw new NullReferenceException("LINQ failure at SetActiveLocation assignment in Instance.cs");
+        }
+        ActiveLocation.MapGUID = location.MapGUID;
+        ActiveLocation.Address = location.Address;
+        ActiveLocation.Latitude = location.Latitude;
+        ActiveLocation.Longitude = location.Longitude;
+        ActiveLocation.ChildGUID = "unassigned";
+	}
     public static void SetActiveMap(string guid)
 	{
         if(guid.Length == 0 || guid == null) Log.WriteError("Failure at SetActiveMap from null input.");

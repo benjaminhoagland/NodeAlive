@@ -58,7 +58,10 @@ public partial class Data
                     new TableStructure.Attribute("guid", "TEXT"),
                     new TableStructure.Attribute("date_created", "TEXT"),
                     new TableStructure.Attribute("type", "INTEGER"),
-                    new TableStructure.Attribute("map_guid", "TEXT")
+                    new TableStructure.Attribute("map_guid", "TEXT"),
+                    new TableStructure.Attribute("cluster_guid", "TEXT"),
+                    new TableStructure.Attribute("timeout", "INTEGER"),
+                    new TableStructure.Attribute("alive", "INTEGER")
 			    }),
                 new TableStructure("cluster", new List<TableStructure.Attribute>()
 			    {
@@ -126,6 +129,9 @@ public partial class Data
                     public string Name { get;set; }
                     public new int Type { get;set; } = 0;
                     public string MapGUID { get;set; }
+                    public string ClusterGUID { get;set; }
+                    public int Timeout { get; set; } // in seconds
+                    public bool Alive { get; set; }
                     public override string ToString()
 			        {
                         var output = "";

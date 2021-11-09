@@ -107,7 +107,10 @@ namespace Data
                 new RecordStructure.Attribute("guid", "273d8c97-9c61-4452-9b9d-9b03562e0029"),
                 new RecordStructure.Attribute("date_created", DateTime.Now.ToString(timeformat)),
                 new RecordStructure.Attribute("type", 0.ToString()),
-                new RecordStructure.Attribute("map_guid", "f8dad699-c299-42df-9f51-af7c410be502")
+                new RecordStructure.Attribute("map_guid", "f8dad699-c299-42df-9f51-af7c410be502"),
+                new RecordStructure.Attribute("cluster_guid", "unassigned"),
+                new RecordStructure.Attribute("timeout", "90"),
+                new RecordStructure.Attribute("alive", "1"),
             });
 
             Insert("location", new List<RecordStructure.Attribute>()
@@ -229,12 +232,12 @@ namespace Data
             string connectionString = "URI=file:" + File.fullName;
             IDbConnection connection = new SqliteConnection(connectionString);
             IDbCommand command;
-            try
-		    {
                 connection.Open();
                 command = connection.CreateCommand();
                 command.CommandText = query;
                 command.ExecuteNonQuery();
+            try
+		    {
 		    }
             catch
 		    {
