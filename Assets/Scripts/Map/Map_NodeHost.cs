@@ -66,6 +66,8 @@ public class Map_NodeHost : MonoBehaviour
         // data to match
         var nodes = (from node in Instance.Nodes 
                      select node).ToList();
+        var toAdd = new List<NodeLocation>();
+        var toRemove = new List<NodeLocation>();
         // add stuff
         var guids = (from loc in NodeLocation.List select loc.guid).ToList();
         foreach(var node in nodes)
@@ -82,7 +84,7 @@ public class Map_NodeHost : MonoBehaviour
                                                   where entity.ChildGUID == node.GUID
                                                   select entity.GUID).FirstOrDefault()
                      select new Vector2d(location.Latitude, location.Longitude)).FirstOrDefault();
-			NodeLocation.List.Add(new NodeLocation(l, node.GUID, v));
+			toAdd.Add(new NodeLocation(l, node.GUID, v));
 		}
 
         // remove stuff
@@ -90,6 +92,15 @@ public class Map_NodeHost : MonoBehaviour
 		{
 			if((from n in nodes select n.GUID).ToList().Contains(l.gameObject.GetComponent<Identifier>().GUID)) 
                 continue;
+            toRemove.Add(l);
+		}
+
+        foreach(var l in toAdd)
+		{
+            NodeLocation.List.Add(l);
+		}
+        foreach(var l in toRemove)
+		{
             NodeLocation.Remove(l);
 		}
         yield return wait;

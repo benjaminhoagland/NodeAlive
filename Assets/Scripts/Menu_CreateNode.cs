@@ -53,7 +53,7 @@ public class Menu_CreateNode : SerializedMonoBehaviour
         Instance.Message("Updated location.");
         Instance.Message("Creating new entity...");
         Data.Data.Schema.Table.Entity entity = new Data.Data.Schema.Table.Entity();
-        entity.LocationGUID = Instance.SelectedLocationGUID;
+        entity.LocationGUID = Instance.ActiveLocation.GUID;
         entity.GUID = location.ChildGUID;
         entity.ChildGUID = Guid.NewGuid().ToString();
         entity.Type = 0;
@@ -75,10 +75,6 @@ public class Menu_CreateNode : SerializedMonoBehaviour
         // this linq is very brittle, and will need heavy error handling
         // we should also disable inputs to the other ui elements to prevent other locations from becoming the "selected location"
 
-        foreach(var e in Data.Data.Select.Entity())
-		{
-            Debug.Log(e.ToString());
-		}
         node.EntityGUID = (from e in Data.Data.Select.Entity()
                            where e.LocationGUID == Instance.SelectedLocationGUID
                            select e.GUID).FirstOrDefault();

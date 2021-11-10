@@ -270,8 +270,8 @@ namespace Data
                 foreach(var attribute in attributes)
 				{
 
-                    var query = "UPDATE location SET " + attribute.Name + " = \'" + attribute.Value + "\'" +
-                        "WHERE guid == \"" + guid + "\";";
+                    var query = "UPDATE location SET " + attribute.Name + " = \'" + attribute.Value + "\' " +
+                        "WHERE guid = \"" + guid + "\";";
                     var log = true;
 			        if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
                     string connectionString = "URI=file:" + File.fullName;

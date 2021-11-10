@@ -69,9 +69,12 @@ public static class Instance
         public static float Latitude { get;set; }
         public static float Longitude { get;set; }
         public static string ChildGUID { get;set; }
+        
+        public static string GUID { get; set; }
     }
     public static void SetActiveLocation(string guid)
 	{
+        ActiveLocation.GUID = guid;
         var location = (from l in Data.Data.Select.Location()
                         where l.GUID == guid
                         select l).FirstOrDefault();
