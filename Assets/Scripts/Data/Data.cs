@@ -102,8 +102,6 @@ namespace Data
                 var log = true;
 			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
                 string connectionString = "URI=file:" + File.fullName;
-                try
-		        {
                     IDbConnection connection = new SqliteConnection(connectionString);
                     IDbCommand command;
                     IDataReader reader;
@@ -125,8 +123,11 @@ namespace Data
                         node.ClusterGUID  = reader[index++].ToString();
                         int timeout; Int32.TryParse(reader[index++].ToString(), out timeout); node.Timeout = timeout;
                         bool alive; bool.TryParse(reader[index++].ToString(), out alive); node.Alive = alive;
+                        node.LastResponse = DateTime.ParseExact(reader[index++].ToString(), timeformat, CultureInfo.InvariantCulture);
                         returnList.Add(node);
 		            }
+                try
+		        {
 		        }
                 catch
 		        {

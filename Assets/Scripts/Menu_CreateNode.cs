@@ -108,7 +108,8 @@ public class Menu_CreateNode : SerializedMonoBehaviour
             new Data.Data.RecordStructure.Attribute("map_guid", Instance.ActiveMap.GUID),
             new Data.Data.RecordStructure.Attribute("cluster_guid", "unassigned"),
             new Data.Data.RecordStructure.Attribute("timeout", node.Timeout.ToString()),
-            new Data.Data.RecordStructure.Attribute("alive", node.Alive.ToString())
+            new Data.Data.RecordStructure.Attribute("alive", node.Alive.ToString()),
+            new Data.Data.RecordStructure.Attribute("last_response", DateTime.Now.ToString(Data.Data.timeformat))
         }, true);
         Instance.Message("Created new node.");
 

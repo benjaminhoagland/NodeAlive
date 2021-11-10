@@ -6,7 +6,8 @@ using System.Reflection;
 
 public class DataCollector : MonoBehaviour
 {
-	Coroutine c;
+	// this class collects information and populates it into the "instance" which is easily readable by the rest of the applicaiton via "Instance.member" style access
+    Coroutine c;
 
 	[SerializeField] float interval = 1f;
 

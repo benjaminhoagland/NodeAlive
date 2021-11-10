@@ -82,7 +82,7 @@ public class Menu_NewLocationAddressHandler : MonoBehaviour
 			float.TryParse(longitudeString, out y);
 			var v2 = new Vector2d(x, y);
 			reverseResource.Query = v2;
-			Debug.Log(v2.ToString());
+			// Debug.Log(v2.ToString());
 			MapboxAccess.Instance.Geocoder.Geocode(reverseResource, HandleReverse);
 		}
 	}
@@ -96,7 +96,7 @@ public class Menu_NewLocationAddressHandler : MonoBehaviour
 		else if (null != res.Features && res.Features.Count > 0)
 		{
 			// var center = res.Features[0].Center;
-			Debug.Log(Instance.DebugProperties(res.Features[0]));
+			// Debug.Log(Instance.DebugProperties(res.Features[0]));
 			coordinate = res.Features[0].Center;
 			latitude.text = res.Features[0].Center.x.ToString();
 			longitude.text = res.Features[0].Center.y.ToString();

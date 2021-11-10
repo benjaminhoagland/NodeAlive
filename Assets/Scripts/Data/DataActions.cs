@@ -85,9 +85,9 @@ namespace Data
             Insert("location", new List<RecordStructure.Attribute>()
             {
                 new RecordStructure.Attribute("map_guid", "f8dad699-c299-42df-9f51-af7c410be502"),
-                new RecordStructure.Attribute("address", "1 Main St, Buffalo, New York 14203"),
-                new RecordStructure.Attribute("latitude", "42.8800"),
-                new RecordStructure.Attribute("longitude", "-78.8764"),
+                new RecordStructure.Attribute("address", "Sloan, New York, United States"),
+                new RecordStructure.Attribute("latitude", "42.8955"),
+                new RecordStructure.Attribute("longitude", "-78.7941"),
                 new RecordStructure.Attribute("guid", "75da11ac-7922-4aa9-8cf9-35906d5592dd"),
                 new RecordStructure.Attribute("date_created", DateTime.Now.ToString(timeformat)),
                 new RecordStructure.Attribute("child_guid", "39bef964-1ae8-4193-b5cd-6b9bc5f587b2")
@@ -111,6 +111,7 @@ namespace Data
                 new RecordStructure.Attribute("cluster_guid", "unassigned"),
                 new RecordStructure.Attribute("timeout", "90"),
                 new RecordStructure.Attribute("alive", "1"),
+                new RecordStructure.Attribute("last_response", DateTime.Now.ToString(timeformat))
             });
 
             Insert("location", new List<RecordStructure.Attribute>()
