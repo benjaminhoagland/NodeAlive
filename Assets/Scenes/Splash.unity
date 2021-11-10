@@ -1063,8 +1063,8 @@ RectTransform:
   m_Father: {fileID: 1967891487}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1080,7 +1080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb197419ac0930e4b8ac81a49c168494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelPrefab: {fileID: 4769639057625001072, guid: 326aa2addc05df445a50be791bcce41f, type: 3}
+  panelPrefab: {fileID: 6668272483906925411, guid: 326aa2addc05df445a50be791bcce41f, type: 3}
   canvas: {fileID: 223043318}
 --- !u!1 &184229113
 GameObject:
@@ -2572,7 +2572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3660ee6747c2244da21efaabfb8cf0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelPrefab: {fileID: 5966926648985850339, guid: 7476a47d72ed528438867fb57f6c954c, type: 3}
+  panelPrefab: {fileID: 4915342952474425294, guid: 7476a47d72ed528438867fb57f6c954c, type: 3}
   canvas: {fileID: 223043318}
 --- !u!1 &352069903
 GameObject:
@@ -9427,7 +9427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d137ba6d13bee0b42b1e8e0724a1dfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelPrefab: {fileID: 5469899522073478041, guid: 5a9f43e87e3a6084dbb5294fb19eeb8f, type: 3}
+  panelPrefab: {fileID: 4947752793097106438, guid: 5a9f43e87e3a6084dbb5294fb19eeb8f, type: 3}
   canvas: {fileID: 223043318}
 --- !u!1 &975997116
 GameObject:
@@ -20735,7 +20735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8d25a4b4eabbd47bb4b0cbfb435ded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelPrefab: {fileID: 3477861235850009801, guid: f70026117d7bb4c4282f474b56189f9a, type: 3}
+  panelPrefab: {fileID: 4455666292611079021, guid: f70026117d7bb4c4282f474b56189f9a, type: 3}
   canvas: {fileID: 223043318}
 --- !u!1 &1766042549
 GameObject:

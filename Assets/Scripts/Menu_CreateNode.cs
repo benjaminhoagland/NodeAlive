@@ -21,6 +21,10 @@ public class Menu_CreateNode : SerializedMonoBehaviour
     {
         Instance.Message("Validating node information...");
         var validated = true;
+        if(InputIndicatorTuple.Count < 1)
+        { 
+            throw new NullReferenceException("Input fields are null at Menu_CreateNode");
+         }
         foreach(var tuple in InputIndicatorTuple)
 		{
             if(tuple.input.text.Length == 0)

@@ -45,9 +45,11 @@ public class Display_LocationsHost : MonoBehaviour
 			{
 				// update position
 				Vector2 screenPoint = RectTransformUtility.WorldToScreenPoint(Camera.main, loc.gameObject.transform.position);
+				
 				(from p in List 
 				 where p.GUID == loc.guid 
 				 select p.PanelGameObject).FirstOrDefault().GetComponent<RectTransform>().anchoredPosition = screenPoint - (canvasRectTransform.sizeDelta / 2f);
+
 			}
 			else
 			{

@@ -12,18 +12,10 @@ public class Menu_AddNode : MonoBehaviour
         button = GetComponent<Button>();
         button.onClick.AddListener(() => Clicked());
         target = GameObject.Find("NewNodePanel Host").transform.GetChild(0).gameObject;
-        Debug.Log(target.name);
     }
 
     void Clicked()
     {
-        if(target.activeInHierarchy)
-		{
-            target.SetActive(false);
-		}
-        else
-		{
             target.SetActive(true);
-		}
     }
 }
