@@ -1,12 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using System.Linq;
 public class Menu_RemoveNode : MonoBehaviour
 {
-    // remove node
-    // remove entity
-    // remove node referecne on location
-    // set location child reference to "unassigned"
+    Button button;
+    void Awake()
+    {
+       button = GetComponent<Button>();
+       button.onClick.AddListener(() => Clicked());
+    }
+
+    void Clicked()
+    {
+        var nodeGUID = Instance.ActiveNode.GUID;
+        Data.Data.Delete.Node(nodeGUID);
+        Instance.Message("Deleting node...");
+        Instance.ClearActiveNode();
+        var entityGUID = (from e in Data.Data.Select.Entity()
+                          where e.ChildGUID == nodeGUID
+                          select e.GUID).FirstOrDefault();
+        Instance.Message("Deleting entity...");
+        Data.Data.Delete.Entity(entityGUID);
+        var locationGUID = (from l in Data.Data.Select.Location()
+                            where l.ChildGUID == entityGUID
+                            select l.GUID).FirstOrDefault();
+        Instance.Message("Updating location references...");
+        Data.Data.Update.RemoveLocationChildReference(locationGUID);
+    }
 
 }

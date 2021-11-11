@@ -265,6 +265,28 @@ namespace Data
 
         public static class Update
 		{
+            public static void RemoveLocationChildReference(string LocationGUID)
+			{
+                var query = "UPDATE location SET child_guid = \"unassigned\" " +
+                        "WHERE guid = \"" + LocationGUID + "\";";
+                    var log = true;
+			        if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
+                    string connectionString = "URI=file:" + File.fullName;
+                    try
+		            {
+                        IDbConnection connection = new SqliteConnection(connectionString);
+                        IDbCommand command;
+                        connection.Open();
+                        command = connection.CreateCommand();
+                        command.CommandText = query;
+                        command.ExecuteNonQuery();
+		            }
+                    catch
+		            {
+                        Log.WriteError("Database connection failure at " + MethodBase.GetCurrentMethod().Name);
+                        Log.WriteWarning("Used query: \"" + System.Environment.NewLine + query + "\"");
+		            }
+				}
             public static void Location(string guid, List<Data.RecordStructure.Attribute> attributes)
 	        {      
                 
@@ -298,6 +320,48 @@ namespace Data
             public static void Location(string guid)
 	        {      
                 var query = "DELETE FROM location WHERE guid == \"" + guid + "\";";
+                var log = true;
+			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
+                string connectionString = "URI=file:" + File.fullName;
+                try
+		        {
+                    IDbConnection connection = new SqliteConnection(connectionString);
+                    IDbCommand command;
+                    connection.Open();
+                    command = connection.CreateCommand();
+                    command.CommandText = query;
+                    command.ExecuteNonQuery();
+		        }
+                catch
+		        {
+                    Log.WriteError("Database connection failure at " + MethodBase.GetCurrentMethod().Name);
+                    Log.WriteWarning("Used query: \"" + System.Environment.NewLine + query + "\"");
+		        }
+	        }
+            public static void Entity(string guid)
+	        {      
+                var query = "DELETE FROM entity WHERE guid == \"" + guid + "\";";
+                var log = true;
+			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
+                string connectionString = "URI=file:" + File.fullName;
+                try
+		        {
+                    IDbConnection connection = new SqliteConnection(connectionString);
+                    IDbCommand command;
+                    connection.Open();
+                    command = connection.CreateCommand();
+                    command.CommandText = query;
+                    command.ExecuteNonQuery();
+		        }
+                catch
+		        {
+                    Log.WriteError("Database connection failure at " + MethodBase.GetCurrentMethod().Name);
+                    Log.WriteWarning("Used query: \"" + System.Environment.NewLine + query + "\"");
+		        }
+	        }
+            public static void Node(string guid)
+	        {      
+                var query = "DELETE FROM node WHERE guid == \"" + guid + "\";";
                 var log = true;
 			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
                 string connectionString = "URI=file:" + File.fullName;
@@ -374,9 +438,6 @@ namespace Data
 		    }
             public List<Attribute> attributes;
 	    }
-        
-
-
         public static List<string> SelectWhatFromWhere (string what, string from, string where = null, bool log = false)
 	    {
             string query = null;
@@ -420,6 +481,5 @@ namespace Data
             return results;
 	    }
 
-    }
-
+	}
 }

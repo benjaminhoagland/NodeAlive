@@ -72,6 +72,26 @@ public static class Instance
         
         public static string GUID { get; set; }
     }
+    public static Data.Data.Schema.Table.Node ActiveNode = new Data.Data.Schema.Table.Node();
+    public static void ClearActiveNode()
+	{
+        ActiveNode = new Data.Data.Schema.Table.Node();
+	}
+    public static void SetActiveNode(string guid)
+	{
+        if(String.IsNullOrEmpty(guid))
+        {
+            throw new Exception("GUID input to SetActiveNode is null or empty. Active node not set.");
+        }
+        var node = (from n in Data.Data.Select.Node()
+                    where n.GUID == guid
+                    select n).FirstOrDefault();
+        if(node == null)
+        {
+            throw new NullReferenceException("LINQ failure at SetActiveNode assignment in Instance.cs");
+        }
+        ActiveNode = node;
+	}
     public static void SetActiveLocation(string guid)
 	{
         ActiveLocation.GUID = guid;
