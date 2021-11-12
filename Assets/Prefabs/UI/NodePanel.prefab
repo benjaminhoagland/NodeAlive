@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 3670536195577185369}
   - component: {fileID: 3343052949144486879}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: BubbleSelected
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -478,7 +478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.7098849, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.00002193451, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -507,7 +507,7 @@ GameObject:
   - component: {fileID: 7242525474013504604}
   - component: {fileID: 3341261444522692043}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Bubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -553,7 +553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.6484008, a: 1}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -586,6 +586,7 @@ GameObject:
   - component: {fileID: 2704527456591643713}
   - component: {fileID: 5223499794481032453}
   - component: {fileID: 7489825441195558840}
+  - component: {fileID: 2937377719399728132}
   m_Layer: 5
   m_Name: NodePanel
   m_TagString: Untagged
@@ -736,6 +737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeNameGameObject: {fileID: 7699008459060587030}
   scriptNameGameObject: {fileID: 8239491458430535632}
+  timeoutGameObject: {fileID: 9058395493416125790}
 --- !u!114 &7489825441195558840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -749,6 +751,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   identifierTarget: {fileID: 4947752793097106438}
+--- !u!114 &2937377719399728132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4947752793097106438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddc2fdc93cb24234facdad5ea8e7dff0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  imagesToUpdate:
+  - {fileID: 3341261444522692043}
+  - {fileID: 3343052949144486879}
+  lastResponseGameObject: {fileID: 7841743732467969263}
 --- !u!1 &5691822369355141070
 GameObject:
   m_ObjectHideFlags: 0

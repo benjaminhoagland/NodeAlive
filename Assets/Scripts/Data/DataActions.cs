@@ -109,9 +109,18 @@ namespace Data
                 new RecordStructure.Attribute("type", 0.ToString()),
                 new RecordStructure.Attribute("map_guid", "f8dad699-c299-42df-9f51-af7c410be502"),
                 new RecordStructure.Attribute("cluster_guid", "unassigned"),
-                new RecordStructure.Attribute("timeout", "90"),
+                new RecordStructure.Attribute("timeout", "20"),
                 new RecordStructure.Attribute("alive", "1"),
                 new RecordStructure.Attribute("last_response", DateTime.Now.ToString(timeformat))
+            });
+            Insert("script", new List<RecordStructure.Attribute>()
+            {
+                new RecordStructure.Attribute("guid", "d94b55ec-9db0-403b-86e8-12e91150d65a"),
+                new RecordStructure.Attribute("node_guid", "273d8c97-9c61-4452-9b9d-9b03562e0029"),
+                new RecordStructure.Attribute("name", "Script 1"),
+                new RecordStructure.Attribute("date_created", DateTime.Now.ToString(timeformat)),
+                new RecordStructure.Attribute("path", @"C:\Directory\File.ps1"),
+                new RecordStructure.Attribute("contents", "$result = Test-Connection 8.8.8.8 -Quiet; if($result){Write-Output \"Connection to 8.8.8.8 successful\"; exit 0;}else{Write-Output \"Connection to 8.8.8.8 failure\"; exit 1;}")
             });
 
             Insert("location", new List<RecordStructure.Attribute>()

@@ -10,20 +10,31 @@ public class Display_UpdateNodeNameOnEnable : MonoBehaviour
 	TMPro.TMP_Text nodeName;
 	[SerializeField] GameObject scriptNameGameObject;
 	TMPro.TMP_Text scriptName;
+	[SerializeField] GameObject timeoutGameObject;
+	TMPro.TMP_Text timeout;
 	private void Awake()
 	{
 		nodeName = nodeNameGameObject.GetComponent<TMPro.TMP_Text>();
-		nodeName.text = "New Node";
+		nodeName.text = "Name: parsing...";
 		scriptName = scriptNameGameObject.GetComponent<TMPro.TMP_Text>();
-		scriptName.text = "Script: unassigned";
+		scriptName.text = "Script: parsing...";
+		timeout = timeoutGameObject.GetComponent<TMPro.TMP_Text>();
+		timeout.text = "Timeout: parsing...";
 	}
 	private void OnEnable()
 	{
 		var guid = GetComponent<Identifier>().GUID;
-		nodeName.text = (from n in Data.Data.Select.Node()
+		var node = (from n in Data.Data.Select.Node()
 						 where n.GUID == guid
-						 select n.Name).FirstOrDefault();
+						 select n).FirstOrDefault();
+		if(node == null)
+		{ Debug.Log("no node returned by LINQ at display_updatenodenameonenable"); return; }
+		nodeName.text = node.Name;
 
-		// flag:todo set this text to a script with a node guid that matches the node guid
+		scriptName.text = "Script: " + (from s in Data.Data.Select.Script()
+						   where s.NodeGUID == guid
+					       select s.Name).FirstOrDefault();
+
+		timeout.text = "Timeout: " + node.Timeout;
 	}
 }

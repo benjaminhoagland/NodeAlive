@@ -83,7 +83,17 @@ public partial class Data
                     new TableStructure.Attribute("date_created", "TEXT"),
                     new TableStructure.Attribute("type", "INTEGER"),
                     new TableStructure.Attribute("map_guid", "TEXT")
-			    })
+			    }),
+                new TableStructure("script", new List<TableStructure.Attribute>()
+			    {
+                    new TableStructure.Attribute("id", "INTEGER PRIMARY KEY"),
+                    new TableStructure.Attribute("guid", "TEXT"),
+                    new TableStructure.Attribute("node_guid", "TEXT"),
+                    new TableStructure.Attribute("name", "TEXT"),
+                    new TableStructure.Attribute("date_created", "TEXT"),
+                    new TableStructure.Attribute("path", "TEXT"),
+                    new TableStructure.Attribute("contents", "TEXT")
+			    }),
             };
             public class Table
 		    {
@@ -212,6 +222,24 @@ public partial class Data
                     // public string Guid { get;set; }
                     // public DateTime DateCreated { get;set; }
                     public DateTime DateActivated { get;set; }
+                    public override string ToString()
+			        {
+                        var output = "";
+                        Type type = this.GetType();
+                        PropertyInfo[] properties = type.GetProperties();
+                        foreach (PropertyInfo property in properties)
+                        {
+                            output += property.Name + ": " + property.GetValue(this, null) + Environment.NewLine;
+                        }
+                        return output;
+			        }
+		        }
+                public class Script : Table
+		        {
+                    public string NodeGUID { get;set; }
+                    public string Name { get;set; }
+                    public string Path { get;set; }
+                    public string Contents { get;set; }
                     public override string ToString()
 			        {
                         var output = "";

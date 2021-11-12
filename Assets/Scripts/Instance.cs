@@ -46,7 +46,7 @@ public static class Instance
         // "Initalizing...", 
         "Instance initialized." 
     };
-
+    public static bool NODEOFFLINE = false;
     public static List<Data.Data.Schema.Table.Location> UnassignedLocations = new List<Data.Data.Schema.Table.Location>();
     public static List<Data.Data.Schema.Table.Dispatch> Dispatches = new List<Data.Data.Schema.Table.Dispatch>();
     public static List<Data.Data.Schema.Table.Node> Nodes = new List<Data.Data.Schema.Table.Node>();

@@ -49,7 +49,26 @@ public class Menu_ImportScript : SerializedMonoBehaviour
         }
         Instance.Message(fileInfo.FullName + " script validated.");
         Instance.Message("Importing script...");
+        var script = new Data.Data.Schema.Table.Script();
+        script.GUID = Guid.NewGuid().ToString();
+        script.Name = InputIndicatorTuple[0].input.text;
+        script.NodeGUID = Instance.ActiveNode.GUID;
+        script.Path = InputIndicatorTuple[1].input.text;
+        script.DateCreated = DateTime.Now;
+        script.Contents = File.ReadAllText(script.Path);
+        
+        Instance.Message("Attaching script...");
+        Data.Data.Insert("script", new List<Data.Data.RecordStructure.Attribute>()
+		{
+            new Data.Data.RecordStructure.Attribute("guid", script.GUID),
+            new Data.Data.RecordStructure.Attribute("name", script.Name),
+            new Data.Data.RecordStructure.Attribute("node_guid", script.NodeGUID),
+            new Data.Data.RecordStructure.Attribute("path", script.Path),
+            new Data.Data.RecordStructure.Attribute("date_created", script.DateCreated.ToString(Data.Data.timeformat)),
+            new Data.Data.RecordStructure.Attribute("contents", script.Contents)
+		});
+        Instance.Message("Script imported and attached.");
 
-        // parent.SetActive(false);
+        parent.SetActive(false);
     }
 }

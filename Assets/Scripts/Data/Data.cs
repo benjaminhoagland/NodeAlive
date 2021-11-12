@@ -15,6 +15,43 @@ namespace Data
     {
         public static class Select
 	    {
+            public static List<Schema.Table.Script> Script()
+	        {
+                var returnList = new List<Schema.Table.Script>();      
+                var query = "SELECT * FROM script;";
+                var log = true;
+			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
+                string connectionString = "URI=file:" + File.fullName;
+                try
+		        {
+                    IDbConnection connection = new SqliteConnection(connectionString);
+                    IDbCommand command;
+                    IDataReader reader;
+                    connection.Open();
+                    command = connection.CreateCommand();
+                    command.CommandText = query;
+                    reader = command.ExecuteReader();
+			        while(reader.Read())
+		            {
+                        Schema.Table.Script script = new Schema.Table.Script();
+                        int index = 0;
+                        int i; Int32.TryParse(reader[index++].ToString(), out i); script.ID = i; 
+                        script.GUID  = reader[index++].ToString();
+                        script.NodeGUID  = reader[index++].ToString();
+                        script.Name  = reader[index++].ToString();
+                        script.DateCreated = DateTime.ParseExact(reader[index++].ToString(), timeformat, CultureInfo.InvariantCulture);
+                        script.Path  = reader[index++].ToString();
+                        script.Contents  = reader[index++].ToString();
+                        returnList.Add(script);
+		            }
+		        }
+                catch
+		        {
+                    Log.WriteError("Database connection failure at " + MethodBase.GetCurrentMethod().Name);
+                    Log.WriteWarning("Used query: \"" + System.Environment.NewLine + query + "\"");
+		        }
+                return returnList;
+	        }
             public static List<Schema.Table.Location> Location()
 	        {
                 var returnList = new List<Schema.Table.Location>();      
@@ -122,7 +159,7 @@ namespace Data
                         node.MapGUID  = reader[index++].ToString();
                         node.ClusterGUID  = reader[index++].ToString();
                         int timeout; Int32.TryParse(reader[index++].ToString(), out timeout); node.Timeout = timeout;
-                        bool alive; bool.TryParse(reader[index++].ToString(), out alive); node.Alive = alive;
+                        if(reader[index++].ToString() == 1.ToString()) { node.Alive = true; } else { node.Alive = false; };
                         node.LastResponse = DateTime.ParseExact(reader[index++].ToString(), timeformat, CultureInfo.InvariantCulture);
                         returnList.Add(node);
 		            }
@@ -314,6 +351,28 @@ namespace Data
 		            }
 				}
 	        }
+            public static void NodeOverdue(string guid)
+			{
+                var query = "UPDATE node SET alive = \"0\" " +
+                        "WHERE guid = \"" + guid + "\";";
+                var log = true;
+			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
+                string connectionString = "URI=file:" + File.fullName;
+                try
+		        {
+                    IDbConnection connection = new SqliteConnection(connectionString);
+                    IDbCommand command;
+                    connection.Open();
+                    command = connection.CreateCommand();
+                    command.CommandText = query;
+                    command.ExecuteNonQuery();
+		        }
+                catch
+		        {
+                    Log.WriteError("Database connection failure at " + MethodBase.GetCurrentMethod().Name);
+                    Log.WriteWarning("Used query: \"" + System.Environment.NewLine + query + "\"");
+		        }
+			}
 		}
         public static class Delete
 		{
@@ -362,6 +421,27 @@ namespace Data
             public static void Node(string guid)
 	        {      
                 var query = "DELETE FROM node WHERE guid == \"" + guid + "\";";
+                var log = true;
+			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
+                string connectionString = "URI=file:" + File.fullName;
+                try
+		        {
+                    IDbConnection connection = new SqliteConnection(connectionString);
+                    IDbCommand command;
+                    connection.Open();
+                    command = connection.CreateCommand();
+                    command.CommandText = query;
+                    command.ExecuteNonQuery();
+		        }
+                catch
+		        {
+                    Log.WriteError("Database connection failure at " + MethodBase.GetCurrentMethod().Name);
+                    Log.WriteWarning("Used query: \"" + System.Environment.NewLine + query + "\"");
+		        }
+	        }
+            public static void Script(string guid)
+	        {      
+                var query = "DELETE FROM script WHERE guid == \"" + guid + "\";";
                 var log = true;
 			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
                 string connectionString = "URI=file:" + File.fullName;

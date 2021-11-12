@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 using System.Reflection;
 
 public class DataCollector : MonoBehaviour
@@ -37,6 +38,21 @@ public class DataCollector : MonoBehaviour
         Instance.Nodes = (from n in Data.Data.Select.Node()
                                         where n.MapGUID == Instance.ActiveMap.GUID
                                         select n).ToList();
+        foreach(var node in Instance.Nodes)
+		{
+            if((DateTime.Now - node.LastResponse).TotalSeconds > node.Timeout) Data.Data.Update.NodeOverdue(node.GUID);
+		}
+        Instance.Nodes = (from n in Data.Data.Select.Node()
+                                        where n.MapGUID == Instance.ActiveMap.GUID
+                                        select n).ToList();
+        var offlineNodes = (from n in Instance.Nodes
+                            where n.Alive == false
+                            select n).ToList();
+        if(offlineNodes.Count != 0)
+        { Instance.NODEOFFLINE = true; }
+        else
+        { Instance.NODEOFFLINE = false; }
+
         Instance.Clusters = (from c in Data.Data.Select.Cluster()
                                         where c.MapGUID == Instance.ActiveMap.GUID
                                         select c).ToList();

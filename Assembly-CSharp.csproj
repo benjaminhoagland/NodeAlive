@@ -318,6 +318,7 @@
     <Compile Include="Assets\Mapbox\Unity\SourceLayers\SubLayerDarkStyle.cs" />
     <Compile Include="Assets\Mapbox\Examples\Scripts\ReverseGeocodeUserInput.cs" />
     <Compile Include="Assets\Mapbox\Unity\Map\Interfaces\IMapPlacementStrategy.cs" />
+    <Compile Include="Assets\Scripts\Menu_DisplaySelectedLocationName.cs" />
     <Compile Include="Assets\Mapbox\Unity\SourceLayers\VectorLayer.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Map\TileResource.cs" />
     <Compile Include="Assets\Mapbox\Examples\2_AstronautGame\AstronautGame\Astronaut\AstronautMouseController.cs" />
@@ -326,6 +327,7 @@
     <Compile Include="Assets\Mapbox\Examples\Scripts\HighlightFeature.cs" />
     <Compile Include="Assets\Scripts\UI\subassembly\Menu_CancelSelection.cs" />
     <Compile Include="Assets\Mapbox\Unity\Map\AbstractMapVisualizer.cs" />
+    <Compile Include="Assets\Scripts\Display_UpdateNodeNameOnEnable.cs" />
     <Compile Include="Assets\Scripts\UI\subassembly\Menu_CreateNewLocation.cs" />
     <Compile Include="Assets\Scripts\Menu_SelectLocationGUID.cs" />
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Factories\TerrainStrategies\LowPolyTerrainStrategy.cs" />
@@ -473,8 +475,10 @@
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Factories\ImageDataFetcher.cs" />
     <Compile Include="Assets\Mapbox\Unity\Location\LocationSmoothing\KalmanFilter.cs" />
     <Compile Include="Assets\Mapbox\Unity\SourceLayers\ISubLayerCustomStyle.cs" />
-    <Compile Include="Assets\Scripts\Display_UpdateNodeNameOnEnable.cs" />
-    <Compile Include="Assets\Scripts\Menu_DisplaySelectedLocationName.cs" />
+    <Compile Include="Assets\Scripts\Display_UpdateNodeStatus.cs" />
+    <Compile Include="Assets\Scripts\Utility\LastResponseFormat.cs" />
+    <Compile Include="Assets\Scripts\Display_NodeOfflineMonitor.cs" />
+    <Compile Include="Assets\Display_PulseWarning.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
