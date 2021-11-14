@@ -4901,6 +4901,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 382831611}
+  - component: {fileID: 382831612}
   m_Layer: 0
   m_Name: DirectionsHost
   m_TagString: Untagged
@@ -4922,6 +4923,22 @@ Transform:
   m_Father: {fileID: 656379389}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &382831612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382831610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292d4dc10434c864db1960bb324bd6cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DirectionsEntity: {fileID: 4688615757804076509, guid: e0c8f96093bcacb44afb4daa7f7c28dc, type: 3}
+  NodeHost: {fileID: 852604580}
+  DispatchHost: {fileID: 2105180543}
+  interval: 1
 --- !u!1001 &407898314
 PrefabInstance:
   m_ObjectHideFlags: 0

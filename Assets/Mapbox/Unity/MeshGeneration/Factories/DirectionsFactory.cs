@@ -1,3 +1,5 @@
+// modified from mapbox "Traffic and Directions"
+
 namespace Mapbox.Unity.MeshGeneration.Factories
 {
 	using UnityEngine;
@@ -16,10 +18,11 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 		[SerializeField]
 		AbstractMap _map;
 
-		[SerializeField]
-		MeshModifier[] MeshModifiers;
-		[SerializeField]
-		Material _material;
+		// [SerializeField]
+		// MeshModifier[] MeshModifiers;
+		// [SerializeField]
+		// Material _material;
+		[SerializeField] GameObject cube;
 
 		[SerializeField]
 		Transform[] _waypoints;
@@ -29,7 +32,7 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 		[Range(1,10)]
 		private float UpdateFrequency = 2;
 
-
+		private LineRenderer lr;
 
 		private Directions _directions;
 		private int _counter;
@@ -46,6 +49,7 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 			_directions = MapboxAccess.Instance.Directions;
 			_map.OnInitialized += Query;
 			_map.OnUpdated += Query;
+			lr = GetComponent<LineRenderer>();
 		}
 
 		public void Start()
@@ -56,12 +60,6 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 				_cachedWaypoints.Add(item.position);
 			}
 			_recalculateNext = false;
-
-			foreach (var modifier in MeshModifiers)
-			{
-				modifier.Initialize();
-			}
-
 			StartCoroutine(QueryTimer());
 		}
 
@@ -113,52 +111,23 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 				return;
 			}
 
-			var meshData = new MeshData();
 			var dat = new List<Vector3>();
 			foreach (var point in response.Routes[0].Geometry)
 			{
-				dat.Add(Conversions.GeoToWorldPosition(point.x, point.y, _map.CenterMercator, _map.WorldRelativeScale).ToVector3xz());
+				var conv = Conversions.GeoToWorldPosition(point.x, point.y, _map.CenterMercator, _map.WorldRelativeScale).ToVector3xz();
+				conv.y = 1f;
+				dat.Add(conv);
 			}
 
 			var feat = new VectorFeatureUnity();
 			feat.Points.Add(dat);
 
-			foreach (MeshModifier mod in MeshModifiers.Where(x => x.Active))
+			foreach(var d in dat)
 			{
-				mod.Run(feat, meshData, _map.WorldRelativeScale);
+				d.Set(d.x, d.y, 10f);
 			}
-
-			CreateGameObject(meshData);
-		}
-
-		GameObject CreateGameObject(MeshData data)
-		{
-			if (_directionsGO != null)
-			{
-				_directionsGO.Destroy();
-			}
-			_directionsGO = new GameObject("direction waypoint " + " entity");
-			var mesh = _directionsGO.AddComponent<MeshFilter>().mesh;
-			mesh.subMeshCount = data.Triangles.Count;
-
-			mesh.SetVertices(data.Vertices);
-			_counter = data.Triangles.Count;
-			for (int i = 0; i < _counter; i++)
-			{
-				var triangle = data.Triangles[i];
-				mesh.SetTriangles(triangle, i);
-			}
-
-			_counter = data.UV.Count;
-			for (int i = 0; i < _counter; i++)
-			{
-				var uv = data.UV[i];
-				mesh.SetUVs(i, uv);
-			}
-
-			mesh.RecalculateNormals();
-			_directionsGO.AddComponent<MeshRenderer>().material = _material;
-			return _directionsGO;
+			lr.positionCount = dat.Count;
+			lr.SetPositions(dat.ToArray());
 		}
 	}
 
