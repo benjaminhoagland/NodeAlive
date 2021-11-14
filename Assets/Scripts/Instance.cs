@@ -51,7 +51,7 @@ public static class Instance
     public static List<Data.Data.Schema.Table.Dispatch> Dispatches = new List<Data.Data.Schema.Table.Dispatch>();
     public static List<Data.Data.Schema.Table.Node> Nodes = new List<Data.Data.Schema.Table.Node>();
     public static List<Data.Data.Schema.Table.Cluster> Clusters = new List<Data.Data.Schema.Table.Cluster>();
-
+    public static List<Data.Data.Schema.Table.Result> Results = new List<Data.Data.Schema.Table.Result>();
     public static class ActiveMap
 	{
         public static string ID { get; set; }

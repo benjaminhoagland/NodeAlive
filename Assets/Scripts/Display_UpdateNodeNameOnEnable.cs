@@ -10,6 +10,7 @@ public class Display_UpdateNodeNameOnEnable : MonoBehaviour
 	TMPro.TMP_Text nodeName;
 	[SerializeField] GameObject scriptNameGameObject;
 	TMPro.TMP_Text scriptName;
+	[SerializeField] GameObject identifierTarget;
 	[SerializeField] GameObject timeoutGameObject;
 	TMPro.TMP_Text timeout;
 	private void Awake()
@@ -23,12 +24,15 @@ public class Display_UpdateNodeNameOnEnable : MonoBehaviour
 	}
 	private void OnEnable()
 	{
-		var guid = GetComponent<Identifier>().GUID;
+		var guid = identifierTarget.GetComponent<Identifier>().GUID;
 		var node = (from n in Data.Data.Select.Node()
 						 where n.GUID == guid
 						 select n).FirstOrDefault();
 		if(node == null)
-		{ Debug.Log("no node returned by LINQ at display_updatenodenameonenable"); return; }
+		{ 
+			// Debug.Log("no node returned by LINQ at display_updatenodenameonenable"); 
+			return; 
+		}
 		nodeName.text = node.Name;
 
 		scriptName.text = "Script: " + (from s in Data.Data.Select.Script()

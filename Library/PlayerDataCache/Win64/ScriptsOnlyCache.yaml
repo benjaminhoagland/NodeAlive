@@ -6,7 +6,11 @@ ScriptsOnlyBuild:
     - Display_ClustersHost
     - Display_DispatchesHost
     - Display_LocationsHost
+    - Display_NodeOfflineMonitor
     - Display_NodesHost
+    - Display_PulseWarning
+    - Display_UpdateNodeNameOnEnable
+    - Display_UpdateNodeStatus
     - Identifier
     - Map_ClickHandler
     - Map_ClusterHost
@@ -31,26 +35,35 @@ ScriptsOnlyBuild:
     - Mapbox.Unity.MeshGeneration.Modifiers.ReplaceFeatureCollectionModifier
     - Mapbox.Unity.Utilities.DebugTools.SceneData
     - Mapbox.Unity.Utilities.DebugTools.ScenesList
+    - Mapbox.Unity.Utilities.OpenUrlOnButtonClick
     - Mapbox.Unity.Utilities.Runnable
+    - Mapbox.Unity.Utilities.TelemetryConfigurationButton
     - Menu_AddNode
+    - Menu_AddScript
     - Menu_CancelSelection
     - Menu_ClearDB
     - Menu_CreateMap
     - Menu_CreateNewLocation
     - Menu_CreateNode
     - Menu_DisplaySelectedLocationGUID
+    - Menu_DisplaySelectedLocationName
+    - Menu_DisplaySelectedNodeName
     - Menu_ExitApplication
     - Menu_ForwardGeocodeResponse
     - Menu_HideMapWhenLoading
+    - Menu_ImportScript
     - Menu_NewLocationAddressHandler
     - Menu_NewNodePanelHost
+    - Menu_NewScriptPanelHost
     - Menu_OnPointerExit
     - Menu_PanelDrag
     - Menu_PopulateDB
     - Menu_RemoveLocation
+    - Menu_RemoveNode
     - Menu_ResetDB
     - Menu_ResetInputsAndIndicators
     - Menu_ResetNewMapValues
+    - Menu_SelectActiveNode
     - Menu_SelectLocationGUID
     - Menu_SelectMap
     - Menu_SelectMapContentController
@@ -63,7 +76,6 @@ ScriptsOnlyBuild:
     - StatusHost
     - Status_Collector
     Sirenix.OdinInspector.Editor.dll:
-    - Sirenix.OdinInspector.Editor.GeneralDrawerConfig
     - Sirenix.OdinInspector.Editor.ImportSettingsConfig
     - Sirenix.OdinInspector.Editor.InspectorConfig
     - Sirenix.Serialization.AOTGenerationConfig
@@ -158,151 +170,177 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1694}
     - Class: 114
-      Script: {instanceID: 1812}
+      Script: {instanceID: 1736}
     - Class: 114
       Script: {instanceID: 1814}
     - Class: 114
-      Script: {instanceID: 1854}
+      Script: {instanceID: 1816}
     - Class: 114
-      Script: {instanceID: 1878}
+      Script: {instanceID: 1856}
     - Class: 114
-      Script: {instanceID: 1916}
+      Script: {instanceID: 1880}
     - Class: 114
       Script: {instanceID: 1918}
     - Class: 114
-      Script: {instanceID: 1942}
+      Script: {instanceID: 1920}
     - Class: 114
-      Script: {instanceID: 1978}
+      Script: {instanceID: 1944}
     - Class: 114
-      Script: {instanceID: 2000}
+      Script: {instanceID: 1980}
     - Class: 114
-      Script: {instanceID: 2034}
+      Script: {instanceID: 2002}
     - Class: 114
-      Script: {instanceID: 2052}
+      Script: {instanceID: 2036}
     - Class: 114
-      Script: {instanceID: 2130}
+      Script: {instanceID: 2054}
     - Class: 114
-      Script: {instanceID: 2190}
+      Script: {instanceID: 2108}
     - Class: 114
-      Script: {instanceID: 2302}
+      Script: {instanceID: 2132}
     - Class: 114
-      Script: {instanceID: 2326}
+      Script: {instanceID: 2192}
     - Class: 114
-      Script: {instanceID: 2334}
+      Script: {instanceID: 2204}
     - Class: 114
-      Script: {instanceID: 2422}
+      Script: {instanceID: 2306}
     - Class: 114
-      Script: {instanceID: 2424}
+      Script: {instanceID: 2330}
     - Class: 114
-      Script: {instanceID: 2538}
+      Script: {instanceID: 2338}
     - Class: 114
-      Script: {instanceID: 2606}
+      Script: {instanceID: 2426}
     - Class: 114
-      Script: {instanceID: 2660}
+      Script: {instanceID: 2428}
     - Class: 114
-      Script: {instanceID: 2690}
+      Script: {instanceID: 2542}
     - Class: 114
-      Script: {instanceID: 2730}
+      Script: {instanceID: 2610}
     - Class: 114
-      Script: {instanceID: 2812}
+      Script: {instanceID: 2664}
     - Class: 114
-      Script: {instanceID: 2814}
+      Script: {instanceID: 2694}
     - Class: 114
-      Script: {instanceID: 2840}
+      Script: {instanceID: 2734}
     - Class: 114
-      Script: {instanceID: 2888}
+      Script: {instanceID: 2816}
     - Class: 114
-      Script: {instanceID: 2946}
+      Script: {instanceID: 2818}
     - Class: 114
-      Script: {instanceID: 2974}
+      Script: {instanceID: 2844}
     - Class: 114
-      Script: {instanceID: 2994}
+      Script: {instanceID: 2892}
     - Class: 114
-      Script: {instanceID: 3008}
+      Script: {instanceID: 2950}
     - Class: 114
-      Script: {instanceID: 3066}
+      Script: {instanceID: 2978}
     - Class: 114
-      Script: {instanceID: 3218}
+      Script: {instanceID: 2998}
     - Class: 114
-      Script: {instanceID: 3372}
+      Script: {instanceID: 3012}
     - Class: 114
-      Script: {instanceID: 3388}
+      Script: {instanceID: 3070}
+    - Class: 114
+      Script: {instanceID: 3222}
+    - Class: 114
+      Script: {instanceID: 3264}
+    - Class: 114
+      Script: {instanceID: 3316}
+    - Class: 114
+      Script: {instanceID: 3380}
     - Class: 114
       Script: {instanceID: 3396}
     - Class: 114
-      Script: {instanceID: 3416}
+      Script: {instanceID: 3404}
     - Class: 114
-      Script: {instanceID: 3488}
+      Script: {instanceID: 3424}
     - Class: 114
-      Script: {instanceID: 3500}
+      Script: {instanceID: 3496}
     - Class: 114
-      Script: {instanceID: 3550}
+      Script: {instanceID: 3508}
     - Class: 114
-      Script: {instanceID: 3582}
+      Script: {instanceID: 3558}
     - Class: 114
-      Script: {instanceID: 3642}
+      Script: {instanceID: 3590}
     - Class: 114
-      Script: {instanceID: 3698}
+      Script: {instanceID: 3644}
     - Class: 114
-      Script: {instanceID: 3720}
+      Script: {instanceID: 3650}
     - Class: 114
-      Script: {instanceID: 3746}
+      Script: {instanceID: 3706}
     - Class: 114
-      Script: {instanceID: 3872}
+      Script: {instanceID: 3728}
     - Class: 114
-      Script: {instanceID: 3954}
+      Script: {instanceID: 3754}
     - Class: 114
-      Script: {instanceID: 4010}
+      Script: {instanceID: 3880}
     - Class: 114
-      Script: {instanceID: 4014}
+      Script: {instanceID: 3962}
     - Class: 114
-      Script: {instanceID: 4210}
+      Script: {instanceID: 4018}
     - Class: 114
-      Script: {instanceID: 4230}
+      Script: {instanceID: 4022}
     - Class: 114
-      Script: {instanceID: 4244}
+      Script: {instanceID: 4170}
     - Class: 114
-      Script: {instanceID: 4276}
+      Script: {instanceID: 4220}
     - Class: 114
-      Script: {instanceID: 4384}
+      Script: {instanceID: 4234}
     - Class: 114
-      Script: {instanceID: 4428}
+      Script: {instanceID: 4242}
     - Class: 114
-      Script: {instanceID: 4476}
+      Script: {instanceID: 4256}
     - Class: 114
-      Script: {instanceID: 4552}
+      Script: {instanceID: 4264}
     - Class: 114
-      Script: {instanceID: 4748}
+      Script: {instanceID: 4290}
     - Class: 114
-      Script: {instanceID: 4772}
+      Script: {instanceID: 4398}
     - Class: 114
-      Script: {instanceID: 4816}
+      Script: {instanceID: 4442}
     - Class: 114
-      Script: {instanceID: 4900}
+      Script: {instanceID: 4490}
+    - Class: 114
+      Script: {instanceID: 4534}
+    - Class: 114
+      Script: {instanceID: 4568}
+    - Class: 114
+      Script: {instanceID: 4648}
+    - Class: 114
+      Script: {instanceID: 4768}
+    - Class: 114
+      Script: {instanceID: 4792}
+    - Class: 114
+      Script: {instanceID: 4836}
+    - Class: 114
+      Script: {instanceID: 4918}
     - Class: 114
       Script: {instanceID: 4922}
     - Class: 114
-      Script: {instanceID: 4928}
+      Script: {instanceID: 4944}
     - Class: 114
-      Script: {instanceID: 4948}
+      Script: {instanceID: 4950}
     - Class: 114
-      Script: {instanceID: 5050}
+      Script: {instanceID: 4970}
     - Class: 114
-      Script: {instanceID: 5084}
+      Script: {instanceID: 5072}
     - Class: 114
-      Script: {instanceID: 5088}
+      Script: {instanceID: 5106}
     - Class: 114
-      Script: {instanceID: 5196}
+      Script: {instanceID: 5110}
     - Class: 114
-      Script: {instanceID: 5316}
+      Script: {instanceID: 5218}
     - Class: 114
-      Script: {instanceID: 5440}
+      Script: {instanceID: 5338}
     - Class: 114
-      Script: {instanceID: 5606}
+      Script: {instanceID: 5462}
     - Class: 114
-      Script: {instanceID: 5648}
+      Script: {instanceID: 5618}
     - Class: 114
-      Script: {instanceID: 5656}
+      Script: {instanceID: 5630}
+    - Class: 114
+      Script: {instanceID: 5672}
+    - Class: 114
+      Script: {instanceID: 5680}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -400,6 +438,12 @@ ScriptsOnlyBuild:
     assemblyName: Sirenix.Utilities.dll
     namespaceName: Sirenix.Utilities
     className: ProjectPathFinder
+  - hash:
+      serializedVersion: 2
+      Hash: d4d940ccacc9f1565705cc26ab450c11
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Menu_NewScriptPanelHost
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -616,6 +660,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: Mapbox.Examples
     className: HeroBuildingSelectionUserInput
+  - hash:
+      serializedVersion: 2
+      Hash: e891fea3fbedbdf06b4f0fe077ecf84f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Menu_SelectActiveNode
   - hash:
       serializedVersion: 2
       Hash: 8216e0d9d4736e9dc25b08da6f4ffc65
@@ -936,10 +986,22 @@ ScriptsOnlyBuild:
     className: TestResultRendererCallback
   - hash:
       serializedVersion: 2
+      Hash: 8add150a1746d7bd86ef8fa181e3b622
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Display_PulseWarning
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BlinkLight
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Menu_AddScript
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1290,6 +1352,12 @@ ScriptsOnlyBuild:
     className: ReverseGeocodeUserInput
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Menu_DisplaySelectedLocationName
+  - hash:
+      serializedVersion: 2
       Hash: 563660a00e6e81cb62dbadd1cbc099dc
     assemblyName: Assembly-CSharp.dll
     namespaceName: Mapbox.Examples
@@ -1326,6 +1394,12 @@ ScriptsOnlyBuild:
     className: EventTrigger
   - hash:
       serializedVersion: 2
+      Hash: d4617b18b59b7af0fb339028c709d0f6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Display_UpdateNodeNameOnEnable
+  - hash:
+      serializedVersion: 2
       Hash: 5d86feb8404daa0b27f23b7282ed0499
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1336,6 +1410,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Menu_SelectLocationGUID
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Menu_RemoveNode
   - hash:
       serializedVersion: 2
       Hash: ba3c5c9d9991d3649573748881615403
@@ -1458,6 +1538,12 @@ ScriptsOnlyBuild:
     className: PositionWithLocationProvider
   - hash:
       serializedVersion: 2
+      Hash: 5d86feb8404daa0b27f23b7282ed0499
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Menu_ImportScript
+  - hash:
+      serializedVersion: 2
       Hash: 5d7116858f9806f59b48fe68a51270b6
     assemblyName: Assembly-CSharp.dll
     namespaceName: Mapbox.Examples.Playground
@@ -1486,6 +1572,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_ColorGradient
+  - hash:
+      serializedVersion: 2
+      Hash: 7088d28e931dd626f54cbbb24ecc6561
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Display_UpdateNodeStatus
   - hash:
       serializedVersion: 2
       Hash: 908b3077da284d11de0450423ca1808e
@@ -1552,6 +1644,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: Mapbox.Examples.Voxels
     className: VoxelFetcher
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Menu_DisplaySelectedNodeName
   - hash:
       serializedVersion: 2
       Hash: 6a748f7038462a70cc9c5d7b02a1e0cd
@@ -1756,6 +1854,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: Mapbox.Unity.Location
     className: DeviceLocationProviderAndroidNative
+  - hash:
+      serializedVersion: 2
+      Hash: dc73821af6371eeb7fecb37a41cb841f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Display_NodeOfflineMonitor
   - hash:
       serializedVersion: 2
       Hash: cd6d875f2efef0732b05e11e8419ef42

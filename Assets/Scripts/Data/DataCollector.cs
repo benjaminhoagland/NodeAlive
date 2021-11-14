@@ -56,6 +56,9 @@ public class DataCollector : MonoBehaviour
         Instance.Clusters = (from c in Data.Data.Select.Cluster()
                                         where c.MapGUID == Instance.ActiveMap.GUID
                                         select c).ToList();
+        Instance.Results = (from r in Data.Data.Select.Result()
+                                        where r.MapGUID == Instance.ActiveMap.GUID
+                                        select r).ToList();
         Instance.Dispatches = (from d in Data.Data.Select.Dispatch()
                                         where d.MapGUID == Instance.ActiveMap.GUID
                                         select d).ToList();

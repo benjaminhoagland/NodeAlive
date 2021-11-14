@@ -19,7 +19,7 @@ namespace Data
 	        {
                 var returnList = new List<Schema.Table.Script>();      
                 var query = "SELECT * FROM script;";
-                var log = true;
+                var log = false;
 			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
                 string connectionString = "URI=file:" + File.fullName;
                 try
@@ -52,11 +52,92 @@ namespace Data
 		        }
                 return returnList;
 	        }
+            public static List<Schema.Table.Result> Result()
+	        {
+                var returnList = new List<Schema.Table.Result>();      
+                var query = "SELECT * FROM result;";
+                var log = false;
+			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
+                string connectionString = "URI=file:" + File.fullName;
+                try
+		        {
+                    IDbConnection connection = new SqliteConnection(connectionString);
+                    IDbCommand command;
+                    IDataReader reader;
+                    connection.Open();
+                    command = connection.CreateCommand();
+                    command.CommandText = query;
+                    reader = command.ExecuteReader();
+			        while(reader.Read())
+		            {
+                        Schema.Table.Result result = new Schema.Table.Result();
+                        int index = 0;
+                        int i; Int32.TryParse(reader[index++].ToString(), out i); result.ID = i; 
+                        result.GUID  = reader[index++].ToString();
+                        result.NodeGUID  = reader[index++].ToString();
+                        result.ScriptGUID  = reader[index++].ToString();
+                        result.MapGUID  = reader[index++].ToString();
+                        result.DateCreated = DateTime.ParseExact(reader[index++].ToString(), timeformat, CultureInfo.InvariantCulture);
+                        bool s; bool.TryParse(reader[index++].ToString(), out s); result.Status = s; 
+                        result.Contents  = reader[index++].ToString();
+                        result.DateFinishedExecution = DateTime.ParseExact(reader[index++].ToString(), timeformat, CultureInfo.InvariantCulture);
+                        int r; Int32.TryParse(reader[index++].ToString(), out r); result.Runtime = r; 
+                        returnList.Add(result);
+		            }
+		        }
+                catch
+		        {
+                    Log.WriteError("Database connection failure at " + MethodBase.GetCurrentMethod().Name);
+                    Log.WriteWarning("Used query: \"" + System.Environment.NewLine + query + "\"");
+		        }
+                return returnList;
+	        }
+            public static List<Schema.Table.Node> Node()
+	        {
+                var returnList = new List<Schema.Table.Node>();      
+                var query = "SELECT * FROM node;";
+                var log = false;
+			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
+                string connectionString = "URI=file:" + File.fullName;
+                    IDbConnection connection = new SqliteConnection(connectionString);
+                    IDbCommand command;
+                    IDataReader reader;
+                    connection.Open();
+                    command = connection.CreateCommand();
+                    command.CommandText = query;
+                    reader = command.ExecuteReader();
+			        while(reader.Read())
+		            {
+                        Schema.Table.Node node = new Schema.Table.Node();
+                        int index = 0;
+                        int i; Int32.TryParse(reader[index++].ToString(), out i); node.ID = i; 
+                        node.EntityGUID = reader[index++].ToString();
+                        node.Name = reader[index++].ToString();
+                        node.GUID  = reader[index++].ToString();
+                        node.DateCreated = DateTime.ParseExact(reader[index++].ToString(), timeformat, CultureInfo.InvariantCulture);
+                        int t; Int32.TryParse(reader[index++].ToString(), out t); node.Type = t;
+                        node.MapGUID  = reader[index++].ToString();
+                        node.ClusterGUID  = reader[index++].ToString();
+                        int timeout; Int32.TryParse(reader[index++].ToString(), out timeout); node.Timeout = timeout;
+                        if(reader[index++].ToString() == 1.ToString()) { node.Alive = true; } else { node.Alive = false; };
+                        node.LastResponse = DateTime.ParseExact(reader[index++].ToString(), timeformat, CultureInfo.InvariantCulture);
+                        returnList.Add(node);
+		            }
+                try
+		        {
+		        }
+                catch
+		        {
+                    Log.WriteError("Database connection failure at " + MethodBase.GetCurrentMethod().Name);
+                    Log.WriteWarning("Used query: \"" + System.Environment.NewLine + query + "\"");
+		        }
+                return returnList;
+	        }
             public static List<Schema.Table.Location> Location()
 	        {
                 var returnList = new List<Schema.Table.Location>();      
                 var query = "SELECT * FROM location;";
-                var log = true;
+                var log = false;
 			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
                 string connectionString = "URI=file:" + File.fullName;
                 try
@@ -100,7 +181,7 @@ namespace Data
 	        {
                 var returnList = new List<Schema.Table.Entity>();      
                 var query = "SELECT * FROM entity;";
-                var log = true;
+                var log = false;
 			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
                 string connectionString = "URI=file:" + File.fullName;
                 try
@@ -132,52 +213,11 @@ namespace Data
 		        }
                 return returnList;
 	        }
-            public static List<Schema.Table.Node> Node()
-	        {
-                var returnList = new List<Schema.Table.Node>();      
-                var query = "SELECT * FROM node;";
-                var log = true;
-			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
-                string connectionString = "URI=file:" + File.fullName;
-                    IDbConnection connection = new SqliteConnection(connectionString);
-                    IDbCommand command;
-                    IDataReader reader;
-                    connection.Open();
-                    command = connection.CreateCommand();
-                    command.CommandText = query;
-                    reader = command.ExecuteReader();
-			        while(reader.Read())
-		            {
-                        Schema.Table.Node node = new Schema.Table.Node();
-                        int index = 0;
-                        int i; Int32.TryParse(reader[index++].ToString(), out i); node.ID = i; 
-                        node.EntityGUID = reader[index++].ToString();
-                        node.Name = reader[index++].ToString();
-                        node.GUID  = reader[index++].ToString();
-                        node.DateCreated = DateTime.ParseExact(reader[index++].ToString(), timeformat, CultureInfo.InvariantCulture);
-                        int t; Int32.TryParse(reader[index++].ToString(), out t); node.Type = t;
-                        node.MapGUID  = reader[index++].ToString();
-                        node.ClusterGUID  = reader[index++].ToString();
-                        int timeout; Int32.TryParse(reader[index++].ToString(), out timeout); node.Timeout = timeout;
-                        if(reader[index++].ToString() == 1.ToString()) { node.Alive = true; } else { node.Alive = false; };
-                        node.LastResponse = DateTime.ParseExact(reader[index++].ToString(), timeformat, CultureInfo.InvariantCulture);
-                        returnList.Add(node);
-		            }
-                try
-		        {
-		        }
-                catch
-		        {
-                    Log.WriteError("Database connection failure at " + MethodBase.GetCurrentMethod().Name);
-                    Log.WriteWarning("Used query: \"" + System.Environment.NewLine + query + "\"");
-		        }
-                return returnList;
-	        }
             public static List<Schema.Table.Cluster> Cluster()
 	        {
                 var returnList = new List<Schema.Table.Cluster>();      
                 var query = "SELECT * FROM cluster;";
-                var log = true;
+                var log = false;
 			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
                 string connectionString = "URI=file:" + File.fullName;
                 try
@@ -214,7 +254,7 @@ namespace Data
 	        {
                 var returnList = new List<Schema.Table.Dispatch>();      
                 var query = "SELECT * FROM dispatch;";
-                var log = true;
+                var log = false;
 			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
                 string connectionString = "URI=file:" + File.fullName;
                 try
@@ -306,7 +346,7 @@ namespace Data
 			{
                 var query = "UPDATE location SET child_guid = \"unassigned\" " +
                         "WHERE guid = \"" + LocationGUID + "\";";
-                    var log = true;
+                    var log = false;
 			        if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
                     string connectionString = "URI=file:" + File.fullName;
                     try
@@ -355,7 +395,7 @@ namespace Data
 			{
                 var query = "UPDATE node SET alive = \"0\" " +
                         "WHERE guid = \"" + guid + "\";";
-                var log = true;
+                var log = false;
 			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
                 string connectionString = "URI=file:" + File.fullName;
                 try
@@ -461,8 +501,6 @@ namespace Data
 		        }
 	        }
 		}
-        public static string connectionString = "URI=file:" + File.fullName;
-        public static string timeformat = "yyyy-MM-dd HH:mm:ss"; 
         public static class File
         {
             // public static string filePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
@@ -478,6 +516,8 @@ namespace Data
                 }
             }
         }
+        public static string connectionString = "URI=file:" + File.fullName;
+        public static string timeformat = "yyyy-MM-dd HH:mm:ss"; 
         public class TableStructure
 	    {
             public string Name { get; set; }

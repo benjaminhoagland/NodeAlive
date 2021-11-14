@@ -122,7 +122,7 @@ namespace Data
                 new RecordStructure.Attribute("path", @"C:\Directory\File.ps1"),
                 new RecordStructure.Attribute("contents", "$result = Test-Connection 8.8.8.8 -Quiet; if($result){Write-Output \"Connection to 8.8.8.8 successful\"; exit 0;}else{Write-Output \"Connection to 8.8.8.8 failure\"; exit 1;}")
             });
-
+            /* cluster is on the roadmap as a collection of nodes at a single location
             Insert("location", new List<RecordStructure.Attribute>()
             {
                 new RecordStructure.Attribute("map_guid", "f8dad699-c299-42df-9f51-af7c410be502"),
@@ -150,7 +150,7 @@ namespace Data
                 new RecordStructure.Attribute("type", 1.ToString()),
                 new RecordStructure.Attribute("map_guid", "f8dad699-c299-42df-9f51-af7c410be502")
             });
-
+            */
             Insert("location", new List<RecordStructure.Attribute>()
             {
                 new RecordStructure.Attribute("map_guid", "f8dad699-c299-42df-9f51-af7c410be502"),

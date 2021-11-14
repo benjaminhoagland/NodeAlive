@@ -215,7 +215,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 6668272481999887235}
   m_OnClick:
     m_PersistentCalls:
@@ -817,6 +817,7 @@ GameObject:
   - component: {fileID: 6668272482714073568}
   - component: {fileID: 6668272482714073569}
   - component: {fileID: 6668272482714073374}
+  - component: {fileID: 3456792094263892418}
   m_Layer: 5
   m_Name: AddDispatch
   m_TagString: Untagged
@@ -926,6 +927,19 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3456792094263892418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6668272482714073372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 508b71f90521afc47878d6ab5fd9331e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 6668272483906925411}
 --- !u!1 &6668272482718267206
 GameObject:
   m_ObjectHideFlags: 0
@@ -1268,8 +1282,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4284177243
+  m_fontColor: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1346,7 +1360,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6668272483263721644
 RectTransform:
   m_ObjectHideFlags: 0

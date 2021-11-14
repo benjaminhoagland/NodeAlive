@@ -28,6 +28,12 @@ public class Menu_RemoveNode : MonoBehaviour
                             select l.GUID).FirstOrDefault();
         Instance.Message("Updating location references...");
         Data.Data.Update.RemoveLocationChildReference(locationGUID);
+        var scriptGUID = (from s in Data.Data.Select.Script()
+                          where s.NodeGUID == nodeGUID
+                          select s.GUID).FirstOrDefault();
+        Instance.Message("Removing script references...");
+        Data.Data.Delete.Script(scriptGUID);
+        Instance.Message("Complete");
     }
 
 }

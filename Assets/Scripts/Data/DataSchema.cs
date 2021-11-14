@@ -94,6 +94,19 @@ public partial class Data
                     new TableStructure.Attribute("path", "TEXT"),
                     new TableStructure.Attribute("contents", "TEXT")
 			    }),
+                new TableStructure("result", new List<TableStructure.Attribute>()
+			    {
+                    new TableStructure.Attribute("id", "INTEGER PRIMARY KEY"),
+                    new TableStructure.Attribute("guid", "TEXT"),
+                    new TableStructure.Attribute("node_guid", "TEXT"),
+                    new TableStructure.Attribute("script_guid", "TEXT"),
+                    new TableStructure.Attribute("map_guid", "TEXT"),
+                    new TableStructure.Attribute("date_created", "TEXT"),
+                    new TableStructure.Attribute("status", "INTEGER"),
+                    new TableStructure.Attribute("contents", "TEXT"),
+                    new TableStructure.Attribute("date_finished_execution", "TEXT"),
+                    new TableStructure.Attribute("runtime", "INTEGER")
+			    })
             };
             public class Table
 		    {
@@ -252,6 +265,27 @@ public partial class Data
                         return output;
 			        }
 		        }
+                public class Result : Table
+				{
+                    public string NodeGUID { get;set; } 
+                    public string ScriptGUID { get;set; }
+                    public string MapGUID { get;set; }
+                    public bool Status { get;set; }
+                    public string Contents { get;set; }
+                    public DateTime DateFinishedExecution { get; set; }
+                    public int Runtime { get; set; }
+                    public override string ToString()
+			        {
+                        var output = "";
+                        Type type = this.GetType();
+                        PropertyInfo[] properties = type.GetProperties();
+                        foreach (PropertyInfo property in properties)
+                        {
+                            output += property.Name + ": " + property.GetValue(this, null) + Environment.NewLine;
+                        }
+                        return output;
+			        }
+				}
 		    }
 	    }
 	}    
