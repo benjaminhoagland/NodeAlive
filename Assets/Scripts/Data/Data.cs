@@ -479,6 +479,27 @@ namespace Data
                     Log.WriteWarning("Used query: \"" + System.Environment.NewLine + query + "\"");
 		        }
 	        }
+            public static void Dispatch(string guid)
+	        {      
+                var query = "DELETE FROM dispatch WHERE guid == \"" + guid + "\";";
+                var log = true;
+			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
+                string connectionString = "URI=file:" + File.fullName;
+                try
+		        {
+                    IDbConnection connection = new SqliteConnection(connectionString);
+                    IDbCommand command;
+                    connection.Open();
+                    command = connection.CreateCommand();
+                    command.CommandText = query;
+                    command.ExecuteNonQuery();
+		        }
+                catch
+		        {
+                    Log.WriteError("Database connection failure at " + MethodBase.GetCurrentMethod().Name);
+                    Log.WriteWarning("Used query: \"" + System.Environment.NewLine + query + "\"");
+		        }
+	        }
             public static void Script(string guid)
 	        {      
                 var query = "DELETE FROM script WHERE guid == \"" + guid + "\";";

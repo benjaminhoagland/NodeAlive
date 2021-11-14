@@ -50,12 +50,20 @@ public class Map_DispatchHost : MonoBehaviour
     void Update()
     {
         if(ready) StartCoroutine(UpdateGameObjects());
-        foreach(var location in DispatchLocation.List)
+		try
 		{
-            var pos = map.GeoToWorldPosition(location.coordinate);
+
+            foreach(var location in DispatchLocation.List)
+		    {
+                var pos = map.GeoToWorldPosition(location.coordinate);
 
 
-            location.gameObject.transform.position = pos;
+                location.gameObject.transform.position = pos;
+		    }
+		}
+        catch
+		{
+            Log.WriteWarning("Map_DispatchHost Collection was modified during operation... Unexpected results may occur.");
 		}
     }
 		
@@ -63,34 +71,42 @@ public class Map_DispatchHost : MonoBehaviour
 	IEnumerator UpdateGameObjects()
 	{
         ready = false;
-        // data to match
-        var dispatches = (from d in Instance.Dispatches
-                     select d).ToList();
-        // add stuff
-        var guids = (from loc in DispatchLocation.List select loc.guid).ToList();
-        foreach(var disp in dispatches)
+		// data to match
+		try
 		{
-            if (guids.Contains(disp.GUID))
-			{
-                continue;
-			}
-            var l = Instantiate(DispatchEntity);
-            l.GetComponent<Identifier>().GUID = disp.GUID;
-			l.transform.parent = this.transform;
-            var v = (from location in Data.Data.Select.Location()
-                     where location.ChildGUID == (from entity in Data.Data.Select.Entity()
-                                                  where entity.ChildGUID == disp.GUID
-                                                  select entity.GUID).FirstOrDefault()
-                     select new Vector2d(location.Latitude, location.Longitude)).FirstOrDefault();
-			DispatchLocation.List.Add(new DispatchLocation(l, disp.GUID, v));
-		}
 
-        // remove stuff
-        foreach(var l in DispatchLocation.List)
+            var dispatches = (from d in Instance.Dispatches
+                                select d).ToList();
+            // add stuff
+            var guids = (from loc in DispatchLocation.List select loc.guid).ToList();
+            foreach(var disp in dispatches)
+		    {
+                if (guids.Contains(disp.GUID))
+			    {
+                    continue;
+			    }
+                var l = Instantiate(DispatchEntity);
+                l.GetComponent<Identifier>().GUID = disp.GUID;
+			    l.transform.parent = this.transform;
+                var v = (from location in Data.Data.Select.Location()
+                         where location.ChildGUID == (from entity in Data.Data.Select.Entity()
+                                                      where entity.ChildGUID == disp.GUID
+                                                      select entity.GUID).FirstOrDefault()
+                         select new Vector2d(location.Latitude, location.Longitude)).FirstOrDefault();
+			    DispatchLocation.List.Add(new DispatchLocation(l, disp.GUID, v));
+		    }
+
+            // remove stuff
+            foreach(var l in DispatchLocation.List)
+		    {
+			    if((from d in dispatches select d.GUID).ToList().Contains(l.gameObject.GetComponent<Identifier>().GUID)) 
+                    continue;
+                DispatchLocation.Remove(l);
+		    }
+		}
+        catch
 		{
-			if((from d in dispatches select d.GUID).ToList().Contains(l.gameObject.GetComponent<Identifier>().GUID)) 
-                continue;
-            DispatchLocation.Remove(l);
+            Log.WriteWarning("Map_DispatchHost Collection was modified during operation... Unexpected results may occur.");
 		}
         yield return wait;
         ready = true;

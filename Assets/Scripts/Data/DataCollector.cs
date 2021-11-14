@@ -40,6 +40,10 @@ public class DataCollector : MonoBehaviour
                                         select n).ToList();
         foreach(var node in Instance.Nodes)
 		{
+            if(string.IsNullOrEmpty(node.LastResponse.ToString()))
+            {
+                Data.Data.Update.NodeOverdue(node.GUID);
+            }
             if((DateTime.Now - node.LastResponse).TotalSeconds > node.Timeout) Data.Data.Update.NodeOverdue(node.GUID);
 		}
         Instance.Nodes = (from n in Data.Data.Select.Node()

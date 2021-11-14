@@ -37,15 +37,11 @@ public static class Instance
         "Exiting",
     };
     public static bool InitializationFailure = false;
-    public static List<string> MessageQueue = new List<string>() 
-    
-    { 
-        // "Initalizing", 
-        // "Initalizing.",
-        // "Initalizing..", 
-        // "Initalizing...", 
-        "Instance initialized." 
-    };
+    public static Queue<(string message, float showForDelay)> MessageQueue = 
+        new Queue<(string message, float showForDelay)>
+        (
+            new[] { ("Instance initialized.", 0.25f) }
+        );
     public static bool NODEOFFLINE = false;
     public static List<Data.Data.Schema.Table.Location> UnassignedLocations = new List<Data.Data.Schema.Table.Location>();
     public static List<Data.Data.Schema.Table.Dispatch> Dispatches = new List<Data.Data.Schema.Table.Dispatch>();
@@ -73,6 +69,7 @@ public static class Instance
         public static string GUID { get; set; }
     }
     public static Data.Data.Schema.Table.Node ActiveNode = new Data.Data.Schema.Table.Node();
+    public static Data.Data.Schema.Table.Dispatch ActiveDispatch = new Data.Data.Schema.Table.Dispatch();
     public static void ClearActiveNode()
 	{
         ActiveNode = new Data.Data.Schema.Table.Node();
@@ -140,9 +137,9 @@ public static class Instance
 	{
         SelectedLocationGUID = guid;
 	}
-    public static void Message(string status)
+    public static void Message(string status, float showForDelay = 0.25f)
 	{
-        MessageQueue.Add(status);
+        MessageQueue.Enqueue((status, showForDelay));
 	}
     public static void DisableNodeUI()
 	{
