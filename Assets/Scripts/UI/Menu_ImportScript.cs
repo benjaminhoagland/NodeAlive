@@ -39,7 +39,7 @@ public class Menu_ImportScript : SerializedMonoBehaviour
         if (!validated) return;
         Instance.Message("Validating script...");
         var fileInfo = new FileInfo(InputIndicatorTuple[1].input.text);
-        Debug.Log(fileInfo.FullName);
+        // Debug.Log(fileInfo.FullName);
         if(!fileInfo.Exists)
         {
             InputIndicatorTuple[1].indicator.SetActive(true);

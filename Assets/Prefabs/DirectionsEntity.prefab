@@ -49,7 +49,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4688615757004165969
 Transform:
   m_ObjectHideFlags: 0
@@ -144,7 +144,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4688615757519699031
 Transform:
   m_ObjectHideFlags: 0
@@ -264,6 +264,7 @@ GameObject:
   - component: {fileID: 4688615757804076504}
   - component: {fileID: 4688615757804076505}
   - component: {fileID: 6634457856694708359}
+  - component: {fileID: 843188000488051424}
   m_Layer: 0
   m_Name: DirectionsEntity
   m_TagString: Untagged
@@ -337,8 +338,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.092178345
-        value: 0.52830124
+        time: 0.10335059
+        value: 0.23270668
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -350,9 +351,9 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.1832463, b: 0, a: 1}
-      key1: {r: 1, g: 0.1832463, b: 0, a: 1}
-      key2: {r: 1, g: 1, b: 1, a: 0}
+      key0: {r: 1, g: 0.3667643, b: 0, a: 1}
+      key1: {r: 1, g: 0.3667643, b: 0, a: 1}
+      key2: {r: 1, g: 0.1832463, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
@@ -411,8 +412,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _map: {fileID: 0}
-  cube: {fileID: 0}
   _waypoints:
   - {fileID: 4688615757541328422}
   - {fileID: 4688615756857300542}
   UpdateFrequency: 2
+--- !u!114 &843188000488051424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4688615757804076509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3544b871ca8e94694fedbc4b49a833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RouteTime: 0

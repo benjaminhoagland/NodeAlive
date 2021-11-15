@@ -239,6 +239,7 @@
     <Compile Include="Assets\Scripts\UI\subassembly\Display_DispatchesHost.cs" />
     <Compile Include="Assets\Mapbox\Unity\Map\TileProviders\RangeAroundTransformTileProvider.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Map\RawPngRasterTile.cs" />
+    <Compile Include="Assets\Scripts\Map\Map_DirectionsHost.cs" />
     <Compile Include="Assets\Mapbox\Unity\SourceLayers\ISubLayerModeling.cs" />
     <Compile Include="Assets\Scripts\UI\subassembly\Menu_UpdateMapLocation.cs" />
     <Compile Include="Assets\Mapbox\Unity\Utilities\Conversions.cs" />
@@ -375,6 +376,7 @@
     <Compile Include="Assets\Mapbox\Unity\Telemetry\TelemetryIos.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Map\Tile.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Map\RetinaRasterTile.cs" />
+    <Compile Include="Assets\Scripts\UI\Menu_directions.cs" />
     <Compile Include="Assets\Mapbox\Unity\Map\Strategies\MapPlacementAtLocationCenterStrategy.cs" />
     <Compile Include="Assets\Mapbox\Unity\LayerProperties\ElevationLayerProperties.cs" />
     <Compile Include="Assets\Scripts\Utility\LastResponseFormat.cs" />
@@ -484,8 +486,10 @@
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Factories\ImageDataFetcher.cs" />
     <Compile Include="Assets\Mapbox\Unity\Location\LocationSmoothing\KalmanFilter.cs" />
     <Compile Include="Assets\Mapbox\Unity\SourceLayers\ISubLayerCustomStyle.cs" />
-    <Compile Include="Assets\Scripts\UI\Menu_directions.cs" />
-    <Compile Include="Assets\Scripts\Map\Map_DirectionsHost.cs" />
+    <Compile Include="Assets\Scripts\UI\subassembly\Display_DirectionsHost.cs" />
+    <Compile Include="Assets\Scripts\Utility\DisplayRouteTime.cs" />
+    <Compile Include="Assets\Scripts\UI\Display_UpdateDirectionStatus.cs" />
+    <Compile Include="Assets\Scripts\UI\Display_UpdateDirectionNameOnEnable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

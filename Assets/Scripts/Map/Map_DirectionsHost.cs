@@ -22,7 +22,19 @@ public class Map_DirectionsHost : MonoBehaviour
         public string NodeGUID { get; set; }
         public Vector2d StartCoordinate { get; set; }
         public Vector2d EndCoordinate { get; set; }
-        public DirectionLocation(Vector3 start, Vector3 end, GameObject gameObject, GameObject endObject, GameObject startObject, string nodeGUID, Vector2d startCoordinate, Vector2d endCoordinate)
+        public float RouteTime { get; set; }
+        public DirectionLocation
+        (
+            Vector3 start, 
+            Vector3 end, 
+            GameObject gameObject, 
+            GameObject endObject, 
+            GameObject startObject, 
+            string nodeGUID, 
+            Vector2d startCoordinate, 
+            Vector2d endCoordinate
+            //float routeTime
+        )
 		{
             StartPosition = start;
             EndPosition = end;
@@ -32,15 +44,18 @@ public class Map_DirectionsHost : MonoBehaviour
             NodeGUID = nodeGUID;
             StartCoordinate = startCoordinate;
             EndCoordinate = endCoordinate;
+            //RouteTime = routeTime
 		}
         public static void Remove(DirectionLocation directionLocation)
 		{
+            directionLocation.dLGameObject.Destroy();
             List.Remove(directionLocation);
 		}
 	}
     [SerializeField]GameObject DirectionsEntity;
     [SerializeField]GameObject NodeHost;
     [SerializeField]GameObject DispatchHost;
+    [SerializeField]GameObject DisplayDirectionsHost;
 	Coroutine c;
 	[SerializeField] float interval = 1f;
 	bool ready = true;
@@ -72,7 +87,7 @@ public class Map_DirectionsHost : MonoBehaviour
 	
 	IEnumerator UpdateGameObjects()
 	{
-        Debug.Log("UpdateGameObjects is starting now");
+        // Debug.Log("UpdateGameObjects is starting now");
         ready = false;
         // data to match
         var deadNodes = (from node in Data.Data.Select.Node()
@@ -241,7 +256,21 @@ public class Map_DirectionsHost : MonoBehaviour
             sObject.transform.position = startWaypoint;
             eObject.transform.position = endWaypoint;
 
-			toAdd.Add(new DirectionLocation(startWaypoint, endWaypoint, dirloc, sObject, eObject, node.GUID, startCoordinate, endCoordinate));
+            // float routeTime = 
+            // Debug.Log("adding");
+			toAdd.Add(
+                        new DirectionLocation
+                        (
+                            startWaypoint, 
+                            endWaypoint, 
+                            dirloc, 
+                            sObject, 
+                            eObject, 
+                            node.GUID, 
+                            startCoordinate, 
+                            endCoordinate
+                        )
+                     );
 		}
 
         // remove stuff
@@ -261,6 +290,21 @@ public class Map_DirectionsHost : MonoBehaviour
 		{
             DirectionLocation.Remove(l);
             // 6667Debug.Log("removing l from dl.list");
+            var dCount = DisplayDirectionsHost.transform.childCount;
+            GameObject dPanel = null;
+            foreach(var i in Enumerable.Range(0, dCount))
+			{
+                var child = DisplayDirectionsHost.transform.GetChild(i).gameObject;
+                if(child.GetComponent<Identifier>().GUID == l.NodeGUID)
+				{
+                    dPanel = child;
+				}
+			}
+            if(dPanel == null)
+			{
+                continue;
+			}
+            dPanel.Destroy();
 		}
         ready = true;
         yield return wait;

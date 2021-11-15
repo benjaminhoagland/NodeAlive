@@ -56,11 +56,11 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 
 		private void OnEnable()
 		{
-			Awake();
+			
 		}
 		private void Update()
 		{
-
+			
 		}
 		public void Start()
 		{
@@ -96,6 +96,8 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 		{
 			while (true)
 			{
+				
+				_map.UpdateMap();
 				yield return new WaitForSeconds(UpdateFrequency);
 				for (int i = 0; i < _waypoints.Length; i++)
 				{
@@ -140,6 +142,7 @@ namespace Mapbox.Unity.MeshGeneration.Factories
 			lr.positionCount = dat.Count;
 			lr.SetPositions(dat.ToArray());
 			_cachedPositions = dat.ToArray();
+			GetComponent<DisplayRouteTime>().RouteTime = (float) response.Routes[0].Duration;
 		}
 	}
 

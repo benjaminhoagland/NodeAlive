@@ -4938,6 +4938,7 @@ MonoBehaviour:
   DirectionsEntity: {fileID: 4688615757804076509, guid: e0c8f96093bcacb44afb4daa7f7c28dc, type: 3}
   NodeHost: {fileID: 852604580}
   DispatchHost: {fileID: 2105180543}
+  DisplayDirectionsHost: {fileID: 1126081543}
   interval: 1
 --- !u!1001 &407898314
 PrefabInstance:
@@ -18010,6 +18011,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1126081544}
+  - component: {fileID: 1126081545}
   m_Layer: 5
   m_Name: Directions
   m_TagString: Untagged
@@ -18034,8 +18036,22 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1126081545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126081543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8ff8c3b10fcd04182a03a28173df19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelPrefab: {fileID: 3972868017655454598, guid: 05a5477a2f7df90438e7f0a1eada51bd, type: 3}
+  canvas: {fileID: 223043318}
 --- !u!1 &1126991081 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1486854704267930821, guid: c4e1fe5b4cf49c442a1d6004441784ab, type: 3}
