@@ -20,7 +20,7 @@ namespace Data
             {
 			    Log.Write("Database found at " + File.fullName);
                 // Log.Write("Continuing...");
-            
+                
                 // test connection to database
                 // check connection to internet
                 // check connection to mapbox

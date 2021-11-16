@@ -43,7 +43,6 @@ ScriptsOnlyBuild:
     - Mapbox.Unity.Utilities.DebugTools.SceneData
     - Mapbox.Unity.Utilities.DebugTools.ScenesList
     - Mapbox.Unity.Utilities.OpenUrlOnButtonClick
-    - Mapbox.Unity.Utilities.Runnable
     - Mapbox.Unity.Utilities.TelemetryConfigurationButton
     - Menu_AddDispatch
     - Menu_AddNode
@@ -88,7 +87,6 @@ ScriptsOnlyBuild:
     - StatusHost
     - Status_Collector
     Sirenix.OdinInspector.Editor.dll:
-    - Sirenix.OdinInspector.Editor.GeneralDrawerConfig
     - Sirenix.OdinInspector.Editor.ImportSettingsConfig
     - Sirenix.OdinInspector.Editor.InspectorConfig
     - Sirenix.OdinInspector.Editor.Modules.OdinModuleConfig

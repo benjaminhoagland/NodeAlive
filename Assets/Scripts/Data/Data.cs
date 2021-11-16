@@ -418,7 +418,7 @@ namespace Data
 		{
             public static void Location(string guid)
 	        {      
-                var query = "DELETE FROM location WHERE guid == \"" + guid + "\";";
+                var query = "DELETE FROM location WHERE guid = \"" + guid + "\";";
                 var log = true;
 			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
                 string connectionString = "URI=file:" + File.fullName;
@@ -439,7 +439,7 @@ namespace Data
 	        }
             public static void Entity(string guid)
 	        {      
-                var query = "DELETE FROM entity WHERE guid == \"" + guid + "\";";
+                var query = "DELETE FROM entity WHERE guid = \"" + guid + "\";";
                 var log = true;
 			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
                 string connectionString = "URI=file:" + File.fullName;
@@ -460,7 +460,7 @@ namespace Data
 	        }
             public static void Node(string guid)
 	        {      
-                var query = "DELETE FROM node WHERE guid == \"" + guid + "\";";
+                var query = "DELETE FROM node WHERE guid = \"" + guid + "\";";
                 var log = true;
 			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
                 string connectionString = "URI=file:" + File.fullName;
@@ -481,7 +481,7 @@ namespace Data
 	        }
             public static void Dispatch(string guid)
 	        {      
-                var query = "DELETE FROM dispatch WHERE guid == \"" + guid + "\";";
+                var query = "DELETE FROM dispatch WHERE guid = \"" + guid + "\";";
                 var log = true;
 			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
                 string connectionString = "URI=file:" + File.fullName;
@@ -502,7 +502,7 @@ namespace Data
 	        }
             public static void Script(string guid)
 	        {      
-                var query = "DELETE FROM script WHERE guid == \"" + guid + "\";";
+                var query = "DELETE FROM script WHERE guid = \"" + guid + "\";";
                 var log = true;
 			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
                 string connectionString = "URI=file:" + File.fullName;
@@ -533,7 +533,10 @@ namespace Data
                 // example: "C:\NodeAlive\NASVC\NASVC\bin\Debug\NADB.sqlite"
                 get
                 {
-                    return Path.Combine(directoryPath, filename);
+                    var managed = directoryPath;
+                    var nodealivedata = Directory.GetParent(directoryPath).FullName;
+                    var projectbuild = Directory.GetParent(nodealivedata).FullName;
+                    return Path.Combine(projectbuild, filename);
                 }
             }
         }
