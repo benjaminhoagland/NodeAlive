@@ -21,9 +21,10 @@ namespace Data
 			    Log.Write("Database found at " + File.fullName);
                 // Log.Write("Continuing...");
             
-                // FLAG:TODO test connection
-                // FLAG:TODO write log and exit app on connection failure
-                // FLAG:TODO check data initialization
+                // test connection to database
+                // check connection to internet
+                // check connection to mapbox
+                // check connection to alerting services
     
             }
 		    else

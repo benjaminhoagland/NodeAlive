@@ -524,8 +524,8 @@ namespace Data
 		}
         public static class File
         {
-            // public static string filePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
-            public static string filePath = @"C:\NodeAlive\NASVC\NASVC\bin\Debug\";
+            public static string filePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            //public static string filePath = @"C:\NodeAlive\NASVC\NASVC\bin\Debug\";
             public static string directoryPath = System.IO.Path.GetDirectoryName(filePath);
             public const string filename = "NADB.sqlite";
             public static string fullName
