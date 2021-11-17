@@ -586,6 +586,7 @@ GameObject:
   - component: {fileID: 2704527456591643713}
   - component: {fileID: 7489825441195558840}
   - component: {fileID: 2937377719399728132}
+  - component: {fileID: 56231876996502827}
   m_Layer: 5
   m_Name: NodePanel
   m_TagString: Untagged
@@ -760,6 +761,18 @@ MonoBehaviour:
   - {fileID: 3341261444522692043}
   - {fileID: 3343052949144486879}
   lastResponseGameObject: {fileID: 7841743732467969263}
+--- !u!114 &56231876996502827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4947752793097106438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e45b2e78e496fe740a748e83e0b53750, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5691822369355141070
 GameObject:
   m_ObjectHideFlags: 0

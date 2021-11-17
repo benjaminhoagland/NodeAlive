@@ -43,10 +43,12 @@ ScriptsOnlyBuild:
     - Mapbox.Unity.Utilities.DebugTools.SceneData
     - Mapbox.Unity.Utilities.DebugTools.ScenesList
     - Mapbox.Unity.Utilities.OpenUrlOnButtonClick
+    - Mapbox.Unity.Utilities.Runnable
     - Mapbox.Unity.Utilities.TelemetryConfigurationButton
     - Menu_AddDispatch
     - Menu_AddNode
     - Menu_AddScript
+    - Menu_AdminLock
     - Menu_CancelSelection
     - Menu_ClearDB
     - Menu_CreateDispatch
@@ -59,7 +61,9 @@ ScriptsOnlyBuild:
     - Menu_ExitApplication
     - Menu_ForwardGeocodeResponse
     - Menu_HideMapWhenLoading
+    - Menu_IfLockedButtonDisable
     - Menu_ImportScript
+    - Menu_LockUnlockUpdateMenuButton
     - Menu_NewDispatchPanelHost
     - Menu_NewLocationAddressHandler
     - Menu_NewNodePanelHost
@@ -87,9 +91,9 @@ ScriptsOnlyBuild:
     - StatusHost
     - Status_Collector
     Sirenix.OdinInspector.Editor.dll:
+    - Sirenix.OdinInspector.Editor.GeneralDrawerConfig
     - Sirenix.OdinInspector.Editor.ImportSettingsConfig
     - Sirenix.OdinInspector.Editor.InspectorConfig
-    - Sirenix.OdinInspector.Editor.Modules.OdinModuleConfig
     - Sirenix.Serialization.AOTGenerationConfig
     Sirenix.Serialization.Config.dll:
     - Sirenix.Serialization.GlobalSerializationConfig
@@ -377,6 +381,12 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5696}
     - Class: 114
       Script: {instanceID: 5704}
+    - Class: 114
+      Script: {instanceID: 22270}
+    - Class: 114
+      Script: {instanceID: 24174}
+    - Class: 114
+      Script: {instanceID: 37286}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -1994,6 +2004,24 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ImageDataFetcher
+  - hash:
+      serializedVersion: 2
+      Hash: e0766a0e8938b34dbdc572ce4b274d5c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Menu_LockUnlockUpdateMenuButton
+  - hash:
+      serializedVersion: 2
+      Hash: 5d86feb8404daa0b27f23b7282ed0499
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Menu_AdminLock
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Menu_IfLockedButtonDisable
   platform: 19
   scenePathNames:
   - Assets/Scenes/Splash.unity

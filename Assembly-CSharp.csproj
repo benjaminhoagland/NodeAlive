@@ -113,6 +113,7 @@
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Utils\JsonConverters\BboxToGeoCoordinateBoundsConverter.cs" />
     <Compile Include="Assets\Mapbox\Unity\Utilities\Console.cs" />
     <Compile Include="Assets\Mapbox\Unity\SourceLayers\ITerrainLayer.cs" />
+    <Compile Include="Assets\Scripts\UI\subassembly\Menu_QueryNodeResultsContentController.cs" />
     <Compile Include="Assets\Mapbox\Unity\Utilities\TelemetryConfigurationButton.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Map\UnwrappedTileId.cs" />
     <Compile Include="Assets\Mapbox\Unity\Styling\ScriptablePalette.cs" />
@@ -490,7 +491,9 @@
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Factories\ImageDataFetcher.cs" />
     <Compile Include="Assets\Mapbox\Unity\Location\LocationSmoothing\KalmanFilter.cs" />
     <Compile Include="Assets\Mapbox\Unity\SourceLayers\ISubLayerCustomStyle.cs" />
-    <Compile Include="Assets\Scripts\UI\subassembly\Menu_QueryNodeResultsContentController.cs" />
+    <Compile Include="Assets\Scripts\Menu_LockUnlockUpdateMenuButton.cs" />
+    <Compile Include="Assets\Scripts\UI\subassembly\Menu_AdminLock.cs" />
+    <Compile Include="Assets\Scripts\Menu_IfLockedButtonDisable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

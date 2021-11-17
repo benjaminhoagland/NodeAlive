@@ -127,6 +127,16 @@ public static class Instance
         if(log) Debug.Log(ActiveMap.GUID);
 	}
     public static string SelectedLocationGUID;
+    
+    public static bool AdminLocked { get; private set;}
+    public static void AdminLock()
+	{
+        AdminLocked = true;
+	}
+    public static void AdminUnlock()
+	{
+        AdminLocked = false;
+	}
  
     public static string SelectedMapGUID;
     public static void SelectMapGUID(string guid)

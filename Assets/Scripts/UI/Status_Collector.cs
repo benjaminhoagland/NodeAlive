@@ -22,7 +22,7 @@ public class Status_Collector : MonoBehaviour
 	{
         pollIsRunning = true;
         // Debug.Log(delay.ToString());
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(1);
         gameObject.SetActive(Instance.MessageQueue.Count > 0 ? true : false);
         pollIsRunning = false;
 	}
