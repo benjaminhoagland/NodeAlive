@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Comment CommentText="Core Classes">
+    <Position X="0.5" Y="0.5" Height="0.291" Width="0.984" />
+  </Comment>
+  <Comment CommentText="Mapbox API  Classes">
+    <Position X="0.5" Y="10.386" Height="0.291" Width="1.596" />
+  </Comment>
+  <Comment CommentText="Helper and UI Classes">
+    <Position X="0.511" Y="20.928" Height="0.291" Width="1.596" />
+  </Comment>
+  <Comment CommentText="UI Database Action Classes">
+    <Position X="0.5" Y="30.75" Height="0.291" Width="2.401" />
+  </Comment>
+  <Comment CommentText="Update Display Classes">
+    <Position X="0.5" Y="37.056" Height="0.291" Width="2.401" />
+  </Comment>
+  <Class Name="Log">
+    <Position X="0.5" Y="7.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAQAAAAAAAAAAAABAAAAAAAAEAAAA=</HashCode>
+      <FileName>Assets\Scripts\Utility\Log.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataCollector">
+    <Position X="0.5" Y="4.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAQAAAgAAAAAAAACAAAAAAACEAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Data\DataCollector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Data.Data">
+    <Position X="0.5" Y="1" Width="2.75" />
+    <NestedTypes>
+      <Class Name="Data.Data.Select" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Data\Data.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Data.Data.Update" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Data\Data.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Data.Data.Delete" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Data\Data.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Data.Data.File" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Data\Data.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Data.Data.TableStructure" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Data\Data.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Data.Data.RecordStructure" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Data\Data.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Data.Data.Schema" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Data\DataSchema.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>CAAAAEAAAAAABQgABAAAAAQIAAAAAAAAAAAAAABIAAA=</HashCode>
+      <FileName>Assets\Scripts\Data\Data.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Instance">
+    <Position X="3.5" Y="1" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="Instance.ActiveMap" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Instance.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Instance.ActiveLocation" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Instance.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAggEQEAQAAAAEACBEAkAQCSIBBAACoACAAIACBgAA=</HashCode>
+      <FileName>Assets\Scripts\Instance.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Map_NodeHost">
+    <Position X="6.5" Y="1" Width="3.25" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="Map_NodeHost.NodeLocation">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\Map\Map_NodeHost.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAQAAAAAAAAAAAACAAAAAAACEAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Map\Map_NodeHost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Map_LocationHost" Collapsed="true">
+    <Position X="6.5" Y="8" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AEQAEAAAAQAAAAAAAAAAAACAAAAAAACEAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Map\Map_LocationHost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Map_DispatchHost" Collapsed="true">
+    <Position X="6.5" Y="8.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAQAAAAAAAAABAACAAAAAAACEAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Map\Map_DispatchHost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Map_DirectionsHost" Collapsed="true">
+    <Position X="6.5" Y="7.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAQAAACIAAAAAAACCAAAACACEAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Map\Map_DirectionsHost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Map_ClusterHost" Collapsed="true">
+    <Position X="6.5" Y="9.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAQAAAAAAAAAAAACAAAAAAACEAgAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Map\Map_ClusterHost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menu_ForwardGeocodeResponse">
+    <Position X="0.5" Y="10.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAUAIAAANIJAAAEAAAABAACAAAAAAQAAAAAAUAAEA=</HashCode>
+      <FileName>Assets\Scripts\UI\subassembly\Menu_ForwardGeocodeResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mapbox.Unity.MeshGeneration.Factories.Menu_directions">
+    <Position X="3.5" Y="10.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>IAwZCAAAACAAgAAAAgAAAQAAABAAAAgAAEAAAAIAGEA=</HashCode>
+      <FileName>Assets\Scripts\UI\Menu_directions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menu_UpdateMapLocation">
+    <Position X="6.5" Y="10.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>CAAAQAAAAAIAAAAAAACBABAACgAAAoAACEAAICBFAEA=</HashCode>
+      <FileName>Assets\Scripts\UI\subassembly\Menu_UpdateMapLocation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menu_NewLocationAddressHandler">
+    <Position X="0.5" Y="15.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>RAAAQGAAAAAAJAQAAAQAAAAACAIAAEAAAAAAAgAgAEQ=</HashCode>
+      <FileName>Assets\Scripts\UI\subassembly\Menu_NewLocationAddressHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menu_Selection">
+    <Position X="3.5" Y="15.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAACAAAEAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\UI\subassembly\Menu_Selection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menu_PanelDrag">
+    <Position X="0.5" Y="21.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>CASEAAAAAAAIAAACAAAAAQAAAAAAAAAAAAAAAAAACEA=</HashCode>
+      <FileName>Assets\Scripts\UI\Menu_PanelDrag.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menu_ToggleSubMenu">
+    <Position X="3.5" Y="21.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAACAAAAAAIAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Menu_ToggleSubMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Status_Collector">
+    <Position X="6.5" Y="23" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAQAAAAAAAAAAAAAAAAAAAAAAAoAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\UI\Status_Collector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StatusHost">
+    <Position X="6.5" Y="21.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\StatusHost.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Identifier">
+    <Position X="3.5" Y="23.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Utility\Identifier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menu_RemoveNode">
+    <Position X="0.5" Y="31.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\UI\Menu_RemoveNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menu_CreateNode">
+    <Position X="3.5" Y="31.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAACAAAABAAAAAAAAAAAAAACAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\UI\Menu_CreateNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menu_RemoveDispatch" Collapsed="true">
+    <Position X="0.5" Y="33.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAACAAAAAAAACAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\UI\Menu_RemoveDispatch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menu_RemoveLocation" Collapsed="true">
+    <Position X="0.5" Y="34" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAACAAEAAAAACAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\UI\Menu_RemoveLocation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menu_OnPointerExit">
+    <Position X="0.5" Y="24.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Menu_OnPointerExit.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Menu_OnPointerExitTarget">
+    <Position X="3.5" Y="25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Menu_OnPointerExitTarget.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Menu_AddScript" Collapsed="true">
+    <Position X="3.5" Y="33.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAIAAAAAAAAAAAACAAAAAAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Menu_AddScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menu_AddNode" Collapsed="true">
+    <Position X="3.5" Y="34.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAIAAAAAAAAAAAACAAAAAAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Menu_AddNode.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menu_AddDispatch" Collapsed="true">
+    <Position X="3.5" Y="35.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAIAAAAAAAAAAAACAAAAAAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Menu_AddDispatch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Display_NodeOfflineMonitor">
+    <Position X="3.5" Y="37.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAQACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\UI\Display_NodeOfflineMonitor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Display_PulseWarning">
+    <Position X="6.5" Y="37.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAEAAAAAAJAQEAAAAAAAE=</HashCode>
+      <FileName>Assets\Scripts\UI\Display_PulseWarning.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Display_UpdateDirectionNameOnEnable">
+    <Position X="0.5" Y="37.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAgACAACEA=</HashCode>
+      <FileName>Assets\Scripts\UI\Display_UpdateDirectionNameOnEnable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Display_UpdateDirectionStatus">
+    <Position X="0.5" Y="42.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAQAAAAAAAgAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Display_UpdateDirectionStatus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Display_UpdateDispatchNameOnEnable">
+    <Position X="0.5" Y="40.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAAACAAAAAAAAAAAAAAAQAAACEA=</HashCode>
+      <FileName>Assets\Scripts\UI\Display_UpdateDispatchNameOnEnable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Display_UpdateNodeNameOnEnable">
+    <Position X="3.5" Y="39.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAgAAACACAAACAAAAAAACCAAAACEA=</HashCode>
+      <FileName>Assets\Scripts\UI\Display_UpdateNodeNameOnEnable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Display_UpdateNodeStatus">
+    <Position X="3.5" Y="42.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAEAAAAAAAAAAAAABAUBAAAggAAAAAAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\UI\Display_UpdateNodeStatus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menu_ResetDB">
+    <Position X="6.5" Y="33.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAACAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\subassembly\Menu_ResetDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menu_PopulateDB">
+    <Position X="6.5" Y="31.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAACAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\subassembly\Menu_PopulateDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menu_UpdateActiveMapLabel">
+    <Position X="6.5" Y="40.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\UI\subassembly\Menu_UpdateActiveMapLabel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menu_ClearDB">
+    <Position X="6.5" Y="35.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAACAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\UI\subassembly\Menu_ClearDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Menu_IfLockedButtonDisable">
+    <Position X="6.5" Y="42.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAQAAABAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Menu_IfLockedButtonDisable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

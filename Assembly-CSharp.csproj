@@ -102,6 +102,7 @@
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Components\FeatureBehaviour.cs" />
     <Compile Include="Assets\Mapbox\Unity\Utilities\Singleton.cs" />
     <Compile Include="Assets\Mapbox\Unity\Map\TileProviders\RangeTileProvider.cs" />
+    <Compile Include="Assets\Scripts\UI\subassembly\Menu_AdminLock.cs" />
     <Compile Include="Assets\Mapbox\Unity\MapboxAccess.cs" />
     <Compile Include="Assets\Scripts\UI\subassembly\Menu_ResetNewMapValues.cs" />
     <Compile Include="Assets\Mapbox\Examples\Scripts\ImmediatePositionWithLocationProvider.cs" />
@@ -201,6 +202,7 @@
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Modifiers\GameObjectModifiers\ColliderModifier.cs" />
     <Compile Include="Assets\Mapbox\Unity\DataContainers\UnityLayerOptions.cs" />
     <Compile Include="Assets\Mapbox\Unity\Utilities\DebugTools\SceneData.cs" />
+    <Compile Include="Assets\Scripts\Menu_IfLockedButtonDisable.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Directions\Response\DirectionsResponse.cs" />
     <Compile Include="Assets\Scripts\UI\Menu_DisplaySelectedLocationGUID.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Map\TileErrorEventArgs.cs" />
@@ -245,6 +247,7 @@
     <Compile Include="Assets\Mapbox\Unity\SourceLayers\ISubLayerModeling.cs" />
     <Compile Include="Assets\Scripts\UI\subassembly\Menu_UpdateMapLocation.cs" />
     <Compile Include="Assets\Mapbox\Unity\Utilities\Conversions.cs" />
+    <Compile Include="Assets\Scripts\Menu_LockUnlockUpdateMenuButton.cs" />
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Modifiers\GameObjectModifier.cs" />
     <Compile Include="Assets\Mapbox\Unity\DataContainers\LayerModifierOptions.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Map\ClassicRetinaRasterTile.cs" />
@@ -491,9 +494,6 @@
     <Compile Include="Assets\Mapbox\Unity\MeshGeneration\Factories\ImageDataFetcher.cs" />
     <Compile Include="Assets\Mapbox\Unity\Location\LocationSmoothing\KalmanFilter.cs" />
     <Compile Include="Assets\Mapbox\Unity\SourceLayers\ISubLayerCustomStyle.cs" />
-    <Compile Include="Assets\Scripts\Menu_LockUnlockUpdateMenuButton.cs" />
-    <Compile Include="Assets\Scripts\UI\subassembly\Menu_AdminLock.cs" />
-    <Compile Include="Assets\Scripts\Menu_IfLockedButtonDisable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

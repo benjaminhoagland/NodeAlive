@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{3A393195-C09A-AD80-718E-385364BCE174}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirenix.OdinInspector.CompatibilityLayer", "Sirenix.OdinInspector.CompatibilityLayer.csproj", "{392B3D99-605C-5E77-AF54-080B7D7F0A71}"
@@ -8,6 +10,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{B0E27D73-60E8-9EE1-A4D2-AFFE7DDB19DD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sirenix.OdinInspector.CompatibilityLayer.Editor", "Sirenix.OdinInspector.CompatibilityLayer.Editor.csproj", "{DC5402B0-1E12-5351-C511-0BCF2E023FEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAUnitTest", "NAUnitTEst\NAUnitTest.csproj", "{EA3321D8-0321-407D-B9AB-53D82C40A7F9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3A393195-C09A-AD80-718E-385364BCE174} = {3A393195-C09A-AD80-718E-385364BCE174}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,8 +38,15 @@ Global
 		{DC5402B0-1E12-5351-C511-0BCF2E023FEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC5402B0-1E12-5351-C511-0BCF2E023FEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC5402B0-1E12-5351-C511-0BCF2E023FEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA3321D8-0321-407D-B9AB-53D82C40A7F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA3321D8-0321-407D-B9AB-53D82C40A7F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA3321D8-0321-407D-B9AB-53D82C40A7F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA3321D8-0321-407D-B9AB-53D82C40A7F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {04C979BD-BB5B-4D57-8353-60A7B733F407}
 	EndGlobalSection
 EndGlobal

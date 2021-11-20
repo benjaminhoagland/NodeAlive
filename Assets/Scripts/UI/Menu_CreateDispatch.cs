@@ -5,7 +5,6 @@ using UnityEngine.UI;
 using Sirenix.OdinInspector;
 using System;
 using System.Linq;
-
 public class Menu_CreateDispatch : SerializedMonoBehaviour
 {
     [ShowInInspector][SerializeField] List<(TMPro.TMP_InputField input, GameObject indicator)> InputIndicatorTuple;

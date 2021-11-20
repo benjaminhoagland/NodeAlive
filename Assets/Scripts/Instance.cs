@@ -74,11 +74,15 @@ public static class Instance
 	{
         ActiveNode = new Data.Data.Schema.Table.Node();
 	}
+    
+    public static string SetActiveNodeNullReferenceMessageInput = "GUID input to SetActiveNode is null or empty. Active node not set.";
     public static void SetActiveNode(string guid)
 	{
+        
+        
         if(String.IsNullOrEmpty(guid))
         {
-            throw new Exception("GUID input to SetActiveNode is null or empty. Active node not set.");
+            throw new NullReferenceException(SetActiveNodeNullReferenceMessageInput);
         }
         var node = (from n in Data.Data.Select.Node()
                     where n.GUID == guid
@@ -89,8 +93,13 @@ public static class Instance
         }
         ActiveNode = node;
 	}
+    public static string SetActiveLocationNullReferenceMessageInput = "GUID input to SetActiveLocation is null or empty. Active location not set.";
     public static void SetActiveLocation(string guid)
 	{
+        if(String.IsNullOrEmpty(guid))
+        {
+            throw new NullReferenceException(SetActiveLocationNullReferenceMessageInput);
+        }
         ActiveLocation.GUID = guid;
         var location = (from l in Data.Data.Select.Location()
                         where l.GUID == guid
@@ -105,9 +114,13 @@ public static class Instance
         ActiveLocation.Longitude = location.Longitude;
         ActiveLocation.ChildGUID = "unassigned";
 	}
+    public static string SetActiveMapNullReferenceMessageInput = "GUID input to SetActiveMap is null or empty. Active map not set.";
     public static void SetActiveMap(string guid)
 	{
-        if(guid.Length == 0 || guid == null) Log.WriteError("Failure at SetActiveMap from null input.");
+        if(String.IsNullOrEmpty(guid))
+        {
+            throw new NullReferenceException(SetActiveMapNullReferenceMessageInput);
+        }
         var id = Data.Data.SelectWhatFromWhere("id", "map", "guid = \'" + guid + "\'").FirstOrDefault();
         
         var log = false;
@@ -170,3 +183,4 @@ public static class Instance
 	}
 
 }
+

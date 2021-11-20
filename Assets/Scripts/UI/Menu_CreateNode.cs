@@ -11,6 +11,7 @@ public class Menu_CreateNode : SerializedMonoBehaviour
     [ShowInInspector][SerializeField] List<(TMPro.TMP_InputField input, GameObject indicator)> InputIndicatorTuple;
     Button button;
     [SerializeField] GameObject parent;
+    public string nullrefinputmsg = "Input fields are null at Menu_CreateNode";
     void Awake()
     {
        button = GetComponent<Button>();
@@ -23,8 +24,8 @@ public class Menu_CreateNode : SerializedMonoBehaviour
         var validated = true;
         if(InputIndicatorTuple.Count < 1)
         { 
-            throw new NullReferenceException("Input fields are null at Menu_CreateNode");
-         }
+            throw new NullReferenceException(nullrefinputmsg);
+        }
         foreach(var tuple in InputIndicatorTuple)
 		{
             if(tuple.input.text.Length == 0)

@@ -64,8 +64,8 @@
     <Compile Include="Assets\Mapbox\Unity\Editor\PropertyDrawers\VectorFilterOptionsDrawer.cs" />
     <Compile Include="Assets\Mapbox\Unity\Editor\PropertyDrawers\ElevationRequiredOptionsDrawer.cs" />
     <Compile Include="Assets\Mapbox\Unity\Editor\PropertyDrawers\GeometryExtrusionOptionsDrawer.cs" />
-    <Compile Include="Assets\Mapbox\Unity\Editor\PropertyDrawers\ElevationLayerPropertiesDrawer.cs" />
     <Compile Include="Assets\Mapbox\Unity\Editor\TreeElementUtility.cs" />
+    <Compile Include="Assets\Mapbox\Unity\Editor\PropertyDrawers\ElevationLayerPropertiesDrawer.cs" />
     <Compile Include="Assets\Mapbox\Unity\Editor\EditorHelper.cs" />
     <Compile Include="Assets\Mapbox\Core\mapbox-sdk-cs\Tests\UnitTests\Editor\MapboxUnitTests_MapMatcher.cs" />
     <Compile Include="Assets\Mapbox\Unity\Editor\PropertyDrawers\VectorLayerPropertiesDrawer.cs" />

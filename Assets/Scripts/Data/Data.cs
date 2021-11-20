@@ -13,6 +13,8 @@ namespace Data
 {
     public partial class Data
     {
+        public static string GUIDnullref = "GUID input is null. Exiting function.";
+        public static string GUIDInputParseErrorMessage = "GUID input failed to parse as a GUID.";
         public static class Select
 	    {
             public static List<Schema.Table.Script> Script()
@@ -344,6 +346,10 @@ namespace Data
 		{
             public static void RemoveLocationChildReference(string LocationGUID)
 			{
+                if(String.IsNullOrEmpty(LocationGUID))
+				{
+                    throw new NullReferenceException(GUIDnullref);
+				}
                 var query = "UPDATE location SET child_guid = \"unassigned\" " +
                         "WHERE guid = \"" + LocationGUID + "\";";
                     var log = false;
@@ -366,7 +372,10 @@ namespace Data
 				}
             public static void Location(string guid, List<Data.RecordStructure.Attribute> attributes)
 	        {      
-                
+                if(String.IsNullOrEmpty(guid))
+				{
+                    throw new NullReferenceException(GUIDnullref);
+				}
                 foreach(var attribute in attributes)
 				{
 
@@ -393,6 +402,11 @@ namespace Data
 	        }
             public static void NodeOverdue(string guid)
 			{
+                if(String.IsNullOrEmpty(guid))
+				{
+                    throw new NullReferenceException(GUIDnullref);
+				}
+                
                 var query = "UPDATE node SET alive = \"0\" " +
                         "WHERE guid = \"" + guid + "\";";
                 var log = false;
@@ -418,6 +432,14 @@ namespace Data
 		{
             public static void Location(string guid)
 	        {      
+                if(String.IsNullOrEmpty(guid))
+				{
+                    throw new NullReferenceException(GUIDnullref);
+				}
+                if(!Guid.TryParse(guid, out var result))
+				{
+                    throw new FormatException(GUIDInputParseErrorMessage);
+				}
                 var query = "DELETE FROM location WHERE guid = \"" + guid + "\";";
                 var log = true;
 			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
@@ -439,6 +461,15 @@ namespace Data
 	        }
             public static void Entity(string guid)
 	        {      
+                
+                if(String.IsNullOrEmpty(guid))
+				{
+                    throw new NullReferenceException(GUIDnullref);
+				}
+                if(!Guid.TryParse(guid, out var result))
+				{
+                    throw new FormatException(GUIDInputParseErrorMessage);
+				}
                 var query = "DELETE FROM entity WHERE guid = \"" + guid + "\";";
                 var log = true;
 			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
@@ -460,6 +491,14 @@ namespace Data
 	        }
             public static void Node(string guid)
 	        {      
+                if(String.IsNullOrEmpty(guid))
+				{
+                    throw new NullReferenceException(GUIDnullref);
+				}
+                if(!Guid.TryParse(guid, out var result))
+				{
+                    throw new FormatException(GUIDInputParseErrorMessage);
+				}
                 var query = "DELETE FROM node WHERE guid = \"" + guid + "\";";
                 var log = true;
 			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
@@ -481,6 +520,14 @@ namespace Data
 	        }
             public static void Dispatch(string guid)
 	        {      
+                if(String.IsNullOrEmpty(guid))
+				{
+                    throw new NullReferenceException(GUIDnullref);
+				}
+                if(!Guid.TryParse(guid, out var result))
+				{
+                    throw new FormatException(GUIDInputParseErrorMessage);
+				}
                 var query = "DELETE FROM dispatch WHERE guid = \"" + guid + "\";";
                 var log = true;
 			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
@@ -502,6 +549,14 @@ namespace Data
 	        }
             public static void Script(string guid)
 	        {      
+                if(String.IsNullOrEmpty(guid))
+				{
+                    throw new NullReferenceException(GUIDnullref);
+				}
+                if(!Guid.TryParse(guid, out var result))
+				{
+                    throw new FormatException(GUIDInputParseErrorMessage);
+				}
                 var query = "DELETE FROM script WHERE guid = \"" + guid + "\";";
                 var log = true;
 			    if(log) Log.Write("Used query: \"" + System.Environment.NewLine + query + "\"");
